@@ -89,6 +89,9 @@ For £10 per month and free delivery, subscribers will receive a box each month 
 
 #### Colour Scheme
 
+![Colour palette generated using coolors.co](wireframes/images/colour-scheme-twnib.png)
+_Colour palette generated using [coolors.co](https://coolors.co)_
+
 #### Typography
 
 Throughout the site, I used two different fonts from Google Fonts. These were [Anton](https://fonts.google.com/specimen/Anton#standard-styles) with the suggested pairing of [Roboto](https://fonts.google.com/specimen/Roboto).
@@ -105,12 +108,13 @@ I designed a simple logo for the site using [Affinity Photo](https://affinity.se
 
 The wireframes for my site were created using [Balsamiq](https://balsamiq.com/). I created wireframes for mobile, tablet and desktop devices.
 
-![Site Map](wireframes/site-map-horizontal.png)
+![Site Map](wireframes/images/site-map-horizontal.png)
 
 Links to the wireframes can be found below. Each link contains the wireframes for mobile, tablet and desktop devices:
 
-- Home Page
-- Products Page
+- [Home Page](https://github.com/KirstChat/the-wee-norn-iron-box/blob/master/wireframes/home.pdf)
+- [Products Page](https://github.com/KirstChat/the-wee-norn-iron-box/blob/master/wireframes/products.pdf)
+- [Add/Edit/Delete Products](https://github.com/KirstChat/the-wee-norn-iron-box/blob/master/wireframes/add-edit-delete-products.pdf) _(Superuser Only)_
 - User Profile
 - Box Contents
 - Add Review
