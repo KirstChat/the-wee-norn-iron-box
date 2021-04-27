@@ -91,7 +91,15 @@ For £10 per month and free delivery, subscribers will receive a box each month 
 
 #### Typography
 
+Throughout the site, I used two different fonts from Google Fonts. These were [Anton](https://fonts.google.com/specimen/Anton#standard-styles) with the suggested pairing of [Roboto](https://fonts.google.com/specimen/Roboto).
+
+The Anton font was used for all main headings on the site and as the font for the logo text.
+
 #### Imagery
+
+The images used for this project are product images sourced from a variety of different websites. As this project is for educational purposes, I have credited the websites at the bottom of this document in the [credits](#credits) section. The product images used are of well known Northern Irish/Irish brands including [Tayto](https://www.tayto.com/) and [Maine Lemonade](https://www.mainesoftdrinks.co.uk/).
+
+I designed a simple logo for the site using [Affinity Photo](https://affinity.serif.com/en-gb/photo/). The logo is made up of an outline of the map of Northern Ireland and some text with the name of the site - "The Wee Norn Iron Box". I then downloaded a PSD box mock-up from [Free Pik](https://www.freepik.com/) and added the logo as well as some Northern Irish slang to the box. This is featured on the landing page and will show subscribers how the box will look when it arrives.
 
 #### Wireframes
 
@@ -99,9 +107,12 @@ The wireframes for my site were created using [Balsamiq](https://balsamiq.com/).
 
 Links to the wireframes can be found below. Each link contains the wireframes for mobile, tablet and desktop devices:
 
-First Time Visitor
-
+- Site Map
 - Home Page
+- Products Page
+- User Profile
+- Box Contents
+- Add Review
 
 [Contents](#contents)
 
@@ -170,6 +181,8 @@ First Time Visitor
 
 ### Frameworks, Libraries and Tools
 
+- [Affinity Photo](https://affinity.serif.com/en-gb/photo/)
+  - Affinity Photo was used to design a simple logo for the site and to add the logo to a box mock-up PSD
 - [AWS Amazon S3](https://aws.amazon.com/s3/)
   - Amazon S3 _(Amazon Simple Storage Service)_ was used to store static and media files used in the project
 - [Balsamiq](https://balsamiq.com/)
@@ -181,7 +194,7 @@ First Time Visitor
 - [Font Awesome](https://fontawesome.com/)
   - Font Awesome was used to add various icons throughout the site
 - [Google Fonts](https://fonts.google.com/)
-  - Google Fonts was used to add...
+  - Google Fonts was used to add [Anton](https://fonts.google.com/specimen/Anton#standard-styles) and [Roboto](https://fonts.google.com/specimen/Roboto) to the site
 - [Git](https://git-scm.com/)
   - Git was used for version control by utilising the terminal in VS Code to commit to Git and push to GitHub. Git was also used to create branches to test new features before merging with the master branch
 - [GitHub](https://github.com/)
