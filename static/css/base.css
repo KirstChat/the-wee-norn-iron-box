@@ -1,0 +1,61 @@
+/* Colour Palette from coolors.co */
+:root {
+    --white: #f8f7f3;
+    --black: #000;
+    --red: #de4c47;
+    --orange: #f3896e;
+    --yellow: #ffc76d;
+    --green: #2a9d8f;
+    --blue: #264653;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+
+    background: var(--white);
+    color: var(--black);
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ---------- Headings ---------- */
+h1 {
+    font-family: 'Anton', sans-serif;
+}
+/* ---------- End Headings ---------- */
+
+/* ---------- Nav Bar ---------- */
+.navbar {
+    background: var(--white);
+    font-weight: 700;
+}
+
+.navbar-brand {
+    color: var(--black);
+    text-transform: uppercase;
+}
+
+.navbar-brand img {
+    max-width: 40px;
+    margin-right: 4px;
+}
+
+a.nav-link {
+    color: var(--black);
+    font-weight: 700;
+}
+/* ---------- End Nav Bar ---------- */
+
+/* ---------- Background Images ----------*/
+.img-container {
+    height: 100vh;
+    background: url('/media/box-mock-up.jpg') no-repeat center center;
+    background-size: cover;
+}
+/* ---------- End Background Images ----------*/

@@ -102,7 +102,7 @@ The Anton font was used for all main headings on the site and as the font for th
 
 The images used for this project are product images sourced from a variety of different websites. As this project is for educational purposes, I have credited the websites at the bottom of this document in the [credits](#credits) section. The product images used are of well known Northern Irish/Irish brands including [Tayto](https://www.tayto.com/) and [Maine Lemonade](https://www.mainesoftdrinks.co.uk/).
 
-I designed a simple logo for the site using [Affinity Photo](https://affinity.serif.com/en-gb/photo/). The logo is made up of an outline of the map of Northern Ireland and some text with the name of the site - "The Wee Norn Iron Box". I then downloaded a PSD box mock-up from [Free Pik](https://www.freepik.com/) and added the logo as well as some Northern Irish slang to the box. This is featured on the landing page and will show subscribers how the box will look when it arrives.
+I designed a simple logo for the site using [Affinity Photo](https://affinity.serif.com/en-gb/photo/). The logo is made up of an outline of the map of Northern Ireland and some text with the name of the site - "The Wee Norn Iron Box". I then downloaded a PSD box mock-up from [Free Pik](https://www.freepik.com/) and added the logo as well as some Northern Irish slang to the box to display on the landing page of the site.
 
 #### Wireframes
 
@@ -355,7 +355,7 @@ Drinks
 Other Images
 
 - Northern Ireland Map Outline used for the Logo[Clean PNG](https://www.cleanpng.com/png-flag-of-northern-ireland-vector-map-ireland-779814/preview.html)
-- Box Mock-Up used on the Home Page [FreePik](https://www.freepik.com/free-psd/pink-brand-box-arrangement_10355425.htm#page=1&query=box%20mockup&position=49)
+- Box Mock-Up used on the Home Page [Free Pik](https://www.freepik.com/free-psd/delivery-man-handing-box-client_10109726.htm)
 
 ### Acknowledgements
 
