@@ -35,12 +35,19 @@
 </head>
 
 <body>
-    <header>
-
-    </header> 
+    <header></header> 
 
     {% if messages %}
         <div class="container"></div>
     {% endif %}
+
+    {% block page_header %}
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% block postloadjs %}
+    {% endblock %}
 </body>
 </html>
