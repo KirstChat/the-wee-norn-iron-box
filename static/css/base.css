@@ -3,7 +3,7 @@
     --white: #f8f7f3;
     --black: #000;
     --red: #de4c47;
-    --orange: #f3896e;
+    --orange: #f4795a;
     --yellow: #ffc76d;
     --green: #2a9d8f;
     --blue: #264653;
@@ -24,11 +24,19 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-/* ---------- Headings ---------- */
-h1 {
+/* ---------- Headings/Text ---------- */
+h1,
+h2,
+.navbar-brand {
     font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
-/* ---------- End Headings ---------- */
+
+p {
+    font-size: 1rem;
+}
+/* ---------- End Headings/Text ---------- */
 
 /* ---------- Nav Bar ---------- */
 .navbar {
@@ -38,12 +46,11 @@ h1 {
 
 .navbar-brand {
     color: var(--black);
-    text-transform: uppercase;
+    font-size: 1.5rem;
 }
 
 .navbar-brand img {
-    max-width: 40px;
-    margin-right: 4px;
+    max-width: 50px;
 }
 
 a.nav-link {
@@ -54,8 +61,54 @@ a.nav-link {
 
 /* ---------- Background Images ----------*/
 .img-container {
-    height: 100vh;
+    height: 40vh;
+    width: 100vw;
     background: url('/media/box-mock-up.jpg') no-repeat center center;
     background-size: cover;
 }
 /* ---------- End Background Images ----------*/
+
+/* ---------- CTA Button ---------- */
+.cta {
+    background: var(--red);
+    color: var(--white);
+    font-weight: 500;
+    text-transform: uppercase;
+}
+/* ---------- End CTA Button ---------- */
+
+/* ---------- Cards ---------- */
+i.fas {
+    font-size: 2.2rem;
+}
+
+.account-icon {
+    color: var(--red);
+}
+
+.subscription-icon {
+    color: var(--orange);
+}
+
+.delivery-icon {
+    color: var(--yellow);
+}
+/* ---------- End Cards ---------- */
+
+/* ---------- Testimonials ---------- */
+.testimonials-container {
+    background: var(--blue);
+}
+
+.testimonials-container h2 {
+    color: var(--white);
+}
+/* ---------- End Testimonials ---------- */
+
+/* ---------- Media Queries --------- */
+
+/* For devices with a screen size bigger than 425px */
+@media only screen and (min-width: 425px) {
+    
+}
+/* ---------- End Media Queries --------- */

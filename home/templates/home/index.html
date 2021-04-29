@@ -2,53 +2,71 @@
 {% load static %}
 
 {% block content %}
-    <div class="img-container">
-        <div class="row">
-        </div>
+    <!-- Image & CTA Button -->
+    <div class="img-container d-flex">
+        {% comment %} <div class="row align-items-center">
+            <div class="col align-self-center">
+                <button class="btn cta">Get Started</button>
+            </div>
+        </div> {% endcomment %}
     </div>
 
-    <div class="container text-center">
+    <!-- How It Works-->
+    <div class="container p-5 text-center">
+        <!-- Description -->
         <div class="row">
             <div class="col">
                 <h2>How it Works</h2>
-                <p>
-                    For £10 a month, we'll deliver your favourite Northern Irish goods to your door!
-                    All you have to do is:
+                <p class="pt-2">
+                    For £10 a month, we'll deliver your favourite Northern Irish goods to you!
                 </p>
+                <p>All you have to do is:</p>
             </div>
         </div>
+        <!-- Steps -->
         <div class="row">
-            <div class="col-6 col-md-4">
-                <div class="card">
-                    <i class="fas fa-box-open"></i>
+            <!-- Account -->
+            <div class="col-md-12 col-lg-4">
+                <div class="p-4">
+                    <i class="account-icon fas fa-box-open pb-3"></i>
+                    <p class="font-weight-bold">
+                        Sign up for an account and start adding your favourite items to your box
+                    </p>
                     <p>
-                        Sign up for an account and start adding your favourite items
-                        to your box. You can add:
-                        <br>
-                        2x Baked Goods, 2x Drinks, 2x Snacks
+                        This includes 
+                        2 x Baked Goods, 2 x Drinks and 2 x Snacks
                     </p>
                 </div>
             </div>
-            <div class="col-6 col-md-4">
-                <div class="card">
-                    <i class="fas fa-credit-card"></i>
+            <!-- Subscription -->
+            <div class="col-md-12 col-lg-4">
+                <div class="p-4">
+                    <i class="subscription-icon fas fa-credit-card pb-3"></i>
+                    <p class="font-weight-bold">
+                        Activate your subscription and add your delivery details
+                    </p>
                     <p>
-                        Activate your subscription and add your delivery details.
-                        <br>
-                        You can cancel your subscription and update your box at any time.
+                        You can cancel your subscription and update your box at any time
                     </p>
                 </div>
             </div>
-            <div class="col-6 col-md-4">
-                <div class="card">
-                    <i class="fas fa-truck"></i>
+            <!-- Delivery -->
+            <div class="col-md-12 col-lg-4">
+                <div class="p-4">
+                    <i class="delivery-icon fas fa-truck pb-3"></i>
+                    <p class="font-weight-bold">
+                        We'll quickly deliver your box to you every month at no extra cost
+                    </p>
                     <p>
-                        We'll quickly deliver your box to you every month as no extra cost.
-                        <br>
                         All baked goods are delivered fresh so you don't have to worry about expiry dates!
                     </p>
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="testimonials-container p-5 text-center">
+        <h2>Here's what our subscribers think</h2>
     </div>
 {% endblock %}
