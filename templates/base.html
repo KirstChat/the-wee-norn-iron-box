@@ -47,38 +47,23 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-md justify-content-between p-3">
+        <nav class="navbar navbar-expand-md justify-content-between fixed-top">
             <!-- Brand/Logo -->
             <a class="navbar-brand" href="{% url 'home' %}">
                 <img src="{{ MEDIA_URL }} media/twnib-logo.png" alt="The Wee Norn Iron Box Logo">
-                {% comment %} <span class="">The Wee Norn Iron Box</span> {% endcomment %}
+                <span class="heading">The Wee Norn Iron Box</span>
             </a>
             <!-- Mobile Nav Toggler -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
                 aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
-
+            <!-- Navbar -->
             <div class="collapse navbar-collapse justify-content-end" id="navbar">
                 <ul class="navbar-nav text-center">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Subscribe</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Products
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">All Products</a>
-                            <a class="dropdown-item" href="#">Baked Goods</a>
-                            <a class="dropdown-item" href="#">Drinks</a>
-                            <a class="dropdown-item" href="#">Snacks</a>
-                        </div>
-                    </li>
+                    <a class="nav-link" href="#">Subscribe</a>
+                    <a class="nav-link" href="#">Login</a>
+                    <a class="nav-link" href="#">Products</a>
                 </ul>
             </div>
         </nav>
@@ -96,10 +81,11 @@
 
     <!-- Contact/Social Links -->
     <footer>
-        <div class="container">
-            <div class="row">
-                
-            </div>
+        <div class="container text-center p-5">
+            <h5>Follow Us</h5>
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square mt-3 mx-3"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter-square mt-3 mx-3"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram-square mt-3 mx-3"></i></a>
         </div>
     </footer>
 

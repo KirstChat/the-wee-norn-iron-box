@@ -1,12 +1,10 @@
 /* Colour Palette from coolors.co */
 :root {
-    --white: #f8f7f3;
-    --black: #000;
-    --red: #de4c47;
-    --orange: #f4795a;
-    --yellow: #ffc76d;
-    --green: #2a9d8f;
-    --blue: #264653;
+    --white: #f8f8f8;
+    --black: #161616;
+    --yellow: #ffb700;
+    --red: #e00000;
+    --dark-red: #a30000;
 }
 
 html {
@@ -27,10 +25,17 @@ body {
 /* ---------- Headings/Text ---------- */
 h1,
 h2,
+h3,
+h4,
+h5,
 .navbar-brand {
     font-family: 'Anton', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+.heading {
+    display: none;
 }
 
 p {
@@ -50,6 +55,7 @@ p {
 }
 
 .navbar-brand img {
+    max-height: 50px;
     max-width: 50px;
 }
 
@@ -57,12 +63,16 @@ a.nav-link {
     color: var(--black);
     font-weight: 700;
 }
+
+i.fas {
+    font-size: 1.8rem;
+}
 /* ---------- End Nav Bar ---------- */
 
 /* ---------- Background Images ----------*/
 .img-container {
-    height: 40vh;
-    width: 100vw;
+    height: 50vh;
+    width: auto;
     background: url('/media/box-mock-up.jpg') no-repeat center center;
     background-size: cover;
 }
@@ -72,43 +82,97 @@ a.nav-link {
 .cta {
     background: var(--red);
     color: var(--white);
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 700;
     text-transform: uppercase;
+}
+
+.cta:hover {
+    background: var(--dark-red);
+    color: var(--white);
 }
 /* ---------- End CTA Button ---------- */
 
-/* ---------- Cards ---------- */
-i.fas {
+/* ---------- Step Boxes ---------- */
+.step-boxes h2 {
+    font-size: 2rem;
+}
+
+.step-boxes i.fas {
     font-size: 2.2rem;
 }
 
 .account-icon {
-    color: var(--red);
+    color: var(--dark-red);
 }
 
 .subscription-icon {
-    color: var(--orange);
+    color: var(--red);
 }
 
 .delivery-icon {
     color: var(--yellow);
 }
-/* ---------- End Cards ---------- */
+/* ---------- End Step Boxes ---------- */
 
 /* ---------- Testimonials ---------- */
 .testimonials-container {
-    background: var(--blue);
+    background: var(--black);
 }
 
-.testimonials-container h2 {
+.testimonials-container h3 {
     color: var(--white);
+    font-size: 2rem;
 }
 /* ---------- End Testimonials ---------- */
+
+/* ---------- Footer ---------- */
+.fab {
+    font-size: 2rem;
+}
+
+.fa-facebook-square,
+.fa-twitter-square,
+.fa-instagram-square {
+    color: var(--black);
+}
+
+.fa-facebook-square:hover {
+    color: var(--dark-red);
+}
+
+.fa-twitter-square:hover {
+    color: var(--red);
+}
+
+.fa-instagram-square:hover {
+    color: var(--yellow);
+}
+
+footer h5 {
+    font-size: 1.2rem;
+}
+/* ---------- End Footer ---------- */
 
 /* ---------- Media Queries --------- */
 
 /* For devices with a screen size bigger than 425px */
 @media only screen and (min-width: 425px) {
+    .heading {
+        display: inline-block;
+    }
+}
+
+/* For devices with a screen size bigger than 1440px */
+@media only screen and (min-width: 1440px) {
+    /* Background Image */
+    .img-container {
+        height: 90vh;
+    }
     
+    /* CTA Button */
+    .cta {
+        font-size: 1.2rem;
+    }
 }
 /* ---------- End Media Queries --------- */

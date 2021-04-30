@@ -3,12 +3,10 @@
 
 {% block content %}
     <!-- Image & CTA Button -->
-    <div class="img-container d-flex">
-        {% comment %} <div class="row align-items-center">
-            <div class="col align-self-center">
-                <button class="btn cta">Get Started</button>
-            </div>
-        </div> {% endcomment %}
+    <div class="img-container d-flex justify-content-center align-items-end">
+        <div>
+            <button class="btn cta py-2 px-4 mb-4">Get Started</button>
+        </div>
     </div>
 
     <!-- How It Works-->
@@ -20,17 +18,16 @@
                 <p class="pt-2">
                     For £10 a month, we'll deliver your favourite Northern Irish goods to you!
                 </p>
-                <p>All you have to do is:</p>
             </div>
         </div>
         <!-- Steps -->
-        <div class="row">
+        <div class="row step-boxes">
             <!-- Account -->
             <div class="col-md-12 col-lg-4">
-                <div class="p-4">
+                <div class="p-3">
                     <i class="account-icon fas fa-box-open pb-3"></i>
                     <p class="font-weight-bold">
-                        Sign up for an account and start adding your favourite items to your box
+                        Sign up for an account and simply add your favourite items to your box
                     </p>
                     <p>
                         This includes 
@@ -40,7 +37,7 @@
             </div>
             <!-- Subscription -->
             <div class="col-md-12 col-lg-4">
-                <div class="p-4">
+                <div class="p-3">
                     <i class="subscription-icon fas fa-credit-card pb-3"></i>
                     <p class="font-weight-bold">
                         Activate your subscription and add your delivery details
@@ -52,13 +49,13 @@
             </div>
             <!-- Delivery -->
             <div class="col-md-12 col-lg-4">
-                <div class="p-4">
+                <div class="p-3">
                     <i class="delivery-icon fas fa-truck pb-3"></i>
                     <p class="font-weight-bold">
                         We'll quickly deliver your box to you every month at no extra cost
                     </p>
                     <p>
-                        All baked goods are delivered fresh so you don't have to worry about expiry dates!
+                        All baked goods are delivered fresh so no need to worry about expiry dates!
                     </p>
                 </div>
             </div>
@@ -67,6 +64,6 @@
 
     <!-- Testimonials -->
     <div class="testimonials-container p-5 text-center">
-        <h2>Here's what our subscribers think</h2>
+        <h3>Here's what our subscribers think</h2>
     </div>
 {% endblock %}
