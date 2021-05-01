@@ -34,9 +34,9 @@ h5,
     letter-spacing: 1px;
 }
 
-.heading {
+/* .heading {
     display: none;
-}
+} */
 
 p {
     font-size: 1rem;
@@ -46,12 +46,15 @@ p {
 /* ---------- Nav Bar ---------- */
 .navbar {
     background: var(--white);
-    font-weight: 700;
 }
 
 .navbar-brand {
     color: var(--black);
     font-size: 1.5rem;
+}
+
+.navbar-brand:hover {
+    color: var(--black);
 }
 
 .navbar-brand img {
@@ -61,11 +64,18 @@ p {
 
 a.nav-link {
     color: var(--black);
-    font-weight: 700;
 }
 
 i.fas {
     font-size: 1.8rem;
+}
+
+#productsCollapsible {
+    background: var(--black);
+}
+
+#productsCollapsible a {
+    color: var(--white);
 }
 /* ---------- End Nav Bar ---------- */
 
@@ -83,8 +93,8 @@ i.fas {
     background: var(--red);
     color: var(--white);
     font-size: 1rem;
-    font-weight: 700;
     text-transform: uppercase;
+    width: 200px;
 }
 
 .cta:hover {
@@ -100,18 +110,7 @@ i.fas {
 
 .step-boxes i.fas {
     font-size: 2.2rem;
-}
-
-.account-icon {
-    color: var(--dark-red);
-}
-
-.subscription-icon {
-    color: var(--red);
-}
-
-.delivery-icon {
-    color: var(--yellow);
+    color: var(--yellow)
 }
 /* ---------- End Step Boxes ---------- */
 
@@ -137,14 +136,8 @@ i.fas {
     color: var(--black);
 }
 
-.fa-facebook-square:hover {
-    color: var(--dark-red);
-}
-
-.fa-twitter-square:hover {
-    color: var(--red);
-}
-
+.fa-facebook-square:hover,
+.fa-twitter-square:hover,
 .fa-instagram-square:hover {
     color: var(--yellow);
 }
@@ -158,9 +151,9 @@ footer h5 {
 
 /* For devices with a screen size bigger than 425px */
 @media only screen and (min-width: 425px) {
-    .heading {
+    /* .heading {
         display: inline-block;
-    }
+    } */
 }
 
 /* For devices with a screen size bigger than 1440px */

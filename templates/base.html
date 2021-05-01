@@ -46,12 +46,12 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand-md justify-content-between fixed-top">
+    <header class="fixed-top">
+        <nav class="navbar navbar-expand-md justify-content-between font-weight-bold">
             <!-- Brand/Logo -->
             <a class="navbar-brand" href="{% url 'home' %}">
                 <img src="{{ MEDIA_URL }} media/twnib-logo.png" alt="The Wee Norn Iron Box Logo">
-                <span class="heading">The Wee Norn Iron Box</span>
+                <span class="d-none d-md-inline-block ml-1">The Wee Norn Iron Box</span>
             </a>
             <!-- Mobile Nav Toggler -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
@@ -61,12 +61,31 @@
             <!-- Navbar -->
             <div class="collapse navbar-collapse justify-content-end" id="navbar">
                 <ul class="navbar-nav text-center">
-                    <a class="nav-link" href="#">Subscribe</a>
-                    <a class="nav-link" href="#">Login</a>
-                    <a class="nav-link" href="#">Products</a>
+                    {% if request.user.is_authenticated %}
+                        <a class="nav-link" href="#">My Account</a>
+                        <a class="nav-link" href="#">My Box</a>
+                        <a class="nav-link" href="#">Products</a>
+                        <a class="nav-link" href="#">Logout</a>
+                    {% else %}
+                        <a class="nav-link" href="#">Subscribe</a>
+                        <a class="nav-link" href="#">Login</a>
+                        <a class="nav-link" data-toggle="collapse" href="#productsCollapsible" role="button"
+                            aria-expanded="false" aria-controls="productsCollapsible">
+                            Products
+                        </a>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
+        <!-- Products Collapable -->
+        <div class="collapse p-2" id="productsCollapsible">
+            <ul class="nav justify-content-center font-weight-bold">
+                <a class="nav-link" href="#">All Products</a>
+                <a class="nav-link" href="#">Baked Goods</a>
+                <a class="nav-link" href="#">Drinks</a>
+                <a class="nav-link" href="#">Snacks</a>
+            </ul>
+        </div>
     </header> 
 
     {% if messages %}
@@ -80,13 +99,11 @@
     {% endblock %}
 
     <!-- Contact/Social Links -->
-    <footer>
-        <div class="container text-center p-5">
-            <h5>Follow Us</h5>
-            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square mt-3 mx-3"></i></a>
-            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter-square mt-3 mx-3"></i></a>
-            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram-square mt-3 mx-3"></i></a>
-        </div>
+    <footer class="container text-center p-5">
+        <h5>Follow Us</h5>
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square mt-3 mx-3"></i></a>
+        <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter-square mt-3 mx-3"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram-square mt-3 mx-3"></i></a>
     </footer>
 
     {% block postloadjs %}
