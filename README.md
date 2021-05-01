@@ -89,8 +89,16 @@ For £10 per month and free delivery, subscribers will receive a box each month 
 
 #### Colour Scheme
 
-![Colour palette generated using coolors.co](wireframes/images/colour-scheme-twnib.png)
+![Colour palette generated using coolors.co](wireframes/images/twnib-colour-palette.png)
 _Colour palette generated using [coolors.co](https://coolors.co)_
+
+The colour palette for this project is based on the colours of the Harland and Wolff cranes in Belfast, Northern Ireland.
+
+- ![#161616](https://via.placeholder.com/15/161616/000000?text=+) `#161616`:
+- ![#A30000](https://via.placeholder.com/15/a30000/000000?text=+) `#A30000`:
+- ![#E00000](https://via.placeholder.com/15/e00000/000000?text=+) `#E00000`:
+- ![#FFB700](https://via.placeholder.com/15/ffb700/000000?text=+) `#FFB700`:
+- ![#F8F8F8](https://via.placeholder.com/15/f8f8f8/000000?text=+) `#F8F8F8`:
 
 #### Typography
 
