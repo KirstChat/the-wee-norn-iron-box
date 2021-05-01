@@ -4,7 +4,11 @@
 {% block content %}
     <!-- Image & CTA Button -->
     <div class="img-container d-flex justify-content-center align-items-end">
-        <button class="btn cta py-2 px-4 mb-4 font-weight-bold">Get Started</button>
+        {% if request.user.is_authenticated %}
+            <button class="btn cta py-2 px-4 mb-4 font-weight-bold">MY Box</button>
+        {% else %}
+            <button class="btn cta py-2 px-4 mb-4 font-weight-bold">Get Started</button>
+        {% endif %}
     </div>
 
     <!-- How It Works-->
@@ -58,14 +62,20 @@
                 </div>
             </div>
         </div>
-        <!-- Sign Up Button -->
-        <button class="btn cta py-2 px-4 mt-4 font-weight-bold">Subscribe</button>
+        <!-- Subscribe Button -->
+        {% if request.user.is_authenticated %}
+            <button class="btn cta py-2 px-4 mt-4 font-weight-bold">My Box</button>
+        {% else %}
+            <button class="btn cta py-2 px-4 mt-4 font-weight-bold">Subscribe</button>
+        {% endif %}
     </div>
 
     <!-- Testimonials -->
     <div class="testimonials-container p-5 text-center">
         <h3>Here's what our subscribers think</h2>
         <!-- Add Reviews -->
-        <button class="btn cta py-2 px-4 mt-4 font-weight-bold">Leave a Review</button>
+        {% if request.user.is_authenticated %}
+            <button class="btn cta py-2 px-4 mt-4 font-weight-bold">Leave Review</button>
+        {% endif %}
     </div>
 {% endblock %}
