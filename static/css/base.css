@@ -70,6 +70,11 @@ i.fas {
     font-size: 1.8rem;
 }
 
+.nav {
+    flex-direction: column;
+    align-items: center;
+}
+
 #productsCollapsible {
     background: var(--black);
 }
@@ -151,9 +156,10 @@ footer h5 {
 
 /* For devices with a screen size bigger than 425px */
 @media only screen and (min-width: 425px) {
-    /* .heading {
-        display: inline-block;
-    } */
+    .nav {
+        flex-direction: row;
+        justify-content: center;
+    }
 }
 
 /* For devices with a screen size bigger than 1440px */
