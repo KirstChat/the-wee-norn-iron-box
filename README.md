@@ -222,6 +222,8 @@ Links to the wireframes can be found below. Each link contains the wireframes fo
 - **Update This Throughout**
 - [django-allauth](https://django-allauth.readthedocs.io/en/latest/overview.html)
   - Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication
+- [Pillow](https://pillow.readthedocs.io/en/stable/)
+  - Python imaging library
 
 [Contents](#contents)
 
