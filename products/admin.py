@@ -3,4 +3,21 @@ from.models import Category, Product
 
 # Register your models here.
 admin.site.register(Category)
-admin.site.register(Product)
+# admin.site.register(Product)
+
+
+@admin.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+    list_display = (
+        'name',
+        'brand',
+        'category',
+        'size')
+    list_filter = (
+        'category',
+        'size')
+    search_fields = (
+        'name',
+        'brand',
+        'category__name',
+        'size')
