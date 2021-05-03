@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- Favicon -->
-        <link rel="icon" type="image/png" href="{{ MEDIA_URL }} media/twnib-logo.png">
+        <link rel="icon" type="image/png" href={% static "images/twnib-logo.png" %}>
     {% endblock %}
 
     {% block extra_meta %}
@@ -51,7 +51,8 @@
         <nav class="navbar navbar-expand-md justify-content-between font-weight-bold">
             <!-- Brand/Logo -->
             <a class="navbar-brand" href="{% url 'home' %}">
-                <img src="{{ MEDIA_URL }} media/twnib-logo.png" alt="The Wee Norn Iron Box Logo">
+                <!-- Code from Django Docs: https://docs.djangoproject.com/en/3.2/howto/static-files/ -->
+                <img src={% static "images/twnib-logo.png" %} alt="The Wee Norn Iron Box Logo">
                 <span class="d-none d-md-inline-block ml-1">The Wee Norn Iron Box</span>
             </a>
             <!-- Mobile Nav Toggler -->
@@ -91,9 +92,6 @@
     {% if messages %}
         <div class="container"></div>
     {% endif %}
-
-    {% block page_header %}
-    {% endblock %}
 
     {% block content %}
     {% endblock %}

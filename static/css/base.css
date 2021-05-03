@@ -88,7 +88,7 @@ i.fas {
 .img-container {
     height: 50vh;
     width: auto;
-    background: url('/media/box-mock-up.jpg') no-repeat center center;
+    background: url('/static/images/box-mock-up.jpg') no-repeat center center;
     background-size: cover;
 }
 /* ---------- End Background Images ----------*/
