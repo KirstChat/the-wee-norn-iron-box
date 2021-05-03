@@ -1,6 +1,6 @@
 /* Colour Palette from coolors.co */
 :root {
-    --white: #f8f8f8;
+    --white: #fff;
     --black: #161616;
     --yellow: #ffb700;
     --red: #e00000;
@@ -151,6 +151,22 @@ footer h5 {
     font-size: 1.2rem;
 }
 /* ---------- End Footer ---------- */
+
+/* ---------- Products ---------- */
+.products-container {
+    background: var(--yellow);
+}
+
+.products-container .card {
+    background: var(--white);
+}
+
+.products-container img {
+    width: 100%;
+    height: 25vh;
+    object-fit: contain;
+}
+/* ---------- End Products ---------- */
 
 /* ---------- Media Queries --------- */
 
