@@ -98,7 +98,7 @@ The colour palette for this project is based on the colours of the Harland and W
 - ![#A30000](https://via.placeholder.com/15/a30000/000000?text=+) `#A30000`:
 - ![#E00000](https://via.placeholder.com/15/e00000/000000?text=+) `#E00000`:
 - ![#FFB700](https://via.placeholder.com/15/ffb700/000000?text=+) `#FFB700`:
-- ![#F8F8F8](https://via.placeholder.com/15/f8f8f8/000000?text=+) `#F8F8F8`:
+- ![#FFFFFF](https://via.placeholder.com/15/ffffff/000000?text=+) `#FFFFFF`:
 
 #### Typography
 

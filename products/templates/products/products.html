@@ -2,14 +2,18 @@
 {% load static %}
 
 {% block content %}
-    <div class="products-container p-5">
+    <div class="products-heading d-flex justify-content-center align-items-center">
+        <h1>Our Wee Products</h1>
+    </div>
+
+    <div class="products-container p-3">
         <div class="row">
             {% for product in products %}
-                <div class="col-md-6 col-lg-4">
-                    <div class="card border-0 product-card m-3">
-                        <img src="{{ product.image.url }}" class="card-img-top img-fluid p-4" alt="{{ product.name }}">
+                <div class="col-md-4">
+                    <div class="card border-0 mx-2 my-3">
+                        <img src="{{ product.image.url }}" class="card-img-top img-fluid" alt="{{ product.name }}">
                         <div class="card-body">
-                            <p class="card-text text-center">{{ product.name }}</p>
+                            <p class="card-text text-center font-weight-bold">{{ product.name }}</p>
                         </div>
                     </div>
                 </div>

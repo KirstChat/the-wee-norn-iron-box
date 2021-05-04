@@ -34,10 +34,6 @@ h5,
     letter-spacing: 1px;
 }
 
-/* .heading {
-    display: none;
-} */
-
 p {
     font-size: 1rem;
 }
@@ -86,10 +82,9 @@ i.fas {
 
 /* ---------- Background Images ----------*/
 .img-container {
-    height: 50vh;
-    width: auto;
     background: url('/static/images/box-mock-up.jpg') no-repeat center center;
     background-size: cover;
+    height: 50vh;
 }
 /* ---------- End Background Images ----------*/
 
@@ -153,6 +148,12 @@ footer h5 {
 /* ---------- End Footer ---------- */
 
 /* ---------- Products ---------- */
+.products-heading {
+    background: var(--black);
+    color: var(--white);
+    height: calc(40vh + 140px);
+}
+
 .products-container {
     background: var(--yellow);
 }
@@ -182,7 +183,7 @@ footer h5 {
 @media only screen and (min-width: 1440px) {
     /* Background Image */
     .img-container {
-        height: 90vh;
+        height: calc(100vh - 100px);
     }
     
     /* CTA Button */
