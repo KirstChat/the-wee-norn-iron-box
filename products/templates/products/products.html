@@ -6,18 +6,20 @@
         <h1>Our Wee Products</h1>
     </div>
 
-    <div class="products-container p-3">
-        <div class="row">
-            {% for product in products %}
-                <div class="col-md-4">
-                    <div class="card border-0 mx-2 my-3">
+    <div class="products-container">
+        <div class="container p-4">
+            <div class="row">
+                {% for product in products %}
+                <div class="col-md-6 col-lg-4 d-flex justify-content-center">
+                    <div class="card border-0 py-3 my-3 mx-2">
                         <img src="{{ product.image.url }}" class="card-img-top img-fluid" alt="{{ product.name }}">
                         <div class="card-body">
                             <p class="card-text text-center font-weight-bold">{{ product.name }}</p>
                         </div>
                     </div>
                 </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
     </div>
 {% endblock %}
