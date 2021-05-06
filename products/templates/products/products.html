@@ -11,10 +11,23 @@
             <div class="row">
                 {% for product in products %}
                 <div class="col-md-6 col-lg-4 d-flex justify-content-center">
-                    <div class="card border-0 py-3 my-3 mx-2">
-                        <img src="{{ product.image.url }}" class="card-img-top img-fluid" alt="{{ product.name }}">
+                    <!-- Product Cards -->
+                    <div class="card border-0 text-center py-3 my-3 mx-2">
+                    <img src="{{ product.image.url }}" class="card-img-top img-fluid" alt="{{ product.name }}">
+                        <!-- Product Name -->
                         <div class="card-body">
-                            <p class="card-text text-center font-weight-bold">{{ product.name }}</p>
+                            <p class="card-text font-weight-bold">
+                                {{ product.name }}
+                            </p>
+                        </div>
+                        <!-- Product Description -->
+                        <div class="card-body card-overlay">
+                            <p class="card-text">
+                                {{ product.description }}
+                            </p>
+                            <p class="card-text">
+                                Size: {{ product.size }}
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -22,4 +35,9 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script src="{% static 'js/base.js'%}"></script>
 {% endblock %}

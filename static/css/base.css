@@ -158,9 +158,26 @@ footer h5 {
     background: var(--yellow);
 }
 
-.products-container .card {
+.card {
     background: var(--white);
+    position: relative;
     width: 100%;
+}
+
+.card-overlay {
+    background: var(--white);
+    color: var(--black);
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transition: .3s ease-out;
+    opacity: 0;
+}
+
+.card-overlay:hover {
+    transition: .3s ease-in;
+    opacity: 1;
 }
 
 .products-container img {
@@ -168,6 +185,7 @@ footer h5 {
     height: 25vh;
     object-fit: contain;
 }
+
 /* ---------- End Products ---------- */
 
 /* ---------- Media Queries --------- */
