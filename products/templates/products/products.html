@@ -2,8 +2,21 @@
 {% load static %}
 
 {% block content %}
-    <div class="products-heading d-flex justify-content-center align-items-center">
+    <div class="products-heading d-flex flex-column justify-content-center align-items-center p-4">
         <h1>Our Wee Products</h1>
+        <p class="text-center pt-2">All your favourite Northern Irish treats can be found here. From soda bread, to Tayto crisps and even Maine lemonade!</p>
+        
+        <!-- Search Bar -->
+        <div class="col-lg-4 mt-4">
+            <form class="form-inline" method="GET" action="{% url 'products' %}">
+                <input class="form-control" type="text" name="q"
+                    placeholder="Find a Product">
+                <button class="form-control btn" type="submit">
+                    <i class="search fas fa-search"></i>
+                </button>
+                </div>
+            </form>
+        </div>
     </div>
 
     <div class="products-container">
@@ -21,13 +34,20 @@
                             </p>
                         </div>
                         <!-- Product Description -->
-                        <div class="card-body card-overlay">
+                        <div class="card-body card-overlay rounded">
+                            <p class="card-text font-weight-bold">{{ product.name }}</p>
                             <p class="card-text">
                                 {{ product.description }}
                             </p>
                             <p class="card-text">
                                 Size: {{ product.size }}
                             </p>
+                            {% if request.user.is_superuser %}
+                                <a class="btn" href="#"><i class="fas fa-pen-square p-2"></i>Edit</a>
+                                <a class="btn" href="#"><i class="fas fa-trash p-2"></i>Delete</a>
+                            {% else %}
+                                <!-- Add to Box -->
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -35,9 +55,4 @@
             </div>
         </div>
     </div>
-{% endblock %}
-
-{% block postloadjs %}
-    {{ block.super }}
-    <script src="{% static 'js/base.js'%}"></script>
 {% endblock %}

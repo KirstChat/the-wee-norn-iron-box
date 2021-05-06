@@ -5,20 +5,20 @@
     <!-- Image & CTA Button -->
     <div class="img-container d-flex justify-content-center align-items-end">
         {% if request.user.is_authenticated %}
-            <button class="btn cta py-2 px-4 mb-4 font-weight-bold">MY Box</button>
+            <button class="btn cta py-2 px-4 mb-4 font-weight-bold">My Box</button>
         {% else %}
             <button class="btn cta py-2 px-4 mb-4 font-weight-bold">Get Started</button>
         {% endif %}
     </div>
 
     <!-- How It Works-->
-    <div class="container p-5 text-center">
+    <div class="container p-4 text-center">
         <!-- Description -->
         <div class="row">
             <div class="col">
                 <h2>How it Works</h2>
                 <p class="pt-2">
-                    For £10 a month, we'll deliver your favourite Northern Irish goods to you!
+                    For £10 a month, we'll deliver your favourite Northern Irish goods to you! Simply follow theses steps:
                 </p>
             </div>
         </div>
@@ -27,7 +27,7 @@
             <!-- Account -->
             <div class="col-md-12 col-lg-4">
                 <div class="p-3">
-                    <i class="fas fa-box-open pb-3"></i>
+                    <i class="fas fa-box pb-3"></i>
                     <p class="font-weight-bold">
                         Sign up for an account and simply add your favourite items to your box
                     </p>
@@ -73,6 +73,9 @@
     <!-- Testimonials -->
     <div class="testimonials-container p-5 text-center">
         <h3>Here's what our subscribers think</h2>
+        <div class="container">
+
+        </div>
         <!-- Add Reviews -->
         {% if request.user.is_authenticated %}
             <button class="btn cta py-2 px-4 mt-4 font-weight-bold">Leave Review</button>

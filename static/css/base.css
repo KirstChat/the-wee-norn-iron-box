@@ -70,21 +70,13 @@ i.fas {
     flex-direction: column;
     align-items: center;
 }
-
-#productsCollapsible {
-    background: var(--black);
-}
-
-#productsCollapsible a {
-    color: var(--white);
-}
 /* ---------- End Nav Bar ---------- */
 
 /* ---------- Background Images ----------*/
 .img-container {
     background: url('/static/images/box-mock-up.jpg') no-repeat center center;
     background-size: cover;
-    height: 50vh;
+    height: 40vh;
 }
 /* ---------- End Background Images ----------*/
 
@@ -151,33 +143,11 @@ footer h5 {
 .products-heading {
     background: var(--black);
     color: var(--white);
-    height: calc(40vh + 140px);
+    height: 40vh;
 }
 
 .products-container {
     background: var(--yellow);
-}
-
-.card {
-    background: var(--white);
-    position: relative;
-    width: 100%;
-}
-
-.card-overlay {
-    background: var(--white);
-    color: var(--black);
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    transition: .3s ease-out;
-    opacity: 0;
-}
-
-.card-overlay:hover {
-    transition: .3s ease-in;
-    opacity: 1;
 }
 
 .products-container img {
@@ -186,6 +156,35 @@ footer h5 {
     object-fit: contain;
 }
 
+.card {
+    background: var(--white);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: 100%;
+    height: 350px;
+}
+
+.card p {
+    font-size: 0.9rem;
+}
+
+.card-overlay {
+    background: var(--white);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    color: var(--black);
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: .3s ease-out;
+    height: 100%;
+    width: 100%;
+}
+
+.card-overlay:hover {
+    opacity: 1;
+    transition: .3s ease-in;
+    transform: scale(1.02);
+}
 /* ---------- End Products ---------- */
 
 /* ---------- Media Queries --------- */
@@ -202,7 +201,7 @@ footer h5 {
 @media only screen and (min-width: 1440px) {
     /* Background Image */
     .img-container {
-        height: calc(100vh - 100px);
+        height: 100vh;
     }
     
     /* CTA Button */
