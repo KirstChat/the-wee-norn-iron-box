@@ -3,11 +3,11 @@
 
 {% block content %}
     <!-- Image & CTA Button -->
-    <div class="img-container d-flex justify-content-center align-items-end">
+    <div class="img-container d-flex align-items-end justify-content-center">
         {% if request.user.is_authenticated %}
-            <button class="btn cta py-2 px-4 mb-4 font-weight-bold">My Box</button>
+            <button class="btn cta fw-bold mb-4 py-2 px-4">My Box</button>
         {% else %}
-            <button class="btn cta py-2 px-4 mb-4 font-weight-bold">Get Started</button>
+            <button class="btn cta fw-bold mb-4 py-2 px-4">Get Started</button>
         {% endif %}
     </div>
 
@@ -28,7 +28,7 @@
             <div class="col-md-12 col-lg-4">
                 <div class="p-3">
                     <i class="fas fa-box pb-3"></i>
-                    <p class="font-weight-bold">
+                    <p class="fw-bold">
                         Sign up for an account and simply add your favourite items to your box
                     </p>
                     <p>
@@ -41,7 +41,7 @@
             <div class="col-md-12 col-lg-4">
                 <div class="p-3">
                     <i class="fas fa-credit-card pb-3"></i>
-                    <p class="font-weight-bold">
+                    <p class="fw-bold">
                         Activate your subscription and add your delivery details
                     </p>
                     <p>
@@ -53,7 +53,7 @@
             <div class="col-md-12 col-lg-4">
                 <div class="p-3">
                     <i class="fas fa-truck pb-3"></i>
-                    <p class="font-weight-bold">
+                    <p class="fw-bold">
                         We'll quickly deliver your box to you every month at no extra cost
                     </p>
                     <p>
@@ -64,21 +64,21 @@
         </div>
         <!-- Subscribe Button -->
         {% if request.user.is_authenticated %}
-            <button class="btn cta py-2 px-4 mt-4 font-weight-bold">My Box</button>
+            <button class="btn cta fw-bold py-2 px-4">My Box</button>
         {% else %}
-            <button class="btn cta py-2 px-4 mt-4 font-weight-bold">Subscribe</button>
+            <button class="btn cta fw-bold py-2 px-4">Subscribe</button>
         {% endif %}
     </div>
 
     <!-- Testimonials -->
-    <div class="testimonials-container p-5 text-center">
+    <div class="testimonials-container p-4 text-center">
         <h3>Here's what our subscribers think</h2>
         <div class="container">
 
         </div>
         <!-- Add Reviews -->
         {% if request.user.is_authenticated %}
-            <button class="btn cta py-2 px-4 mt-4 font-weight-bold">Leave Review</button>
+            <button class="btn cta fw-bold py-2 px-4">Leave Review</button>
         {% endif %}
     </div>
 {% endblock %}

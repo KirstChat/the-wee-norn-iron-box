@@ -200,8 +200,8 @@ Links to the wireframes can be found below. Each link contains the wireframes fo
   - Amazon S3 _(Amazon Simple Storage Service)_ was used to store static and media files used in the project
 - [Balsamiq](https://balsamiq.com/)
   - Balsamiq was used to create the wireframes for desktop, tablet and mobile during the design process
-- [Bootstrap](https://getbootstrap.com/)
-  - Bootstrap was used to give the site a simple, responsive layout
+- [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+  - Bootstrap v5.0 was used to give the site a simple, responsive layout and to also add various Bootstrap components
 - [Django](https://www.djangoproject.com/)
   - Django was the web framework used to build the project
 - [Font Awesome](https://fontawesome.com/)
@@ -306,6 +306,12 @@ The following steps were used to store static files and media files in an Amazon
 
 - [Code Institute](https://codeinstitute.net/) Full Stack Frameworks Boutique Ado Project
   - The Boutique Ado project walkthrough from the Code Institute Full Stack Development course was used as a guide to help build this project
+
+- [Bootstrap Documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+  - The Bootstrap documentation was used to add different components to the project...
+
+- [CSS linear-gradient()](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient())
+  - MDN Docs was used to find out more about the different values that can be added to create a gradient effect. This was used on the product card hover overlay.
 
 ### Content
 
