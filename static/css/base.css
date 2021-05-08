@@ -4,7 +4,7 @@
     --black: #161616;
     --yellow: #ffb700;
     --red: #e00000;
-    --dark-red: #a30000;
+    --dark-red: #b80000;
 }
 
 html {
@@ -79,17 +79,23 @@ i.fas {
 .btn {
     background: var(--red);
     color: var(--white);
+    box-shadow: 0 2px var(--dark-red);
 }
 
 .btn:hover {
     background: var(--dark-red);
     color: var(--white);
+    transform: translateY(2px)
 }
 
 .cta {
     font-size: 1rem;
     text-transform: uppercase;
     width: 200px;
+}
+
+.form #search-button {
+    border: 0;
 }
 
 .edit,
@@ -152,7 +158,10 @@ footer h5 {
 .products-heading {
     background: var(--black);
     color: var(--white);
-    height: 40vh;
+}
+
+.products-heading .nav-link {
+    color: var(--white);
 }
 
 .products-container {
@@ -194,6 +203,7 @@ footer h5 {
 }
 
 .card-overlay:hover {
+    /* linear-gradient from MDN Docs: https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient() */
     background: linear-gradient(rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 1) 85%, rgba(255, 255, 255, 1) 100%);
     opacity: 1;
     transition: .2s ease-in;
@@ -215,7 +225,7 @@ footer h5 {
 @media only screen and (min-width: 1440px) {
     /* Background Image */
     .img-container {
-        height: 100vh;
+        height: 90vh;
     }
     
     /* CTA Button */
