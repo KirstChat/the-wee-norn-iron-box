@@ -11,15 +11,16 @@
                 From soda bread, to Tayto crisps and even Maine lemonade!
             </p>
 
-            <div class="d-flex flex-column align-items-center mt-4">
-                <!-- Products Filter -->
-                <!-- Nav from Bootstrap Docs: https://getbootstrap.com/docs/5.0/components/navs-tabs/#pills-->
-                <ul class="nav fw-bold mt-4">
+            <!-- Products Filter -->
+            <!-- Nav from Bootstrap Docs: https://getbootstrap.com/docs/5.0/components/navs-tabs/#pills-->
+            <div class="d-flex flex-column align-items-center">
+                <ul class="nav fw-bold">
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'products' %}">All Products<span class="ps-4">|</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'products' %}?category=Breads">Breads<span class="ps-4">|</span></a>
+                        <a class="nav-link" href="{% url 'products' %}?category=Breads">Breads<span
+                                class="ps-4">|</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'products' %}?category=Drinks">Drinks<span
@@ -29,17 +30,6 @@
                         <a class="nav-link" href="{% url 'products' %}?category=Snacks">Snacks</a>
                     </li>
                 </ul>
-                <!-- Search Bar -->
-                <form class="form mt-4" method="GET" action="{% url 'products' %}">
-                    <div class="input-group">
-                        <input class="form-control text-center" type="text" name="q" placeholder="Find a Product"
-                            aria-label="Search Button" aria-describedby="search-button">
-                        <button class="btn form-control" type="submit" id="search-button">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </form>
-
             </div>
         </div>
     </div>
@@ -47,6 +37,39 @@
     <!-- Products -->
     <div class="products-container">
         <div class="container p-4">
+            <div class="row mb-4">
+                <!-- Search Bar -->
+                <div class="col">
+                    <form class="form" method="GET" action="{% url 'products' %}">
+                        <div class="input-group">
+                            <input class="form-control text-center" type="text" name="q" placeholder="Find a Product"
+                                aria-label="Search Button" aria-describedby="search-button">
+                            <button class="btn form-control" type="submit" id="search-button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Dropdown Filter-->
+                <div class="col">
+                    <div class="dropdown">
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Sort By
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <li><a class="dropdown-item" href="{% url 'products' %}?sort=name&direction=asc">A-Z</a>
+                            </li>
+                            <li><a class="dropdown-item" href="{% url 'products' %}?sort=name&direction=desc">Z-A</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Details -->
             <div class="row g-4">
                 {% for product in products %}
                 <div class="col-md-6 col-lg-4">
