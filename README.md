@@ -375,6 +375,7 @@ Other Images
 
 - Northern Ireland Map Outline used for the Logo[Clean PNG](https://www.cleanpng.com/png-flag-of-northern-ireland-vector-map-ireland-779814/preview.html)
 - Box Mock-Up used on the Home Page [Free Pik](https://www.freepik.com/free-psd/delivery-man-handing-box-client_10109726.htm)
+- Ulster Fry used on Products Page [The Culture Trip](https://theculturetrip.com/europe/united-kingdom/northern-ireland/articles/a-brief-history-of-the-ulster-fry/)
 
 ### Acknowledgements
 
