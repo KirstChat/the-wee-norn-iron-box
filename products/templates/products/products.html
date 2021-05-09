@@ -2,111 +2,115 @@
 {% load static %}
 
 {% block content %}
-    <div class="products-heading">
-        <div class="container p-4 text-center">
-            <h1>Our Wee Products</h1>
-            <p class="mt-4">
-                All your favourite Northern Irish treats can be found here.
-                <br> 
-                From soda bread, to Tayto crisps and even Maine lemonade!
-            </p>
+    <div class="products-heading text-center">
+        <div class="container p-4">
+            {% if current_categories == None %}
+                <h1>Our Wee Products</h1>
+                <p>
+                    All your favourite Northern Irish treats can be found here.
+                    From soda bread, to Tayto crisps and even Maine lemonade!
+                </p>
+            {% else %}
+                {% for c in current_categories %}
+                    <h1>Our Wee {{ c.name }}</h1>
+                {% endfor %}
+            {% endif %}
 
-            <!-- Products Filter -->
-            <!-- Nav from Bootstrap Docs: https://getbootstrap.com/docs/5.0/components/navs-tabs/#pills-->
-            <div class="d-flex flex-column align-items-center">
-                <ul class="nav fw-bold">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'products' %}">All Products<span class="ps-4">|</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'products' %}?category=Breads">Breads<span
-                                class="ps-4">|</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'products' %}?category=Drinks">Drinks<span
-                                class="ps-4">|</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'products' %}?category=Snacks">Snacks</a>
-                    </li>
-                </ul>
-            </div>
+            {% for c in current_categories %}
+                {% if c.name == "Breads" %}
+                    <p>Choose two of your favouruite breads.</p>
+                {% elif c.name == "Drinks" %}
+                    <p>Choose two of your favourite drinks.</p>
+                {% elif c.name == "Snacks" %}
+                    <p>Choose two of your favourite snacks.</p>
+                {% endif %}
+            {% endfor %}
         </div>
     </div>
 
-    <!-- Products -->
+    <!-- Product Detail Cards -->
     <div class="products-container">
         <div class="container p-4">
-            <div class="row mb-4">
-                <!-- Search Bar -->
-                <div class="col">
+            <!-- Products Filter and Search Bar -->
+            <div class="row pb-4">
+                <div class="d-none d-lg-inline-block col-md-12 col-lg-4">
+                    <p class="fw-bold">{{ products|length }} Products</p>
+                </div>
+                <!-- Product Category Filter -->
+                <!-- Nav from Bootstrap Docs: https://getbootstrap.com/docs/5.0/components/navs-tabs -->
+                <div class="col-md-12 col-lg-4">
+                    <ul class="nav fw-bold justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'products' %}">All Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'products' %}?category=Breads">Breads</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'products' %}?category=Drinks">Drinks</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'products' %}?category=Snacks">Snacks</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Serach Bar -->
+                <div class="col-md-12 col-lg-4">
                     <form class="form" method="GET" action="{% url 'products' %}">
                         <div class="input-group">
-                            <input class="form-control text-center" type="text" name="q" placeholder="Find a Product"
-                                aria-label="Search Button" aria-describedby="search-button">
+                            <input class="form-control text-center w-75" type="text" name="q"
+                                placeholder="Find a Product" aria-label="Search Button"
+                                aria-describedby="search-button">
                             <button class="btn form-control" type="submit" id="search-button">
                                 <i class="fas fa-search"></i>
                             </button>
                         </div>
                     </form>
                 </div>
-
-                <!-- Dropdown Filter-->
-                <div class="col">
-                    <div class="dropdown">
-                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Sort By
-                        </a>
-
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <li><a class="dropdown-item" href="{% url 'products' %}?sort=name&direction=asc">A-Z</a>
-                            </li>
-                            <li><a class="dropdown-item" href="{% url 'products' %}?sort=name&direction=desc">Z-A</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
             </div>
-
+            
             <!-- Products Details -->
             <div class="row g-4">
                 {% for product in products %}
                 <div class="col-md-6 col-lg-4">
                     <!-- Product Cards -->
                     <div class="card border-0 h-100 text-center p-4">
-                    <img src="{{ product.image.url }}" class="card-img-top img-fluid" alt="{{ product.name }}">
-                    <!-- Product Name -->
-                    <div class="card-body">
-                        <p class="card-text fw-bold">
-                            {{ product.name }}
-                        </p>
-                    </div>
+                        <img src="{{ product.image.url }}" class="card-img-top img-fluid" alt="{{ product.name }}">
+                        <!-- Product Name -->
+                        <div class="card-body">
+                            <p class="card-text fw-bold">
+                                {{ product.name }}
+                            </p>
+                        </div>
                         <!-- Product Description -->
-                    <div class="card-overlay rounded p-4">
-                        <p class="card-text fw-bold">
-                            {{ product.name }}
-                        </p>
-                        <p class="card-text">
-                            {{ product.description }}
-                        </p>
-                        <p class="card-text">
-                            Size: {{ product.size }}
-                        </p>
-                        {% if request.user.is_superuser %}
-                            <div>
-                                <a class="btn edit m-1" href="#">
-                                    <i class="fas fa-pen p-2"></i>
-                                    <span class="d-none d-md-inline-block">Edit</span>
-                                </a>
-                                <a class="btn delete m-1" href="#">
-                                    <i class="fas fa-trash p-2"></i>
-                                    <span class="d-none d-md-inline-block">Delete</span>
-                                </a>
-                            </div>
-                        {% else %}
-                            <!-- Add to Box -->
-                        {% endif %}
+                        <div class="card-overlay rounded p-4">
+                            <p class="card-text fw-bold">
+                                {{ product.name }}
+                            </p>
+                            <p class="card-text">
+                                {{ product.description }}
+                            </p>
+                            <p class="card-text">
+                                Size: {{ product.size }}
+                            </p>
+                            <!-- Buttons -->
+                            {% if request.user.is_superuser %}
+                                <div>
+                                    <a class="btn edit m-1" href="#">
+                                        <i class="fas fa-pen p-2"></i>
+                                        <span class="d-none d-md-inline-block">Edit</span>
+                                    </a>
+                                    <a class="btn delete m-1" href="#">
+                                        <i class="fas fa-trash p-2"></i>
+                                        <span class="d-none d-md-inline-block">Delete</span>
+                                    </a>
+                                </div>
+                            {% elif request.user.is_authenticated %}
+                                <button class="btn">Add to Box</button>
+                            {% else %}
+                                <button class="btn">Subscribe</button>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
