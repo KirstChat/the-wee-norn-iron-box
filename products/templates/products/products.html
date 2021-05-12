@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block page_heading %}
-    <div class="products-img-container d-flex flex-column justify-content-center align-items-center">
+    <div class="products-heading bg-img d-flex flex-column justify-content-center align-items-center">
         {% if current_categories == None %}
             <h1>Our Wee Products</h1>
             <p class="text-center">
@@ -29,14 +29,10 @@
     <!-- Product Detail Cards -->
     <section class="products-container">
         <div class="container p-4">
-            <!-- Products Filter and Search Bar -->
-            <div class="row pb-4">
-                <div class="d-none d-lg-inline-block col-md-12 col-lg-4">
-                    <p class="fw-bold">{{ products|length }} Products</p>
-                </div>
-                <!-- Product Category Filter -->
+            <!-- Product Category Filter -->
+            <div class="row mb-2 justify-content-center">
                 <!-- Nav from Bootstrap Docs: https://getbootstrap.com/docs/5.0/components/navs-tabs -->
-                <div class="col-md-12 col-lg-4">
+                <div class="col">
                     <ul class="nav fw-bold justify-content-center">
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'products' %}">All Products</a>
@@ -51,9 +47,14 @@
                             <a class="nav-link" href="{% url 'products' %}?category=Snacks">Snacks</a>
                         </li>
                     </ul>
-
-                    <!-- Serach Bar -->
-                    <form class="form my-4" method="GET" action="{% url 'products' %}">
+                </div>
+            </div>
+            
+            <!-- Search Bar-->
+            <div class="row">
+                <!-- Search Bar -->
+                <div class="col-lg-8 offset-lg-2">
+                    <form class="form mb-4" method="GET" action="{% url 'products' %}">
                         <div class="input-group">
                             <input class="form-control text-center w-75" type="text" name="q"
                                 placeholder="Find a Product" aria-label="Search Button"
@@ -64,8 +65,14 @@
                         </div>
                     </form>
                 </div>
+                <!-- Product Count -->
+                {% comment %} <div class="col-lg-2">
+                    <div class="d-none d-lg-inline-block mt-4">
+                        <p class="small">{{ products|length }} Products</p>
+                    </div>
+                </div> {% endcomment %}
             </div>
-            
+
             <!-- Products Details -->
             <div class="row g-4">
                 {% for product in products %}
@@ -103,7 +110,16 @@
                                     </a>
                                 </div>
                             {% elif request.user.is_authenticated %}
-                                <button class="btn">Add to Box</button>
+                                {% comment %} <form action="{% url 'add_to_box' product.id %}" class="form" method="POST">
+                                    {% csrf_token %}
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <input class="btn" type="submit" value="Add to Box">
+                                        </div>
+                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                    </div>
+                                </form> {% endcomment %}
+                                <button class="btn">Add To Box</button>
                             {% else %}
                                 <button class="btn">Subscribe</button>
                             {% endif %}
@@ -112,6 +128,19 @@
                 </div>
                 {% endfor %}
             </div>
+        </div>
+    </section>
+
+    <!-- Contact Us -->
+    <section class="contact-container">
+        <div class="container text-center p-4">
+        {% if request.user.is_superuser %}
+            <a href="#" class="btn">Add Product</a>
+            <a href="#" class="btn">Product Admin</a>
+        {% else %}
+            <h3>Can't find your favourite food or drink?</h3>
+            <p class="mt-4">Let us know by emailing us or by sending us a message on one of our social media pages!</p>
+        {% endif %}
         </div>
     </section>
 {% endblock %}

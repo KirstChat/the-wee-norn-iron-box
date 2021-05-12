@@ -3,11 +3,11 @@
 
 {% block page_heading %}
     <!-- Image & CTA Button -->
-    <div class="home-img-container d-flex align-items-end justify-content-center">
+    <div class="home-heading bg-img d-flex align-items-end justify-content-center">
         {% if request.user.is_authenticated %}
-            <a class="btn fw-bold mb-4 py-2 px-4" href="{% url 'products' %}">Products</a>
+            <a class="btn mb-4 py-2 px-4" href="{% url 'products' %}">Products</a>
         {% else %}
-            <a class="btn fw-bold mb-4 py-2 px-4" href="{% url 'account_signup' %}">Get Started</a>
+            <a class="btn mb-4 py-2 px-4" href="{% url 'account_signup' %}">Get Started</a>
         {% endif %}
     </div>
 {% endblock %}
@@ -64,10 +64,12 @@
             </div>
 
             <!-- Subscribe Button -->
-            {% if request.user.is_authenticated %}
-                <a class="btn fw-bold mt-4 py-2 px-4">My Box</a>
+            {% if request.user.is_superuser %}
+                <a class="btn mt-4 py-2 px-4" href="#">Product Admin</a>
+            {% elif request.user.is_authenticated %}
+                <a class="btn mt-4 py-2 px-4" href="{% url 'view_box' %}}">My Box</a>
             {% else %}
-                <a class="btn fw-bold mt-4 py-2 px-4" href="{% url 'account_signup' %}">Subscribe</a>
+                <a href="{% url 'account_signup' %}" class="btn mt-4 py-2 px-4">Subscribe</a>
             {% endif %}
         </div>
     </section>
@@ -76,9 +78,13 @@
     <section class="testimonials-container">
         <div class="container p-4 text-center">
             <h3>Here's what our subscribers think</h2>
-            <!-- Add Review Carousel -->
-            {% if request.user.is_authenticated %}
-                <a class="btn fw-bold mt-4 py-2 px-4">Leave Review</a>
+            <!-- Review Carousel -->
+
+            <!-- Add Review/Manage Reviews -->
+            {% if request.user.is_superuser %}
+                <a class="btn mt-4 py-2 px-4">Manage Reviews</a>
+            {% elif request.user.is_authenticated %}
+                <a href="" class="btn mt-4 py-2 px-4">Leave Review</a>
             {% endif %}
         </div>
     </section>

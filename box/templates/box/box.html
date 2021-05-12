@@ -2,12 +2,26 @@
 {% load static %}
 
 {% block page_heading %}
-    <div class="page-heading text-center">
+    <section class="box-heading bg-img d-flex flex-column justify-content-center align-items-center text-center">
         <div class="container p-4">
-            
+            <h1>My Wee Box</h1>
         </div>
-    </div>
+    </section>
 {% endblock %}
 
 {% block content %}
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    {% if box_items %}
+                    {% else %}
+                        <p>You haven't added any items to your wee box yet!</p>
+                        <p>We don't want to send you an empty box, so why not visit our products page to start adding your favourite home treats!</p>
+                        <a class="btn" href="{% url 'products' %}">Products</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

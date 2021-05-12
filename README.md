@@ -146,24 +146,24 @@ Links to the wireframes can be found below. Each link contains the wireframes fo
 ### Features to Include
 
 - Home App:
-  - About Section
-  - Testimonials Section
+  - ~~About Section~~
+  - Testimonials Section - Add When User Profiles are Complete
 - Products App:
-  - All Products
-  - Baked Goods
-  - Drinks
-  - Snacks
-  - Search for Products
+  - ~~All Products~~
+  - ~~Breads~~
+  - ~~Drinks~~
+  - ~~Snacks~~
+  - ~~Search for Products~~
 - User Profile App:
   - Delivery Details
   - Start/Cancel Subscription
 - Box Contents App:
   - Box Contents
 - Footer Social Media/Email Links:
-  - Facebook
-  - Twitter
-  - Instagram
-  - Email
+  - ~~Facebook~~
+  - ~~Twitter~~
+  - ~~Instagram~~
+  - ~~Email~~
 
 ### Existing Features
 
