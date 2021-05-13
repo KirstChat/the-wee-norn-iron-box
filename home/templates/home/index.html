@@ -3,13 +3,15 @@
 
 {% block page_heading %}
     <!-- Image & CTA Button -->
-    <div class="home-heading bg-img d-flex align-items-end justify-content-center">
-        {% if request.user.is_authenticated %}
-            <a class="btn mb-4 py-2 px-4" href="{% url 'products' %}">Products</a>
-        {% else %}
-            <a class="btn mb-4 py-2 px-4" href="{% url 'account_signup' %}">Get Started</a>
-        {% endif %}
-    </div>
+    <section class="home-heading bg-img d-flex align-items-end">
+        <div class="container text-center">
+            {% if request.user.is_authenticated %}
+                <a class="btn mb-4 py-2 px-4" href="{% url 'products' %}">Products</a>
+            {% else %}
+                <a class="btn mb-4 py-2 px-4" href="{% url 'account_signup' %}">Get Started</a>
+            {% endif %}
+        </div>
+    </section>
 {% endblock %}
 
 {% block content %}
@@ -26,10 +28,10 @@
             <div class="row g-4 steps">
                 <!-- Account -->
                 <div class="col-md-12 col-lg-4">
-                    <div class="card h-100 p-4">
+                    <div class="card border-0 h-100 p-4">
                         <i class="fas fa-box pb-4"></i>
                         <p class="fw-bold">
-                            Sign up for an account and simply add your favourite items to your box
+                            Sign up for an account to start adding your favourite items to your box
                         </p>
                         <p>
                             This includes
@@ -39,7 +41,7 @@
                 </div>
                 <!-- Subscription -->
                 <div class="col-md-12 col-lg-4">
-                    <div class="card h-100 p-4">
+                    <div class="card border-0 h-100 p-4">
                         <i class="fas fa-credit-card pb-3"></i>
                         <p class="fw-bold">
                             Activate your subscription and add your delivery details
@@ -51,7 +53,7 @@
                 </div>
                 <!-- Delivery -->
                 <div class="col-md-12 col-lg-4">
-                    <div class="card h-100 p-4">
+                    <div class="card border-0 h-100 p-4">
                         <i class="fas fa-truck pb-3"></i>
                         <p class="fw-bold">
                             We'll quickly deliver your box to you every month at no extra cost
