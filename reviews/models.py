@@ -12,7 +12,8 @@ class Review(models.Model):
 
     user = OneToOneField(User, on_delete=models.CASCADE)
     review = models.TextField(null=True, blank=True)
-    dated_added = models.DateField(null=True, blank=True)
+    dated_added = models.DateTimeField(auto_now_add=True)
+    rating = models.IntegerField()
 
     def __str__(self):
         return self.review
