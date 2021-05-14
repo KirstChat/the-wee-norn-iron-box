@@ -81,6 +81,16 @@
         <div class="container p-4 text-center">
             <h3>Here's what our subscribers think</h2>
             <!-- Review Carousel -->
+            {% for review in reviews %}
+                <div class="row">
+                    <div class="col-md-4">
+                        <p>{{ review.user }}</p>
+                        <p>{{ review.review }}</p>
+                        <p>{{ review.date_added|date:"y-m-d" }}</p>
+                        <p>{{ review.rating }}</p>
+                    </div>
+                </div>
+            {% endfor %}
 
             <!-- Add Review/Manage Reviews -->
             {% if request.user.is_superuser %}

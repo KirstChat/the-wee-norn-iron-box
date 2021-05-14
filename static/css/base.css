@@ -136,10 +136,10 @@ a.nav-link {
 /* ---------- Testimonials ---------- */
 .testimonials-container {
     background: var(--black);
+    color: var(--white);
 }
 
 .testimonials-container h3 {
-    color: var(--white);
     font-size: 2rem;
 }
 /* ---------- End Testimonials ---------- */
