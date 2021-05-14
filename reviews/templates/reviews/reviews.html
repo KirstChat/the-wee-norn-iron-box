@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_heading %}
+    <!-- Image, Heading and Search Bar -->
+    <section class="products-heading bg-img d-flex flex-column align-items-center justify-content-center">
+        <div class="container text-center p-4">
+            <h1>Reviews</h1>
+        </div>
+    </section>
+{% endblock %}
+
+{% block content %}
+    <section class="yellow-container p-4">
+        <div class="container">
+            {% if request.user.is_authenticated %}
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col">
+                            <input class="form-control" type="text" value="{{ review.user }}">
+                        </div>
+                    </div>
+                </form>
+            {% else %}
+                <p>You must login to leave a review!</p>
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}
