@@ -63,26 +63,30 @@ a.nav-link {
 }
 /* ---------- End Nav Bar ---------- */
 
-/* ---------- Image Containers ----------*/
-.bg-img {
+/* ---------- Containers ----------*/
+.top-container {
+    background: var(--black);
     color: var(--white);
     height: 40vh;
 }
 
-.home-heading {
+.middle-container {
+    background: var(--yellow);
+}
+
+.bottom-container {
+    background: var(--black);
+    color: var(--white);
+}
+
+.home-img {
     background: url("/static/images/box-mock-up.jpg") no-repeat center center;
     background-size: cover;
 }
 
-.products-heading {
+.products-img {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
         url("/static/images/ulster-fry.jpg") no-repeat center center;
-    background-size: cover;
-}
-
-.box-heading {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url("/static/images/box-mock-up.jpg") no-repeat center center;
     background-size: cover;
 }
 /* ---------- End Image Containers ----------*/
@@ -119,10 +123,6 @@ a.nav-link {
 /* ---------- End Cards ---------- */
 
 /* ---------- Step Cards ---------- */
-.steps-container {
-    background: var(--yellow);
-}
-
 .steps h2 {
     font-size: 2rem;
 }
@@ -134,11 +134,6 @@ a.nav-link {
 /* ---------- End Step Cards ---------- */
 
 /* ---------- Testimonials ---------- */
-.testimonials-container {
-    background: var(--black);
-    color: var(--white);
-}
-
 .testimonials-container h3 {
     font-size: 2rem;
 }
@@ -167,11 +162,7 @@ footer h5 {
 /* ---------- End Footer ---------- */
 
 /* ---------- Products ---------- */
-.yellow-container {
-    background: var(--yellow);
-}
-
-.products-container img {
+.middle-container img {
     width: 100%;
     height: 20vh;
     object-fit: contain;
@@ -247,7 +238,7 @@ input.form-control:focus {
     }
     
     /* Background Image */
-    .home-heading.bg-img {
+    .home-img {
         height: 75vh;
     }
 
