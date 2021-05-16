@@ -13,18 +13,19 @@
 {% block content %}
     <section class="middle-container p-4">
         <div class="container">
-            {% if request.user.is_authenticated %}
-                <form action="" method="POST">
-                    {% csrf_token %}
-                    <div class="row">
-                        <div class="col">
-                            <input class="form-control" type="text" value="{{ review.user }}">
-                        </div>
-                    </div>
-                </form>
-            {% else %}
-                <p>You must login to leave a review!</p>
-            {% endif %}
+            <div class="row">
+                <div class="col">
+                    {% if request.user.is_authenticated %}
+                        <h2>How would you rate us?</h2>
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <p>Review by: {{ user.username }}</p>
+                        </form>
+                    {% else %}
+                        <p>You must login to leave a review!</p>
+                    {% endif %}
+                </div>
+            </div>
         </div>
     </section>
 {% endblock %}
