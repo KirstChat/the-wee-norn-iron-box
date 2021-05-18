@@ -16,7 +16,11 @@
                 <div class="col">
                     {% if box_items %}
                         <div>
-                            {{ box_items }}
+                            {% for item in box_items %}
+                                <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                <p>Name: {{ item.product.name }}</p>
+                                <p>Quantity: {{ item.product.quantity }}</p>
+                            {% endfor %}
                         </div>
                     {% else %}
                         <p>You haven't added any items to your wee box yet!</p>
