@@ -46,16 +46,3 @@
         </div>
     </section>
 {% endblock %}
-
-{% block postloadjs %}
-{{ block.super }}
-    <script>
-        // Remove product from box
-        document.getElementById('remove-item').addEventListener("click", (e) => {
-            let url = `bag/remove/${itemId}/`;
-        })
-
-
-
-    </script>
-{% endblock %}
