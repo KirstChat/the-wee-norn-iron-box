@@ -77,12 +77,14 @@
                     <!-- Product Cards -->
                     <div class="card border-0 h-100 text-center p-4">
                         <img src="{{ product.image.url }}" class="card-img-top img-fluid" alt="{{ product.name }}">
+
                         <!-- Product Name -->
                         <div class="card-body">
                             <p class="card-text fw-bold">
                                 {{ product.name }}
                             </p>
                         </div>
+
                         <!-- Product Description -->
                         <div class="card-overlay rounded p-4">
                             <p class="card-text fw-bold">
@@ -94,6 +96,7 @@
                             <p class="card-text">
                                 Size: {{ product.size }}
                             </p>
+
                             <!-- Buttons -->
                             {% if request.user.is_superuser %}
                                 <div>
@@ -111,8 +114,12 @@
                                     {% csrf_token %}
                                     <div class="row">
                                         <div class="col">
-                                            <input type="number" class="form-control" name="quantity" value="1" min="1"
-                                                max="2" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                                            <div class="input-group">
+                                                <!-- Quantity -->
+                                                <input type="number" class="form-control" name="quantity" value="1"
+                                                    min="1" max="2" data-item_id="{{ product.id }}"
+                                                    id="id_qty_{{ product.id }}">
+                                            </div>
                                         </div>
                                         <div class="col">
                                             <button type="submit" class="btn"><i class="fas fa-box-open pe-2"></i>Add to Box</button>

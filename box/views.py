@@ -1,14 +1,17 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
 
+@login_required
 def view_box(request):
     # A view that renders the box contents
 
     return render(request, 'box/box.html')
 
 
+@login_required
 def add_to_box(request, item_id):
     # Add quantity of specified product
 

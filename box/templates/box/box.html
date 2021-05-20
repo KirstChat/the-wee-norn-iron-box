@@ -20,16 +20,18 @@
                             <div class="card border-0 h-100 text-center p-4">
                                 <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                                 <p class="fw-bold">{{ item.product.name }}</p>
-                                <p>Quantity: {{ item.product.quantity }}</p>
+                                <p>Quantity: {{ item.quantity }}</p>
                             </div>
                         </div>
                     {% endfor %}
                     {% else %}
-                        <div class="card">
-                            <p>You haven't added any items to your wee box yet!</p>
-                            <p>We don't want to send you an empty box, so why not visit our products page to start
-                                adding your favourite home treats!</p>
-                            <a class="btn" href="{% url 'products' %}">Products</a>
+                        <div class="col">
+                            <div class="card border-0 h-100 text-center p-4">
+                                <p>You haven't added any items to your wee box yet!</p>
+                                <p>We don't want to send you an empty box, so why not visit our products page to start
+                                    adding your favourite home treats!</p>
+                                <a class="btn" href="{% url 'products' %}">Products</a>
+                            </div>
                         </div>
                     {% endif %}
                 </div>
