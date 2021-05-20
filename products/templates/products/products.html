@@ -26,7 +26,7 @@
             {% endif %}
 
             <!-- Search Bar -->
-            <form class="form w-50 mx-auto" method="GET" action="{% url 'products' %}">
+            <form class="form w-50 mx-auto mt-4" method="GET" action="{% url 'products' %}">
                 <div class="input-group">
                     <input class="form-control text-center w-75" type="text" name="q" placeholder="Find a Product"
                         aria-label="Search Button" aria-describedby="search-button">
@@ -109,17 +109,13 @@
                             {% elif request.user.is_authenticated %}
                                 <form class="form" action="{% url 'add_to_box' product.id %}" method="POST">
                                     {% csrf_token %}
-                                    <div class="form-row">
+                                    <div class="row">
                                         <div class="col">
-                                            <div class="input-group">
-                                                <input type="number" class="form-control" name="quantity" value="1"
-                                                    min="1" max="2" data-item_id="{{ product.id }}"
-                                                    id="id_qty_{{ product.id }}">
-                                            </div>
+                                            <input type="number" class="form-control" name="quantity" value="1" min="1"
+                                                max="2" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
                                         </div>
-
                                         <div class="col">
-                                            <input type="submit" class="btn" value="Add to Box">
+                                            <button type="submit" class="btn"><i class="fas fa-box-open pe-2"></i>Add to Box</button>
                                         </div>
                                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                     </div>

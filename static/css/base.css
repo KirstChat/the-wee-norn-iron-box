@@ -161,31 +161,31 @@ footer h5 {
 }
 /* ---------- End Footer ---------- */
 
-/* ---------- Products ---------- */
+/* ---------- Products App ---------- */
 .middle-container img {
     width: 100%;
     height: 20vh;
     object-fit: contain;
 }
 
-button#search-button {
+.top-container button#search-button {
     background: var(--red);
 }
 
-button#search-button:hover {
+.top-container button#search-button:hover {
     transform: none;
 }
 
-button#search-button.form-control:focus {
+.top-container button#search-button.form-control:focus {
     color: var(--white);
 }
 
-input.form-control {
+.top-container input.form-control {
     border: none;
     box-shadow: 0 2px var(--dark-red);
 }
 
-input.form-control:focus {
+.top-container input.form-control:focus {
     border: 2px solid var(--red);
     box-shadow: 0 2px var(--dark-red);
 }
@@ -218,7 +218,7 @@ input.form-control:focus {
     background: var(--black);
     color: var(--white);
 }
-/* ---------- End Products ---------- */
+/* ---------- End Products App ---------- */
 
 /* ---------- Media Queries --------- */
 

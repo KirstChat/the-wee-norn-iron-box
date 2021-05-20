@@ -12,20 +12,25 @@
 {% block content %}
     <section>
         <div class="middle-container">
-            <div class="row">
-                <div class="col">
+            <div class="container p-4">
+                <div class="row g-4">
                     {% if box_items %}
-                        <div>
-                            {% for item in box_items %}
+                    {% for item in box_items %}
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card border-0 h-100 text-center p-4">
                                 <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                                <p>Name: {{ item.product.name }}</p>
+                                <p class="fw-bold">{{ item.product.name }}</p>
                                 <p>Quantity: {{ item.product.quantity }}</p>
-                            {% endfor %}
+                            </div>
                         </div>
+                    {% endfor %}
                     {% else %}
-                        <p>You haven't added any items to your wee box yet!</p>
-                        <p>We don't want to send you an empty box, so why not visit our products page to start adding your favourite home treats!</p>
-                        <a class="btn" href="{% url 'products' %}">Products</a>
+                        <div class="card">
+                            <p>You haven't added any items to your wee box yet!</p>
+                            <p>We don't want to send you an empty box, so why not visit our products page to start
+                                adding your favourite home treats!</p>
+                            <a class="btn" href="{% url 'products' %}">Products</a>
+                        </div>
                     {% endif %}
                 </div>
             </div>
