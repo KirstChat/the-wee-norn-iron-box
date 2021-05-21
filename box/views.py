@@ -1,5 +1,8 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+
+from products.models import Product
 
 # Create your views here.
 
@@ -15,12 +18,14 @@ def view_box(request):
 def add_to_box(request, item_id):
     # Add product to box
 
+    product = Product.objects.get(pk=item_id)
     quantity = 1  # Default value
     redirect_url = request.POST.get('redirect_url')
 
     box = request.session.get('box', {})
 
     box[item_id] = quantity
+    messages.success(request, f'Added {product.name} to your box.')
 
     request.session['box'] = box
     return redirect(redirect_url)
