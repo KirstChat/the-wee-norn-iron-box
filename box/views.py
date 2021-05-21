@@ -15,18 +15,14 @@ def view_box(request):
 def add_to_box(request, item_id):
     # Add product to box
 
-    quantity = int(request.POST.get('quantity'))
+    quantity = 1  # Default value
     redirect_url = request.POST.get('redirect_url')
 
     box = request.session.get('box', {})
 
-    if item_id in list(box.keys()):
-        box[item_id] += quantity
-    else:
-        box[item_id] = quantity
+    box[item_id] = quantity
 
     request.session['box'] = box
-    print(request.session['box'])
     return redirect(redirect_url)
 
 
