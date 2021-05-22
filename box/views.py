@@ -25,7 +25,7 @@ def add_to_box(request, item_id):
     box = request.session.get('box', {})
 
     box[item_id] = quantity
-    messages.success(request, f'Added {product.name} to your box.')
+    messages.success(request, f'You\'ve added {product.name} to your box!')
 
     request.session['box'] = box
     return redirect(redirect_url)

@@ -63,6 +63,22 @@ a.nav-link {
 }
 /* ---------- End Nav Bar ---------- */
 
+/* ---------- Toasts ---------- */
+.toast-container {
+    z-index: 999;
+}
+
+.toast-header,
+.close-btn {
+    background: var(--black);
+    color: var(--white);
+}
+
+.close-btn {
+    border: none;
+}
+/* ---------- End Toasts ---------- */
+
 /* ---------- Containers ----------*/
 .top-container {
     background: var(--black);

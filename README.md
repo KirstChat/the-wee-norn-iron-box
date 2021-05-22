@@ -316,6 +316,8 @@ The following steps were used to store static files and media files in an Amazon
 - [Django Documentation](https://docs.djangoproject.com/en/3.2/)
   - The Django Documentation was used to...
 
+-[Initialize Bootstrap 5 Toasts](https://stackoverflow.com/questions/63515279/how-to-initialize-toasts-with-javascript-in-bootstrap-5)
+
 ### Content
 
 All product descriptions and sizes were taken the following sites:
