@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse
+from django.http.response import HttpResponse
+from django.shortcuts import get_object_or_404, render, redirect, reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
@@ -18,13 +19,13 @@ def view_box(request):
 def add_to_box(request, item_id):
     # Add product to box
 
-    product = Product.objects.get(pk=item_id)
+    product = get_object_or_404(Product, pk=item_id)
     quantity = 1  # Default value
     redirect_url = request.POST.get('redirect_url')
 
     box = request.session.get('box', {})
 
-    if item_id in list(box.keys()):
+    if item_id in box:
         messages.error(
             request, f'You\'ve already added {product.name} to your box')
     else:
@@ -40,13 +41,18 @@ def add_to_box(request, item_id):
 def remove_from_box(request, item_id):
     # Remove product from box
 
-    product = Product.objects.get(pk=item_id)
-    box = request.session.get('box', {})
+    try:
+        product = get_object_or_404(Product, pk=item_id)
+        box = request.session.get('box', {})
 
-    if item_id in box:
-        box.pop(item_id)
-        messages.success(
-            request, f'You\'ve removed {product.name} from your box')
+        if item_id in box:
+            box.pop(item_id)
+            messages.success(
+                request, f'You\'ve removed {product.name} from your box')
 
-    request.session['box'] = box
-    return redirect(reverse('view_box'))
+        request.session['box'] = box
+        return redirect(reverse('view_box'))
+
+    except Exception as e:
+        messages.error(request, f'Error removing item: {e}')
+        return HttpResponse(status=500)
