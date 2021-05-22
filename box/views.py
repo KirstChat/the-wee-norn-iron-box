@@ -24,10 +24,15 @@ def add_to_box(request, item_id):
 
     box = request.session.get('box', {})
 
-    box[item_id] = quantity
-    messages.success(request, f'You\'ve added {product.name} to your box!')
+    if item_id in list(box.keys()):
+        messages.error(
+            request, f'You\'ve already added {product.name} to your box')
+    else:
+        box[item_id] = quantity
+        messages.success(request, f'You\'ve added {product.name} to your box!')
 
     request.session['box'] = box
+    print(request.session['box'])
     return redirect(redirect_url)
 
 
@@ -35,10 +40,13 @@ def add_to_box(request, item_id):
 def remove_from_box(request, item_id):
     # Remove product from box
 
+    product = Product.objects.get(pk=item_id)
     box = request.session.get('box', {})
 
     if item_id in box:
         box.pop(item_id)
+        messages.success(
+            request, f'You\'ve removed {product.name} from your box')
 
     request.session['box'] = box
     return redirect(reverse('view_box'))
