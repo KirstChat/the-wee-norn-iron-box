@@ -20,7 +20,6 @@
                             <div class="card border-0 h-100 text-center p-4">
                                 <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                                 <p class="fw-bold">{{ item.product.name }}</p>
-                                {% comment %} <p>Quantity: {{ item.quantity }}</p> {% endcomment %}
                                 <!-- Remove Item Button -->
                                 <div class="card-overlay rounded p-4">
                                     <form action="{% url 'remove_from_box' item.product.id %}" method="POST" class="form">

@@ -8,7 +8,26 @@
             </button>
         </div>
         <div class="toast-body">
-            {{ message }}
+            <div class="row">
+                <div class="col">
+                    {{ message }}
+                </div>
+            </div>
+            <hr>
+            <p>Here's what's in your box:</p>
+            {% for item in box_items %}
+                <div class="row text-center">
+                    <div class="col">
+                        <img class="w-50" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                        <p>{{ item.product.name }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="row">
+                <div class="col">
+                    <a href="{% url 'view_box' %}" class="btn">View My Box</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
