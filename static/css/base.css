@@ -74,6 +74,12 @@ a.nav-link {
     color: var(--white);
 }
 
+.box-preview {
+    height: 200px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
 .close-btn {
     border: none;
 }
@@ -185,10 +191,12 @@ footer h5 {
 }
 
 .top-container button#search-button {
-    background: var(--red);
+    background: var(--black);
+    box-shadow: 0 2px var(--black);
 }
 
 .top-container button#search-button:hover {
+    background: var(--yellow);
     transform: none;
 }
 
@@ -198,12 +206,12 @@ footer h5 {
 
 .top-container input.form-control {
     border: none;
-    box-shadow: 0 2px var(--dark-red);
+    box-shadow: 0 2px var(--black);
 }
 
 .top-container input.form-control:focus {
-    border: 2px solid var(--red);
-    box-shadow: 0 2px var(--dark-red);
+    border: 2px solid var(--yellow);
+    box-shadow: 0 2px var(--black);
 }
 
 .card-overlay {

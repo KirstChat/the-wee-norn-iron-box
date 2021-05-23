@@ -321,6 +321,9 @@ The following steps were used to store static files and media files in an Amazon
 - [Get full URL path](https://docs.djangoproject.com/en/3.2/ref/request-response/#django.http.HttpRequest.get_full_path)
   - Return URL with appended query string
 
+- [URL in if statement](https://stackoverflow.com/questions/17829718/url-name-in-django-template-if-statement)
+  - Check url path
+
 ### Content
 
 All product descriptions and sizes were taken the following sites:

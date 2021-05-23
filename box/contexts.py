@@ -12,9 +12,9 @@ def box_contents(request):
         product = get_object_or_404(Product, pk=item_id)
         product_count += quantity
         box_items.append({
+            'product': product,
             'item_id': item_id,
             'quantity': quantity,
-            'product': product,
         })
 
     context = {
