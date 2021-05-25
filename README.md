@@ -135,7 +135,24 @@ Links to the wireframes can be found below. Each link contains the wireframes fo
 
 [SQLite3](https://www.sqlite.org/index.html) was used in development as part of the Django framework and [Heroku Postgres](https://www.heroku.com/postgres) was used for Production.
 
-- **Add Tables or Screenshot**
+- Products App:
+
+Category Model
+
+| Field | Field Type | Field Options |
+| :---: | :---: | :---: |
+| name | CharField | max_length=200 |
+
+Products Model
+
+| Field | Field Type | Field Options |
+| :---: | :---: | :---: |
+| name | CharField | max_length=200, null=True |
+| description | TextField | null=True, blank=True |
+| brand | CharField | max_length=200, null=True, blank=True |
+| category | ForeignKey | 'Category', null=True, blank=True, on_delete=models.SET_NULL |
+| size | CharField | max_length=25, null=True, blank=True |
+| image | ImageField | null=True, blank=True |
 
 [Contents](#contents)
 
