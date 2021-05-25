@@ -163,28 +163,25 @@ Products Model
 ### Features to Include
 
 - Home App:
-  - ~~About Section~~
   - Testimonials Section - Add When User Profiles are Complete
 - Products App:
-  - ~~All Products~~
-  - ~~Breads~~
-  - ~~Drinks~~
-  - ~~Snacks~~
-  - ~~Search for Products~~
+  
 - User Profile App:
   - Delivery Details
   - Start/Cancel Subscription
 - Box Contents App:
-  - Box Contents
+  - ~~Box Contents~~
 - Footer Social Media/Email Links:
-  - ~~Facebook~~
-  - ~~Twitter~~
-  - ~~Instagram~~
-  - ~~Email~~
+  - Email
 
 ### Existing Features
 
-- **Update This Throughout**
+- An easy to use navigation bar located at the top of every page with a toggle button to trigger the nav on mobile devices
+- A home page with an about section that explains the purpose of the site
+- A products page with a search bar and a filter by category option
+- A footer located on every page with links to social media pages
+
+- Toasts to let the user know when they've successfully completed an action or to let them know if there was a error completing an action
 
 ### Features Left to be Implemented
 
