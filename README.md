@@ -116,7 +116,7 @@ I designed a simple logo for the site using [Affinity Photo](https://affinity.se
 
 The wireframes for my site were created using [Balsamiq](https://balsamiq.com/). I created wireframes for mobile, tablet and desktop devices.
 
-![Site Map](wireframes/images/site-map-horizontal.png)
+![Site Map](wireframes/images/site-map.png)
 
 Links to the wireframes can be found below. Each link contains the wireframes for mobile, tablet and desktop devices:
 
