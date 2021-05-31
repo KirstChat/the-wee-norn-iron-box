@@ -83,16 +83,20 @@
         </header> 
 
         {% if messages %}
-            <div class="container">
+            <div class="toast-container position-fixed bottom-0 end-0 p-4">
                 {% for message in messages %}
                     {% with message.level as level %}
-                        {% if level == 40 %} <!-- Error -->
+                        {% if level == 40 %}
+                            <!-- Error -->
                             {% include 'includes/toasts/toast_error.html' %}
-                        {% elif level == 30 %} <!-- Warning -->
+                        {% elif level == 30 %}
+                            <!-- Warning -->
                             {% include 'includes/toasts/toast_warning.html' %}
-                        {% elif level == 25 %} <!-- Success -->
+                        {% elif level == 25 %}
+                            <!-- Success -->
                             {% include 'includes/toasts/toast_success.html' %}
-                        {% else %} <!-- Info -->
+                        {% else %}
+                            <!-- Info -->
                             {% include 'includes/toasts/toast_info.html' %}
                         {% endif %}
                     {% endwith %}
@@ -115,6 +119,7 @@
         </footer>
 
         {% block postloadjs %}
+            <!-- Code from Stack Overflow: https://stackoverflow.com/questions/63515279/how-to-initialize-toasts-with-javascript-in-bootstrap-5 -->
             <script>
                 var toastElList = [].slice.call(document.querySelectorAll('.toast'))
                 var toastList = toastElList.map(function (toastEl) {
