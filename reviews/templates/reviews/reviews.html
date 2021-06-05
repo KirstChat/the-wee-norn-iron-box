@@ -20,6 +20,7 @@
                         <form action="" method="POST">
                             {% csrf_token %}
                             <p>Review by: {{ user.username }}</p>
+                            <p>{{ user.review }}</p>
                         </form>
                     {% else %}
                         <p>You must login to leave a review!</p>

@@ -3,33 +3,44 @@
 
 {% block page_heading %}
     <!-- Image & CTA Button -->
-    <section class="top-container home-img d-flex align-items-end">
-        <div class="container text-center">
-            {% if request.user.is_authenticated %}
-                <a class="btn mb-4 py-2 px-4" href="{% url 'products' %}">Products</a>
-            {% else %}
-                <a class="btn mb-4 py-2 px-4" href="{% url 'account_signup' %}">Get Started</a>
-            {% endif %}
+    <section class="white-container py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Products Button -->
+                <div class="col-md-12 col-lg-5 text-center align-self-center">
+                    <h1>The Taste of Home Delivered to You For £10 A Month</h1>
+                    {% if request.user.is_authenticated %}
+                        <a class="btn my-4 py-2 px-4" href="{% url 'products' %}">Products</a>
+                    {% else %}
+                        <a class="btn my-4 py-2 px-4" href="{% url 'account_signup' %}">Get Started</a>
+                    {% endif %}
+                </div>
+                <!-- Box Mock Up Image -->
+                <div class="col-md-12 col-lg-7 align-self-end">
+                    <img class="img-fluid" src="{% static "images/box-mock-up.jpg" %}" alt="Box Mock Up">
+                </div>
+            </div>
         </div>
     </section>
 {% endblock %}
 
 {% block content %}
     <!-- How It Works-->
-    <section class="middle-container">
-        <div class="container p-4 text-center">
+    <section class="yellow-container steps p-4">
+        <div class="container text-center">
             <h2>How it Works</h2>
             <p class="mt-4">
-                For £10 a month, we'll deliver your favourite Northern Irish goods to you! Simply follow theses
+                For £10 a month, we'll deliver your favourite Northern Irish goods to you!
+                <br>
+                Simply follow theses
                 steps:
             </p>
-
             <!-- Steps -->
-            <div class="row g-4 steps">
+            <div class="row steps">
                 <!-- Account -->
-                <div class="col-md-12 col-lg-4">
-                    <div class="card border-0 h-100 p-4">
-                        <i class="fas fa-box pb-4"></i>
+                <div class="col-md-12 col-lg-4 px-4 py-2">
+                    <div class="card border-0 p-4">
+                        <i class="fas fa-box mb-4"></i>
                         <p class="fw-bold">
                             Sign up for an account to start adding your favourite items to your box
                         </p>
@@ -40,9 +51,9 @@
                     </div>
                 </div>
                 <!-- Subscription -->
-                <div class="col-md-12 col-lg-4">
-                    <div class="card border-0 h-100 p-4">
-                        <i class="fas fa-credit-card pb-3"></i>
+                <div class="col-md-12 col-lg-4 px-4 py-2">
+                    <div class="card border-0 p-4">
+                        <i class="fas fa-credit-card mb-4"></i>
                         <p class="fw-bold">
                             Activate your subscription and add your delivery details
                         </p>
@@ -52,9 +63,9 @@
                     </div>
                 </div>
                 <!-- Delivery -->
-                <div class="col-md-12 col-lg-4">
-                    <div class="card border-0 h-100 p-4">
-                        <i class="fas fa-truck pb-3"></i>
+                <div class="col-md-12 col-lg-4 px-4 py-2">
+                    <div class="card border-0 p-4">
+                        <i class="fas fa-truck mb-4"></i>
                         <p class="fw-bold">
                             We'll quickly deliver your box to you every month at no extra cost
                         </p>
@@ -64,7 +75,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- Subscribe Button -->
             {% if request.user.is_superuser %}
                 <a class="btn mt-4 py-2 px-4" href="#">Product Admin</a>
@@ -77,11 +87,32 @@
     </section>
 
     <!-- Testimonials -->
-    <section class="bottom-container">
+    <section class="white-container">
         <div class="container p-4 text-center">
             <h3>Here's what our subscribers think</h2>
             <!-- Review Carousel -->
-            {% for review in reviews %}
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    {% for review in reviews %}
+                        <div class="carousel-item active">
+                            <p>{{ user.username }}</p>
+                            <p>{{ user.review }}</p>
+                            <p>{{ user.rating }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            {% comment %} {% for review in reviews %}
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card mt-4">
@@ -93,7 +124,7 @@
                         </div>
                     </div>
                 </div>
-            {% endfor %}
+            {% endfor %} {% endcomment %}
 
             <!-- Add Review/Manage Reviews -->
             {% if request.user.is_superuser %}

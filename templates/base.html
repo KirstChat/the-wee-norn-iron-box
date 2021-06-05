@@ -8,7 +8,7 @@
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <!-- Favicon -->
-            <link rel="icon" type="image/png" href={% static "images/twnib-logo.png" %}>
+            <link rel="icon" type="image/png" href={% static "images/twnib-favicon.png" %}>
         {% endblock %}
 
         {% block extra_meta %}
@@ -51,7 +51,7 @@
     <body>
         <header>
             <!-- NavBar from Bootstrap Docs: https://getbootstrap.com/docs/5.0/components/navbar/#toggler-->
-            <nav class="navbar navbar-expand-md justify-content-between fw-bold">
+            <nav class="navbar navbar-expand-md justify-content-between fw-bold p-2">
                 <div class="container-fluid">
                     <!-- Brand/Logo -->
                     <a class="navbar-brand" href="{% url 'home' %}">
@@ -111,11 +111,11 @@
         {% endblock %}
 
         <!-- Contact/Social Links -->
-        <footer class="container text-center p-4">
+        <footer class="text-center p-4">
             <h5>Follow Us</h5>
             <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square mt-3 mx-3"></i></a>
-            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter-square mt-3 mx-3"></i></a>
-            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram-square mt-3 mx-3"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter mt-3 mx-3"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram mt-3 mx-3"></i></a>
         </footer>
 
         {% block postloadjs %}
