@@ -1,4 +1,5 @@
 import uuid
+
 from django.db import models
 from django_countries.fields import CountryField
 
@@ -17,6 +18,17 @@ class Order(models.Model):
     county = models.CharField(max_length=80, null=True, blank=True)
     postcode = models.CharField(max_length=20, null=False, blank=False)
     country = CountryField(blank_label="Country *", null=False, blank=False)
+    date = models.DateTimeField(auto_now_add=True)
+
+    def _generate_order_number(self):
+        # Generate Order Number using UUID
+        return uuid.uuid4().hex.upper()
+
+    def save(self, *args, **kwargs):
+        # Override original save method to set order number
+        if not self.order_number:
+            self.order_number = self._generate_order_number()
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.order_number
