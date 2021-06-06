@@ -236,6 +236,8 @@ Products Model
   - Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication
 - [Pillow](https://pillow.readthedocs.io/en/stable/)
   - Python imaging library
+- [Django Countries](https://pypi.org/project/django-countries/)
+  - A Django application that provides country choices for use with forms, flag icons static files, and a country field for models
 
 [Contents](#contents)
 
@@ -325,9 +327,6 @@ The following steps were used to store static files and media files in an Amazon
 - [CSS linear-gradient()](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient())
   - CSS linear-gradient was used to add a gradient background to the card overlay from the cards used in the products app.
 
-- [Django Documentation](https://docs.djangoproject.com/en/3.2/)
-  - The Django Documentation was used to...
-
 - [Initialize Bootstrap 5 Toasts](https://stackoverflow.com/questions/63515279/how-to-initialize-toasts-with-javascript-in-bootstrap-5)
 
 - [Get full URL path](https://docs.djangoproject.com/en/3.2/ref/request-response/#django.http.HttpRequest.get_full_path)
@@ -335,6 +334,8 @@ The following steps were used to store static files and media files in an Amazon
 
 - [URL in if statement](https://stackoverflow.com/questions/17829718/url-name-in-django-template-if-statement)
   - Check url path
+
+- [length_is](https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#length-is)
 
 ### Content
 

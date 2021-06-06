@@ -37,7 +37,13 @@ def add_to_box(request, item_id):
             box.values()).count(2) > 2 or list(
                 box.values()).count(3) > 2:
         del box[item_id]
-        messages.error(request, 'You can\'t add anymore')
+        messages.error(
+            request, f'You can\'t add anymore {product.category} to your box')
+
+    # if len(box) > 6:
+    #     del box[item_id]
+    #     messages.error(
+    #         request, 'You can\'t add any more products to your box')
 
     request.session['box'] = box
     print(request.session['box'])

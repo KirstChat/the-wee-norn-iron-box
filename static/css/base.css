@@ -53,7 +53,9 @@ a.nav-link {
 }
 
 a.nav-link:hover,
-.navbar-brand:hover {
+a.nav-link:focus,
+.navbar-brand:hover,
+.navbar-brand:focus {
     color: var(--yellow);
 }
 
@@ -78,6 +80,11 @@ a.nav-link:hover,
     height: 200px;
     overflow-x: hidden;
     overflow-y: scroll;
+}
+
+.box-preview img {
+    height: 20vh;
+    object-fit: contain;
 }
 
 .close-btn {
@@ -109,7 +116,8 @@ a.nav-link:hover,
 }
 
 .box-heading-img {
-    background: url("/static/images/box-mock-up-2.jpg") no-repeat center 85%;
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
+    url("/static/images/box-mock-up-2.jpg") no-repeat center 85%;
     background-size: cover;
     height: 40vh;
 }

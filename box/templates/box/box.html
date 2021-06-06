@@ -49,11 +49,24 @@
                                 <p class="my-4">We don't want to send you an empty box, so why not visit our products
                                     page to start
                                     adding your favourite home treats!</p>
-                                <a class="btn mx-auto" href="{% url 'products' %}">Our Wee Products</a>
                             </div>
                         </div>
                     {% endif %}
                 </div>
+                <!-- Code from Django Docs: https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#length-is -->
+                {% if box_items|length_is:"6" %}
+                    <div class="row text-center">
+                        <div class="col">
+                            <a class="btn mt-4" href="#">Start Subscription</a>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="row text-center">
+                        <div class="col">
+                            <a class="btn mt-4" href="{% url 'products' %}">Add More Products</a>
+                        </div>
+                    </div>
+                {% endif %}
             </div>
         </div>
     </section>
