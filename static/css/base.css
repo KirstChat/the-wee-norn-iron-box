@@ -3,7 +3,6 @@
     --white: #fff;
     --black: #161616;
     --yellow: #ffa600;
-    --dark-yellow: #ff8c00;
     --red: #e00000;
     --dark-red: #b80000;
 }
@@ -49,9 +48,13 @@ p {
 }
 
 .navbar-brand,
-a.nav-link,
-.navbar-brand:hover {
+a.nav-link {
     color: var(--white);
+}
+
+a.nav-link:hover,
+.navbar-brand:hover {
+    color: var(--yellow);
 }
 
 .navbar-brand img {
@@ -88,22 +91,23 @@ a.nav-link,
     color: var(--black);
 }
 
-.black-container {
-    background: var(--black);
-    color: var(--white);
-}
-
 .yellow-container {
     background: var(--yellow);
     color: var(--black);
 }
 
-.products-img {
+.black-container {
+    background: var(--black);
+    color: var(--white);
+}
+
+.products-heading-img {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
         url("/static/images/ulster-fry.jpg") no-repeat center center;
     background-size: cover;
+    height: 40vh;
 }
-/* ---------- End Image Containers ----------*/
+/* ---------- End Containers ----------*/
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -171,12 +175,6 @@ a.nav-link,
 }
 /* ---------- End Step Cards ---------- */
 
-/* ---------- Testimonials ---------- */
-.testimonials-container h3 {
-    font-size: 2rem;
-}
-/* ---------- End Testimonials ---------- */
-
 /* ---------- Footer ---------- */
 .fab {
     font-size: 2rem;
@@ -205,38 +203,42 @@ footer h5 {
 /* ---------- End Footer ---------- */
 
 /* ---------- Products App ---------- */
-.middle-container img {
+.yellow-container img {
     width: 100%;
     height: 20vh;
     object-fit: contain;
 }
 
-.top-container button#search-button {
+.black-container button#search-button {
     background: var(--black);
-    box-shadow: 0 2px var(--black);
+    box-shadow: none;
 }
 
-.top-container button#search-button:hover {
-    background: var(--yellow);
+.black-container button#search-button:hover {
+    background: var(--red);
+    box-shadow: none;
     transform: none;
 }
 
-.top-container button#search-button.form-control:focus {
+.black-container button#search-button.form-control:focus {
     color: var(--white);
 }
 
-.top-container input.form-control {
-    border: none;
-    box-shadow: 0 2px var(--black);
+.black-container input.form-control {
+    border: 2px solid var(--black);
+    box-shadow: none;
 }
 
-.top-container input.form-control:focus {
-    border: 2px solid var(--yellow);
-    box-shadow: 0 2px var(--black);
+.black-container input.form-control:focus {
+    border: 2px solid var(--red);
+    box-shadow: none;
 }
 
-.contact-container {
-    background: var(--black);
+.yellow-container .nav-link {
+    color: var(--black);
+}
+
+.yellow-container .nav-link:hover {
     color: var(--white);
 }
 /* ---------- End Products App ---------- */
@@ -258,11 +260,6 @@ footer h5 {
         font-size: 1rem;
     }
     
-    /* Background Image */
-    /* .home-img {
-        height: 75vh;
-    } */
-
     /* Product Edit and Delete Buttons */
     .edit,
     .delete {

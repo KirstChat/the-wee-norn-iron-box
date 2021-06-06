@@ -3,7 +3,7 @@
 
 {% block page_heading %}
     <!-- Image, Heading and Search Bar -->
-    <section class="top-container products-img d-flex flex-column align-items-center justify-content-center">
+    <section class="black-container products-heading-img d-flex flex-column align-items-center justify-content-center">
         <div class="container text-center p-4">
             {% if current_categories == None %}
                 <h1>Our Wee Products</h1>
@@ -41,7 +41,7 @@
 
 {% block content %}
     <!-- Products -->
-    <section class="middle-container">
+    <section class="yellow-container">
         <div class="container p-4">
             <!-- Product Categories -->
             <div class="row align-items-center mb-2">
@@ -127,7 +127,7 @@
     </section>
 
     <!-- Contact Us -->
-    <section class="contact-container">
+    <section class="white-container">
         <div class="container text-center p-4">
         {% if request.user.is_superuser %}
             <a href="#" class="btn">Add Product</a>
