@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block page_heading %}
+    <section class="white-container d-flex flex-column justify-content-center align-items-center text-center">
+        <div class="container p-4">
+            <h1>My Wee Box</h1>
+        </div>
+    </section>
+{% endblock %}
+
+{% block content %}
+    <section class="yellow-container">
+        <div class="container p-4">
+            <div class="d-flex flex-row justify-content-center">
+                {% for item in box_items %}
+                    <div class="card border-0 h-50 text-center m-4 p-4">
+                        <img class="align-self-center w-50 pb-1" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                        <p class="fw-bold">{{ item.product.name }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+                        {% csrf_token %}
+                        <!-- Contact Details -->
+                        <fieldset>
+                            <legend>Details:</legend>
+                            {{ order_form.first_name | as_crispy_field }}
+                            {{ order_form.last_name | as_crispy_field }}
+                            {{ order_form.email | as_crispy_field }}
+                            {{ order_form.contact_number | as_crispy_field }}
+                        </fieldset>
+                        <!-- Delivery Details -->
+                        <fieldset>
+                            <legend>Delivery:</legend>
+                            {{ order_form.address_line_1 | as_crispy_field }}
+                            {{ order_form.address_line_2 | as_crispy_field }}
+                            {{ order_form.town_or_city | as_crispy_field }}
+                            {{ order_form.county | as_crispy_field }}
+                            {{ order_form.postcode | as_crispy_field }}
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="save-info" checked>
+                                <label class="form-check-label" for="save_info">
+                                    Save Delivery Address to my Profile
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <fieldset></fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

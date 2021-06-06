@@ -238,6 +238,10 @@ Products Model
   - Python imaging library
 - [Django Countries](https://pypi.org/project/django-countries/)
   - A Django application that provides country choices for use with forms, flag icons static files, and a country field for models
+-[Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/)
+  - The best way to have Django DRY forms. Build programmatic reusable layouts out of components, having full control of the rendered HTML without writing HTML in templates
+- [Crispy Bootstrap 5](https://github.com/django-crispy-forms/crispy-bootstrap5)
+  - Bootstrap5 template pack for django-crispy-forms
 
 [Contents](#contents)
 
