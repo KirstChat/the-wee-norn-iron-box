@@ -8,7 +8,7 @@
 {% block page_heading %}
     <section class="white-container d-flex flex-column justify-content-center align-items-center text-center">
         <div class="container p-4">
-            <h1>My Wee Box</h1>
+            <h1>Checkout</h1>
         </div>
     </section>
 {% endblock %}
@@ -16,17 +16,9 @@
 {% block content %}
     <section class="yellow-container">
         <div class="container p-4">
-            <div class="d-flex flex-row justify-content-center">
-                {% for item in box_items %}
-                    <div class="card border-0 h-50 text-center m-4 p-4">
-                        <img class="align-self-center w-50 pb-1" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                        <p class="fw-bold">{{ item.product.name }}</p>
-                    </div>
-                {% endfor %}
-            </div>
             <div class="row">
                 <div class="col-lg-6">
-                    <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+                    <form action="{% url 'checkout' %}" method="POST" id="payment-form" class="pe-4">
                         {% csrf_token %}
                         <!-- Contact Details -->
                         <fieldset>
@@ -44,7 +36,6 @@
                             {{ order_form.town_or_city | as_crispy_field }}
                             {{ order_form.county | as_crispy_field }}
                             {{ order_form.postcode | as_crispy_field }}
-
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="save-info" checked>
                                 <label class="form-check-label" for="save_info">
@@ -52,9 +43,36 @@
                                 </label>
                             </div>
                         </fieldset>
-
-                        <fieldset></fieldset>
                     </form>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row text-center g-4">
+                    <p>Box Contents</p>
+                    {% for item in box_items %}
+                    <div class="col-lg-6">
+                        <div class="card border-0 h-100 p-4">
+                            <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                            <p class="fw-bold">{{ item.product.name }}</p>
+                            <!-- Remove Item Button -->
+                            <div class="card-overlay rounded p-4">
+                                <p class="card-text fw-bold">
+                                    {{ item.product.name }}
+                                </p>
+                                <p class="card-text overflow-auto">
+                                    {{ item.product.description }}
+                                </p>
+                                <p class="card-text">
+                                    Size: {{ item.product.size }}
+                                </p>
+                                <form action="{% url 'remove_from_box' item.product.id %}" method="POST" class="form">
+                                    <!-- Add Quantity here? -->
+                                    {% csrf_token %}
+                                    <button id="remove-item" class="btn" type="submit">Remove From Box</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %} </div>
                 </div>
             </div>
         </div>

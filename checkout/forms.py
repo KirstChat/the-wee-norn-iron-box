@@ -31,7 +31,7 @@ class OrderForm(forms.ModelForm):
                 placeholder = f'{placeholders[field]}*'
             else:
                 placeholder = placeholders[field]
-            # Set placeholder attributes to values from dictionary
+            # Set placeholder attributes to values from dictionary above
             self.fields[field].widget.attrs['placeholder'] = placeholder
             # Remove auto-generated labels
             self.fields[field].label = False
