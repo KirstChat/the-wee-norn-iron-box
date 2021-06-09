@@ -226,6 +226,8 @@ Products Model
   - GitHub was used to store the project code that was pushed from VS Code
 - [Heroku](https://www.heroku.com/)
   - Heroku is a cloud platform that was used to deploy and run the application from the GitHub repository
+- [Stripe](https://stripe.com/docs)
+  - Stripe was used to integrate online payment processing
 - [VS Code](https://code.visualstudio.com/)
   - Visual Studio Code was the editor used to code the project
 
@@ -242,8 +244,10 @@ Products Model
   - The best way to have Django DRY forms. Build programmatic reusable layouts out of components, having full control of the rendered HTML without writing HTML in templates
 - [Crispy Bootstrap 5](https://github.com/django-crispy-forms/crispy-bootstrap5)
   - Bootstrap5 template pack for django-crispy-forms
--[Stripe](https://stripe.com/docs)
+- [Stripe](https://stripe.com/docs)
   - A Python library for Stripe’s API
+- [dj-stripe](https://dj-stripe.readthedocs.io/en/master/)
+  - dj-stripe implements all of the Stripe models, for Django
 
 [Contents](#contents)
 

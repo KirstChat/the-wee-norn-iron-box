@@ -10,42 +10,59 @@
         <div class="row overflow-auto">
             <!-- Checkout Form -->
             <div class="col-lg-5 bg-white">
-                <form class="p-4 w-100" action="{% url 'checkout' %}" method="POST" id="payment-form">
-                    {% csrf_token %}
-                    <!-- Contact Details -->
-                    <fieldset>
-                        <legend>Details:</legend>
-                        {{ order_form.first_name | as_crispy_field }}
-                        {{ order_form.last_name | as_crispy_field }}
-                        {{ order_form.email | as_crispy_field }}
-                        {{ order_form.contact_number | as_crispy_field }}
-                    </fieldset>
-                    <!-- Delivery Details -->
-                    <fieldset>
-                        <legend>Delivery:</legend>
-                        {{ order_form.address_line_1 | as_crispy_field }}
-                        {{ order_form.address_line_2 | as_crispy_field }}
-                        {{ order_form.town_or_city | as_crispy_field }}
-                        {{ order_form.county | as_crispy_field }}
-                        {{ order_form.postcode | as_crispy_field }}
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="save-info" checked>
-                            <label class="form-check-label" for="save_info">
-                                Save Delivery Address to my Profile
-                            </label>
+                <div class="row justify-content-center align-items-center">
+                    <div class="col">
+                        <div class="p-4">
+                            <h2>Subscribe Now for £10 a Month</h2>
                         </div>
-                    </fieldset>
-                </form>
+                        <form class="p-4 pt-0" action="{% url 'checkout' %}" method="POST" id="payment-form">
+                            {% csrf_token %}
+                            <!-- Contact Details -->
+                            <fieldset>
+                                <legend>Details:</legend>
+                                {{ order_form.first_name | as_crispy_field }}
+                                {{ order_form.last_name | as_crispy_field }}
+                                {{ order_form.email | as_crispy_field }}
+                                {{ order_form.contact_number | as_crispy_field }}
+                            </fieldset>
+                            <!-- Delivery Details -->
+                            <fieldset>
+                                <legend>Delivery:</legend>
+                                {{ order_form.address_line_1 | as_crispy_field }}
+                                {{ order_form.address_line_2 | as_crispy_field }}
+                                {{ order_form.town_or_city | as_crispy_field }}
+                                {{ order_form.county | as_crispy_field }}
+                                {{ order_form.postcode | as_crispy_field }}
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="save-info" checked>
+                                    <label class="form-check-label" for="save_info">
+                                        Save Delivery Address to my Profile
+                                    </label>
+                                </div>
+                            </fieldset>
+                            <!-- Stripe Card Element -->
+                            <fieldset>
+                                <legend class="fieldset-label">Payment:</legend>
+                                <div id="card-element">
+                                
+                                </div>
+                                <div id="card-element-error">
+                                    
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
             </div>
             <!-- Box Contents -->
             <div class="col-lg-7">
                 <div class="text-center mt-4">
-                    <h2>Box Contents</h2>
+                    <h2>My Box</h2>
                     <a class="btn" href="{% url 'view_box'%}">Update Box</a>
                 </div>
                 <div class="row g-4 p-4 justify-content-center">
                     {% for item in box_items %}
-                        <div class="col-lg-6">
+                        <div class="col-md-6">
                             <div class="card border-0 h-100 text-center p-4">
                                 <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                                 <p class="fw-bold">{{ item.product.name }}</p>
@@ -62,4 +79,5 @@
     {{ block.super }}
     {{ stripe_public_key|json_script:"id_stripe_public_key" }}
     {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}
