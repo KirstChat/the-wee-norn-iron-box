@@ -40,13 +40,7 @@ def add_to_box(request, item_id):
         messages.error(
             request, f'You can\'t add anymore {product.category} to your box')
 
-    # if len(box) > 6:
-    #     del box[item_id]
-    #     messages.error(
-    #         request, 'You can\'t add any more products to your box')
-
     request.session['box'] = box
-    print(request.session['box'])
     return redirect(redirect_url)
 
 

@@ -18,18 +18,18 @@ def checkout(request):
         messages.error(request, 'You haven\'t added anything to your wee box!')
         return redirect(reverse('products'))
 
-    stripe_total = settings.STANDARD_PRICE
     stripe.api_key = stripe_secret_key
     intent = stripe.PaymentIntent.create(
-        amount=stripe_total,
+        amount=settings.FIXED_PRICE,
         currency=settings.STRIPE_CURRENCY,
     )
+
+    order_form = OrderForm()
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing! \
             Did you forget to set it in you environment?')
 
-    order_form = OrderForm()
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,

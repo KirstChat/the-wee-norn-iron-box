@@ -42,29 +42,29 @@ cardElement.on('change', function (event) {
 // Handle Form Submit
 let form = document.getElementById('payment-form');
 form.addEventListener('submit', function (event) {
+    loading(true);
     // Prevent default action of POST
     event.preventDefault();
     // Disable card element and submit button to prevent multiple submissions
-    card.update({
+    cardElement.update({
         'disabled': true
     })
-    document.getElementById('submit-button').setAttribute('disabled', true)
+    document.getElementById('submit').disabled = true;
     stripe.confirmCardPayment(clientSecret, {
             payment_method: {
                 card: cardElement,
             },
-        })
-        .then(function (result) {
+        }).then(function (result) {
             if (result.error) {
-                let cardElementError = document.getElementById
+                let cardElementError = document.getElementById('card-element-error');
                 cardElementError.innerHTML = `
                     <span><i class="fas fa-exclamation-circle"></i></span>
                     <span>${result.error.message}</span>`;
                 // Re-enable card element and submit button to allow user to re-enter details
-                card.update({
+                cardElement.update({
                     'disabled': false
                 })
-                document.getElementById('submit-button').setAttribute('disabled', false)
+                document.getElementById('submit-button').disabled = false;
             } else {
                 if (result.paymentIntent.status === 'succeeded') {
                     form.submit();
@@ -72,3 +72,17 @@ form.addEventListener('submit', function (event) {
             }
         });
 })
+
+// Show a spinner on payment submission
+var loading = function (isLoading) {
+    if (isLoading) {
+        // Disable the button and show a spinner
+        document.querySelector("button").disabled = true;
+        document.querySelector("#spinner").classList.remove("hidden");
+        document.querySelector("#button-text").classList.add("hidden");
+    } else {
+        document.querySelector("button").disabled = false;
+        document.querySelector("#spinner").classList.add("hidden");
+        document.querySelector("#button-text").classList.remove("hidden");
+    }
+};
