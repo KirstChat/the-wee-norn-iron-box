@@ -36,7 +36,11 @@ class Order(models.Model):
         return self.order_number
 
 
-class OrderLineItem(models.Model):
+class BoxItems(models.Model):
+
+    class Meta:
+        verbose_name_plural = "Box Items"
+
     order = models.ForeignKey(
         Order, null=False, blank=False, on_delete=models.CASCADE)
     product = models.ForeignKey(

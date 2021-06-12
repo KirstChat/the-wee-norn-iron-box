@@ -1,16 +1,18 @@
 from django.contrib import admin
-from .models import Order, OrderLineItem
+from .models import Order, BoxItems
 
 # Register your models here.
 
 
-class OrderLineItemAdminInline(admin.TabularInline):
-    model = OrderLineItem
+class BoxItemsAdminInline(admin.TabularInline):
+    model = BoxItems
+    readonly_fields = ('product', )
+    list_display = ('product', )
 
 
 class OrderAdmin(admin.ModelAdmin):
     # Prevent fields from being editable
-    inlines = (OrderLineItemAdminInline,)
+    inlines = (BoxItemsAdminInline,)
     readonly_fields = ('order_number', 'date', )
 
     fields = ('order_number', 'date', 'first_name', 'last_name', 'email',

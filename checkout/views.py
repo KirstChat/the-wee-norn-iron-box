@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.conf import settings
 
 from .forms import OrderForm
-from .models import Order, OrderLineItem
+from .models import Order, BoxItems
 from products.models import Product
 
 import stripe
@@ -33,13 +33,13 @@ def checkout(request):
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save()
-            for item_id, category in box.items():
+            for item_id in list(box.keys()):
                 product = Product.objects.get(pk=item_id)
-                order_line_item = OrderLineItem(
+                box_items = BoxItems(
                     order=order,
                     product=product,
                 )
-                order_line_item.save()
+                box_items.save()
 
             return redirect(
                 reverse('checkout_success', args=[order.order_number]))
