@@ -133,7 +133,7 @@ Links to the wireframes can be found below. Each link contains the wireframes fo
 
 [SQLite3](https://www.sqlite.org/index.html) was used in development as part of the Django framework and [Heroku Postgres](https://www.heroku.com/postgres) was used for Production.
 
-- Products App:
+**Products App:**
 
 Category Model
 
@@ -152,7 +152,7 @@ Products Model
 | size | CharField | max_length=25, null=True, blank=True |
 | image | ImageField | null=True, blank=True |
 
-- Checkout App:
+**Checkout App:**
 
 Order Model
 
@@ -171,7 +171,7 @@ Order Model
 | country | CountryField | blank_label="Country *", null=False, blank=False |
 | date | DateTimeField | auto_now_add=True |
 
-BoxItems Model
+Box Items Model
 
 | Field | Field Type | Field Options |
 | :---: | :---: | :---:|
