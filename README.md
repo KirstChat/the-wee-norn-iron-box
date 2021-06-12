@@ -1,6 +1,6 @@
 # The Wee Norn Iron Box
 
-The Wee Norn Iron Box is a subscription box service that will allow subscribed members to select different Northern Irish treats to be posted to them each month in a 'wee' box.
+The Wee Norn Iron Box is a snack box service that will allow registered users to choose from a selecting of different Northern Irish treats to be posted to them each month in a 'wee' box.
 
 Multi Device Website Mockup Generator: **Insert Mockup Generator Image Later**
 
@@ -48,12 +48,12 @@ A demo of the project can be found here: **Insert Heroku Link Later**
 
 ### Project Goals
 
-The goal of this project is to create a subscription box service that will allow subscribers to choose from a range of drinks, foods and snacks that are only available in Northern Ireland. The project is aimed at anyone who lives/studies/works abroad or elsewhere in the UK, and misses the taste of home!
+The goal of this project is to create a snack box service that will allow registered users to choose from a range of drinks, foods and snacks that are only available in Northern Ireland. The project is aimed at anyone who lives/studies/works abroad or elsewhere in the UK, and misses the taste of home!
 
-For £10 per month and free delivery, subscribers will receive a box each month containing their chosen Northern Irish goods. Subscribers can add the following to their box:
+Registered users will receive a box containing their chosen Northern Irish goods all for the price of £10, including fast and free delivery. Registered users can add the following to their box:
 
+- 2 x breads
 - 2 x drinks
-- 2 x baked goods
 - 2 x snacks
 
 ### User Stories
@@ -63,27 +63,25 @@ For £10 per month and free delivery, subscribers will receive a box each month 
 - As a **First Time Visitor**, I want to understand the main purpose of the site on my first visit
 - As a **First Time Visitor**, I want to be able to easily navigate the site
 - As a **First Time Visitor**, I want to be able to easily view/use the site on my smartphone
-- As a **First Time Visitor**, I want to be able to see what products are available to add to a subscription box
-- As a **First Time Visitor**, I want to know the subscription price
+- As a **First Time Visitor**, I want to be able to see what products are available to add to a snack box
+- As a **First Time Visitor**, I want to know the snack box price
 - As a **First Time Visitor**, I want to be able to easily register for an account
 - As a **First Time Visitor**, I want to be able to follow the company on social media platforms
 - As a **First Time Visitor**, I want to be able to contact the company with any queries I might have
 
-#### Subscriber
+#### Registered User
 
-- As a **Subscriber**, I want to be able to easily login and logout of my account
-- As a **Subscriber**, I want to be able to easily update my details in my profile
-- As a **Subscriber**, I want to be able to easily add and remove items from my box
-- As a **Subscriber**, I want to be able to easily cancel my subscription
-- As a **Subscriber**, I want to be able to leave a review on the site to let others know about my experience
+- As a **Registered User**, I want to be able to easily login and logout of my account
+- As a **Registered User**, I want to be able to easily update my details in my profile
+- As a **Registered User**, I want to be able to easily add and remove items from my box
+- As a **Registered User**, I want to be able to leave a review on the site to let others know about my experience
 
 #### Site Owner/Superuser
 
 - As a **Site Owner/Superuser**, I want to be able to add new products
 - As a **Site Owner/Superuser**, I want to be able to edit products
 - As a **Site Owner/Superuser**, I want to be able to remove products
-- As a **Site Owner/Superuser**, I want to be able to view subscribers subscription details so I know when to ship their next box
-- As a **Site Owner/Superuser**, I want to be able to view subscribers box contents so I know what products to ship in their next box
+- As a **Site Owner/Superuser**, I want to be able to view registered users order details so I know what products to add to their box
 
 ### Design
 
@@ -112,7 +110,7 @@ The images used for this project are product images sourced from a variety of di
 
 I designed a simple logo for the site using [Affinity Photo](https://affinity.serif.com/en-gb/photo/). The logo is made up of an outline of the map of Northern Ireland and some text with the name of the site - "The Wee Norn Iron Box". I then downloaded a PSD box mock-up from [Free Pik](https://www.freepik.com/) and added the logo to the box.
 
-#### Wireframes
+#### Wireframes (**UPDATE THESE!!!**)
 
 The wireframes for my site were created using [Balsamiq](https://balsamiq.com/). I created wireframes for mobile, tablet and desktop devices.
 
@@ -153,6 +151,32 @@ Products Model
 | category | ForeignKey | 'Category', null=True, blank=True, on_delete=models.SET_NULL |
 | size | CharField | max_length=25, null=True, blank=True |
 | image | ImageField | null=True, blank=True |
+
+- Checkout App:
+
+Order Model
+
+| Field | Field Type | Field Options |
+| :---: | :---: | :---:|
+| order_number | CharField | max_length=32, null=False, editable=False |
+| first_name | CharField | max_length=25, null=False, blank=False |
+| last_name | CharField | max_length=25, null=False, blank=False |
+| email | EmailField | max_length=254, null=False, blank=False |
+| contact_number | CharField | max_length=20, null=True, blank=True |
+| address_line_1 | CharField | max_length=80, null=False, blank=False |
+| address_line_2 | CharField | max_length=80, null=False, blank=False |
+| town_or_city | CharField | max_length=80, null=True, blank=True |
+| county | CharField | max_length=80, null=True, blank=True |
+| postcode | CharField | max_length=20, null=False, blank=False |
+| country | CountryField | blank_label="Country *", null=False, blank=False |
+| date | DateTimeField | auto_now_add=True |
+
+BoxItems Model
+
+| Field | Field Type | Field Options |
+| :---: | :---: | :---:|
+| order | ForeignKey | Order, null=False, blank=False, on_delete=models.CASCADE |
+| product | ForeignKey | Product, null=False, blank=False, on_delete=models.CASCADE |
 
 [Contents](#contents)
 
