@@ -108,7 +108,7 @@ The Anton font was used for all main headings on the site and as the font for th
 
 The images used for this project are product images sourced from a variety of different websites. As this project is for educational purposes, I have credited the websites at the bottom of this document in the [credits](#credits) section. The product images used are of well known Northern Irish/Irish brands including [Tayto](https://www.tayto.com/) and [Maine Lemonade](https://www.mainesoftdrinks.co.uk/).
 
-I designed a simple logo for the site using [Affinity Photo](https://affinity.serif.com/en-gb/photo/). The logo is made up of an outline of the map of Northern Ireland and some text with the name of the site - "The Wee Norn Iron Box". I then downloaded a PSD box mock-up from [Free Pik](https://www.freepik.com/) and added the logo to the box.
+I designed a simple logo for the site using [Affinity Photo](https://affinity.serif.com/en-gb/photo/). The logo is made up of an outline of the map of Northern Ireland and some text with the name of the site - "The Wee Norn Iron Box". I then downloaded a PSD box mock-up from [Free Pik](https://www.freepik.com/) and added the logo to the box to use on the landing page. The outline of the map of Northern Ireland is also used for site favicon.
 
 #### Wireframes (**UPDATE THESE!!!**)
 
@@ -188,13 +188,6 @@ Box Items Model
 
 - Home App:
   - Testimonials Section - Add When User Profiles are Complete
-- User Profile App:
-  - Delivery Details
-  - Start/Cancel Subscription
-- Box Contents App:
-  - ~~Box Contents~~
-- Footer Social Media/Email Links:
-  - Email
 
 ### Existing Features
 
@@ -202,12 +195,12 @@ Box Items Model
 - A home page with an about section that explains the purpose of the site
 - A products page with a search bar and a filter by category option
 - A footer located on every page with links to social media pages
-
 - Toasts to let the user know when they've successfully completed an action or to let them know if there was a error completing an action
 
 ### Features Left to be Implemented
 
 - Blog Feature
+- Subscription Feature
 - Box Tracking
 - Apple/Google Pay
 - Skip Month(s)
@@ -361,15 +354,17 @@ The following steps were used to store static files and media files in an Amazon
 - [CSS linear-gradient()](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient())
   - CSS linear-gradient was used to add a gradient background to the card overlay from the cards used in the products app.
 
-- [Initialize Bootstrap 5 Toasts](https://stackoverflow.com/questions/63515279/how-to-initialize-toasts-with-javascript-in-bootstrap-5)
+- [Initialise Bootstrap 5 Toasts](https://stackoverflow.com/questions/63515279/how-to-initialize-toasts-with-javascript-in-bootstrap-5)
+  - This piece of code from Stack Overflow was used to initialise toasts within Bootstrap 5 using vanilla JavaScript, as Bootstrap 5 no longer uses jQuery.
 
 - [Get full URL path](https://docs.djangoproject.com/en/3.2/ref/request-response/#django.http.HttpRequest.get_full_path)
-  - Return URL with appended query string
+  - This django request object was used to return the URL with the appended query string in the Products app.
 
 - [URL in if statement](https://stackoverflow.com/questions/17829718/url-name-in-django-template-if-statement)
-  - Check url path
+  - Check url path - Used on toasts
 
 - [length_is](https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#length-is)
+  - The length_is filter was used in the Box app to display the button that will allow registered users to checkout out if they've added the total number of items required to their box.
 
 ### Content
 
@@ -428,7 +423,7 @@ Drinks
 
 Other Images
 
-- Northern Ireland Map Outline used for the Logo[Clean PNG](https://www.cleanpng.com/png-flag-of-northern-ireland-vector-map-ireland-779814/preview.html)
+- Northern Ireland Map Outline used for the Logo [Clean PNG](https://www.cleanpng.com/png-flag-of-northern-ireland-vector-map-ireland-779814/preview.html)
 - Box Mock-Up used on the Home Page [Free Pik](https://www.freepik.com/free-psd/kraft-box-packaging-mockup-brown-advertisement_14413053.htm#page=1&query=box%20mockup&position=6)
 - Ulster Fry used on Products Page [The Culture Trip](https://theculturetrip.com/europe/united-kingdom/northern-ireland/articles/a-brief-history-of-the-ulster-fry/)
 
