@@ -3,6 +3,8 @@ import uuid
 from django.db import models
 from django_countries.fields import CountryField
 
+from products.models import Product
+
 # Create your models here.
 
 
@@ -32,3 +34,13 @@ class Order(models.Model):
 
     def __str__(self):
         return self.order_number
+
+
+class OrderLineItem(models.Model):
+    order = models.ForeignKey(
+        Order, null=False, blank=False, on_delete=models.CASCADE)
+    product = models.ForeignKey(
+        Product, null=False, blank=False, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.product.name} on order {self.order.order_number}'
