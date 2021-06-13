@@ -145,9 +145,9 @@ Products Model
 
 | Field | Field Type | Field Options |
 | :---: | :---: | :---: |
-| name | CharField | max_length=200, null=True |
+| name | CharField | max_length=254, null=True |
 | description | TextField | null=True, blank=True |
-| brand | CharField | max_length=200, null=True, blank=True |
+| brand | CharField | max_length=254, null=True, blank=True |
 | category | ForeignKey | 'Category', null=True, blank=True, on_delete=models.SET_NULL |
 | size | CharField | max_length=25, null=True, blank=True |
 | image | ImageField | null=True, blank=True |

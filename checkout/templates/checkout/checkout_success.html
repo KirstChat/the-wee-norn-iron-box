@@ -12,6 +12,14 @@
                 <h2>Your Wee Norn Iron Box has been Ordered!</h2>
                 <p>Confirmation of your order has been sent to {{ order.email }}</p>
             </div>
+            <div class="col">
+                <p>Here's what you ordered:</p>
+                <p>{{ order.order_number }}</p>
+                {% for item in order.boxitems.all %}
+                    <p>{{ item.product.name }}</p>
+                {% endfor %}
+                <p>{{ order.first_name }}</p>
+            </div>
         </div>
     </section>
 {% endblock %}
