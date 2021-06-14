@@ -104,15 +104,15 @@
                                     {% csrf_token %}
                                     <div class="row">
                                         <div class="col">
-                                            <button type="submit" class="btn"><i
-                                                    class="fas fa-box-open pe-2"></i>Add to Box</button>
+                                            <button type="submit" class="btn"><i class="fas fa-box-open pe-2"></i>Add to
+                                                Box</button>
                                         </div>
                                         <!-- Code from Django Docs: https://docs.djangoproject.com/en/3.2/ref/request-response/#django.http.HttpRequest.get_full_path-->
                                         <input type="hidden" name="redirect_url" value="{{ request.get_full_path }}">
                                     </div>
                                 </form>
                             {% else %}
-                                <button class="btn">Subscribe</button>
+                                <a class="btn py-2 px-4" href="{% url 'account_signup' %}">Sign Up</a>
                             {% endif %}
                         </div>
                     </div>

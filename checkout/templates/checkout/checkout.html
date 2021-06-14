@@ -7,58 +7,10 @@
 
 {% block content %}
     <section class="yellow-container">
-        <div class="row overflow-auto">
-            <!-- Checkout Form -->
-            <div class="col-lg-5 bg-white">
-                <div class="row justify-content-center align-items-center">
-                    <div class="col">
-                        <div class="p-4">
-                            <h2>Subscribe Now for £10 a Month</h2>
-                        </div>
-                        <form class="p-4 pt-0" action="{% url 'checkout' %}" method="POST" id="payment-form">
-                            {% csrf_token %}
-                            <!-- Contact Details -->
-                            <fieldset>
-                                <legend>Details:</legend>
-                                {{ order_form.first_name | as_crispy_field }}
-                                {{ order_form.last_name | as_crispy_field }}
-                                {{ order_form.email | as_crispy_field }}
-                                {{ order_form.contact_number | as_crispy_field }}
-                            </fieldset>
-                            <!-- Delivery Details -->
-                            <fieldset>
-                                <legend>Delivery:</legend>
-                                {{ order_form.address_line_1 | as_crispy_field }}
-                                {{ order_form.address_line_2 | as_crispy_field }}
-                                {{ order_form.town_or_city | as_crispy_field }}
-                                {{ order_form.county | as_crispy_field }}
-                                {{ order_form.postcode | as_crispy_field }}
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="save-info" checked>
-                                    <label class="form-check-label" for="save-info">
-                                        Save Delivery Address to my Profile
-                                    </label>
-                                </div>
-                            </fieldset>
-                            <!-- Stripe Card Element -->
-                            <fieldset>
-                                <div id="card-element"></div>
-                                <button id="submit-button" class="btn">
-                                    <div class="spinner hidden" id="spinner"></div>
-                                    <span id="button-text">Pay now</span>
-                                </button>
-                                <div id="card-element-error"></div>
-                            </fieldset>
-                        </form>
-                    </div>
-                </div>
-            </div>
+        <div class="row">
             <!-- Box Contents -->
-            <div class="col-lg-7">
-                <div class="text-center mt-4">
-                    <h2>My Box</h2>
-                    <a class="btn" href="{% url 'view_box'%}">Update Box</a>
-                </div>
+            <div class="col-lg-6 p-4">
+                <h2 class="ps-4">Here's your Wee Norn Iron Box:</h2>
                 <div class="row g-4 p-4 justify-content-center">
                     {% for item in box_items %}
                         <div class="col-md-6">
@@ -68,6 +20,52 @@
                             </div>
                         </div>
                     {% endfor %}
+                </div>
+            </div>
+            <!-- Checkout Form -->
+            <div class="col-lg-6 bg-white">
+                <div class="row justify-content-center align-items-center">
+                    <div class="col">
+                        <div class="p-4">
+                            <h2>Where should we send it?</h2>
+                        </div>
+                        <form class="p-4 pt-0" action="{% url 'checkout' %}" method="POST" id="payment-form">
+                            {% csrf_token %}
+                            <!-- Contact Details -->
+                            <fieldset>
+                                {{ order_form.first_name | as_crispy_field }}
+                                {{ order_form.last_name | as_crispy_field }}
+                                {{ order_form.email | as_crispy_field }}
+                                {{ order_form.contact_number | as_crispy_field }}
+                                <br>
+                                {{ order_form.address_line_1 | as_crispy_field }}
+                                {{ order_form.address_line_2 | as_crispy_field }}
+                                {{ order_form.town_or_city | as_crispy_field }}
+                                {{ order_form.county | as_crispy_field }}
+                                {{ order_form.postcode | as_crispy_field }}
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="save-info" checked>
+                                    <label class="form-check-label small" for="save-info">
+                                        Save Delivery Address
+                                    </label>
+                                </div>
+                            </fieldset>
+                            <!-- Stripe Card Element -->
+                            <fieldset class="mt-4">
+                                <legend class="small">Payment Details:</legend>
+                                <div id="card-element"></div>
+                                <span class="small"></span>
+                                <div class="d-flex flex-column mt-4">
+                                    <button id="submit-button" class="btn">
+                                        <div class="spinner hidden" id="spinner"></div>
+                                        <span id="button-text">Pay now</span>
+                                    </button>
+                                    <a class="btn mt-2" href="{% url 'view_box'%}">Update Box</a>
+                                </div>
+                                <div id="card-element-error"></div>
+                            </fieldset>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

@@ -63,6 +63,16 @@ a.nav-link:focus,
     max-height: 50px;
     max-width: 50px;
 }
+
+.navbar-toggler i {
+    color: var(--white);
+    font-size: 1.6rem;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
 /* ---------- End Nav Bar ---------- */
 
 /* ---------- Toasts ---------- */
@@ -132,7 +142,7 @@ a.nav-link:focus,
     font-size: 1rem;
     font-weight: 700;
     text-transform: uppercase;
-    width: 200px;
+    width: 250px;
 }
 
 .btn:hover {
@@ -193,6 +203,10 @@ a.nav-link:focus,
 .steps i.fas {
     font-size: 2rem;
     color: var(--black);
+}
+
+.steps i.fas:hover {
+    color: var(--dark-red);
 }
 /* ---------- End Step Cards ---------- */
 

@@ -10,65 +10,61 @@
 {% endblock %}
 
 {% block content %}
-    <section>
-        <div class="yellow-container">
-            <div class="container p-4">
-                <div class="row justify-content-center g-4">
-                    <!-- Box Contents -->
-                    {% if box_items %}
-                        {% for item in box_items %}
-                            <div class="col-md-6 col-lg-4">
-                                <div class="card border-0 h-100 text-center p-4">
-                                    <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                                    <p class="fw-bold">{{ item.product.name }}</p>
-                                    <!-- Remove Item Button -->
-                                    <div class="card-overlay rounded p-4">
-                                        <p class="card-text fw-bold">
-                                            {{ item.product.name }}
-                                        </p>
-                                        <p class="card-text overflow-auto">
-                                            {{ item.product.description }}
-                                        </p>
-                                        <p class="card-text">
-                                            Size: {{ item.product.size }}
-                                        </p>
-                                        <form action="{% url 'remove_from_box' item.product.id %}" method="POST"
-                                            class="form">
-                                            <!-- Add Quantity here? -->
-                                            {% csrf_token %}
-                                            <button id="remove-item" class="btn" type="submit">Remove From Box</button>
-                                        </form>
-                                    </div>
+    <div class="yellow-container">
+        <div class="container p-4">
+            <div class="row justify-content-center g-4">
+                <!-- Box Contents -->
+                {% if box_items %}
+                    {% for item in box_items %}
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card border-0 h-100 text-center p-4">
+                                <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                <p class="fw-bold">{{ item.product.name }}</p>
+                                <!-- Remove Item Button -->
+                                <div class="card-overlay rounded p-4">
+                                    <p class="card-text fw-bold">
+                                        {{ item.product.name }}
+                                    </p>
+                                    <p class="card-text overflow-auto">
+                                        {{ item.product.description }}
+                                    </p>
+                                    <p class="card-text">
+                                        Size: {{ item.product.size }}
+                                    </p>
+                                    <form action="{% url 'remove_from_box' item.product.id %}" method="POST" class="form">
+                                        <!-- Add Quantity here? -->
+                                        {% csrf_token %}
+                                        <button id="remove-item" class="btn" type="submit">Remove From Box</button>
+                                    </form>
                                 </div>
                             </div>
-                        {% endfor %}
-                    {% else %}
-                        <div class="col-6">
-                            <div class="card border-0 h-100 p-4 text-center">
-                                <h4>You haven't added any items to your wee box yet</h4>
-                                <p class="my-4">We don't want to send you an empty box, so why not visit our products
-                                    page to start
-                                    adding your favourite home treats!</p>
-                            </div>
                         </div>
-                    {% endif %}
-                </div>
-                <!-- Code from Django Docs: https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#length-is -->
-                {% if box_items|length_is:"6" %}
-                    <!-- Order Now or Upgrade Box? -->
-                    <div class="row text-center">
-                        <div class="col">
-                            <a class="btn mt-4" href="#">Start Subscription</a>
-                        </div>
-                    </div>
+                    {% endfor %}
                 {% else %}
-                    <div class="row text-center">
-                        <div class="col">
-                            <a class="btn mt-4" href="{% url 'products' %}">Add More Products</a>
+                    <div class="col-6">
+                        <div class="card border-0 h-100 p-4 text-center">
+                            <h4>You haven't added any items to your wee box yet</h4>
+                            <p class="my-4">We don't want to send you an empty box, so why not visit our products
+                                page to start
+                                adding your favourite home treats!</p>
                         </div>
                     </div>
                 {% endif %}
             </div>
+            <!-- Code from Django Docs: https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#length-is -->
+            {% if box_items|length_is:"6" %}
+                <div class="row text-center">
+                    <div class="col">
+                        <a class="btn mt-4" href="{% url 'checkout' %}">Order My Box</a>
+                    </div>
+                </div>
+            {% else %}
+                <div class="row text-center">
+                    <div class="col">
+                        <a class="btn mt-4" href="{% url 'products' %}">Add Products</a>
+                    </div>
+                </div>
+            {% endif %}
         </div>
-    </section>
+    </div>
 {% endblock %}

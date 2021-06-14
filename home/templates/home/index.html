@@ -3,20 +3,20 @@
 
 {% block page_heading %}
     <!-- Image & CTA Button -->
-    <section class="white-container py-4">
+    <section class="white-container p-4">
         <div class="container">
             <div class="row">
                 <!-- Products Button -->
-                <div class="col-md-12 col-lg-5 text-center align-self-center">
-                    <h1>The Taste of Home Delivered to You For £10 A Month</h1>
+                <div class="col-md-12 col-lg-5 order-2 order-lg-1 text-center align-self-center">
+                    <h1>The Taste of Home in a Wee Box</h1>
                     {% if request.user.is_authenticated %}
-                        <a class="btn my-4 py-2 px-4" href="{% url 'products' %}">Products</a>
+                        <a class="btn my-4 py-2 px-4" href="{% url 'products' %}">Our Wee Products</a>
                     {% else %}
                         <a class="btn my-4 py-2 px-4" href="{% url 'account_signup' %}">Get Started</a>
                     {% endif %}
                 </div>
                 <!-- Box Mock Up Image -->
-                <div class="col-md-12 col-lg-7 align-self-end">
+                <div class="col-md-12 col-lg-7 order-sm-1 align-self-end">
                     <img class="img-fluid" src="{% static "images/box-mock-up.jpg" %}" alt="Box Mock Up">
                 </div>
             </div>
@@ -29,11 +29,8 @@
     <section class="yellow-container steps p-4">
         <div class="container text-center">
             <h2>How it Works</h2>
-            <p class="mt-4">
-                For £10 a month, we'll deliver your favourite Northern Irish goods to you!
-                <br>
-                Simply follow theses
-                steps:
+            <p class="mt-2 mb-4">
+                We'll deliver your favourite Northern Irish goods in a Wee Box all for £10!
             </p>
             <!-- Steps -->
             <div class="row g-4 steps">
@@ -42,23 +39,25 @@
                     <div class="card border-0 h-100 p-4">
                         <i class="fas fa-box mb-4"></i>
                         <p class="fw-bold">
-                            Sign up for an account to start adding your favourite items to your box
+                            All you need to do is sign up for an account to start adding your favourite items to your box
                         </p>
                         <p>
-                            This includes
-                            2 x Baked Goods, 2 x Drinks and 2 x Snacks
+                            Click the <span class="fw-bold">Sign Up</span> button below to sign up for an account
+                            now
                         </p>
                     </div>
                 </div>
-                <!-- Subscription -->
+                <!-- Payment -->
                 <div class="col-md-12 col-lg-4">
                     <div class="card border-0 h-100 p-4">
                         <i class="fas fa-credit-card mb-4"></i>
                         <p class="fw-bold">
-                            Activate your subscription and add your delivery details
+                            Once you've filled up your box, simply pay for your box and tell us where to send it
                         </p>
                         <p>
-                            You can cancel your subscription and update your box at any time
+                            Box items are limited to
+                            <br>
+                            2 x Breads, 2 x Drinks and 2 x Snacks
                         </p>
                     </div>
                 </div>
@@ -67,21 +66,21 @@
                     <div class="card border-0 h-100 p-4">
                         <i class="fas fa-truck mb-4"></i>
                         <p class="fw-bold">
-                            We'll quickly deliver your box to you every month at no extra cost
+                            We'll quickly deliver your box to you at no extra cost
                         </p>
                         <p>
-                            All baked goods are delivered fresh so no need to worry about expiry dates!
+                            All baked goods are delivered fresh so you won't need to worry about expiry dates
                         </p>
                     </div>
                 </div>
             </div>
-            <!-- Subscribe Button -->
+            <!-- Admin/Registered User Button -->
             {% if request.user.is_superuser %}
                 <a class="btn mt-4 py-2 px-4" href="#">Product Admin</a>
             {% elif request.user.is_authenticated %}
                 <a class="btn mt-4 py-2 px-4" href="{% url 'view_box' %}">My Box</a>
             {% else %}
-                <a href="{% url 'account_signup' %}" class="btn mt-4 py-2 px-4">Subscribe</a>
+                <a href="{% url 'account_signup' %}" class="btn mt-4 py-2 px-4">Sign Up</a>
             {% endif %}
         </div>
     </section>
