@@ -65,6 +65,9 @@ def checkout(request):
         messages.warning(request, 'Stripe public key is missing! \
             Did you forget to set it in you environment?')
 
+    if len(list(box.keys())) < 6:
+        return redirect(reverse('view_box'))
+
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,

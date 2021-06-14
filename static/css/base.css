@@ -170,6 +170,10 @@ a.nav-link:focus,
     font-size: 0.9rem;
 }
 
+.checkout-preview img {
+    height: 15vh;
+}
+
 .card-overlay {
     background: var(--white);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);

@@ -11,15 +11,16 @@
             <!-- Box Contents -->
             <div class="col-lg-6 p-4">
                 <h2 class="ps-4">Here's your Wee Norn Iron Box:</h2>
-                <div class="row g-4 p-4 justify-content-center">
+                <div class="row g-4 px-4 py-2 justify-content-center">
                     {% for item in box_items %}
                         <div class="col-md-6">
-                            <div class="card border-0 h-100 text-center p-4">
+                            <div class="card checkout-preview border-0 h-100 text-center p-4">
                                 <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                                <p class="fw-bold">{{ item.product.name }}</p>
+                                <p class="fw-bold mt-2">{{ item.product.name }}</p>
                             </div>
                         </div>
                     {% endfor %}
+                    <a class="btn" href="{% url 'view_box'%}">Update Box</a>
                 </div>
             </div>
             <!-- Checkout Form -->
@@ -52,15 +53,14 @@
                             </fieldset>
                             <!-- Stripe Card Element -->
                             <fieldset class="mt-4">
-                                <legend class="small">Payment Details:</legend>
+                                <h4>Payment Details:</h4>
                                 <div id="card-element"></div>
                                 <span class="small"></span>
-                                <div class="d-flex flex-column mt-4">
+                                <div class="mt-4">
                                     <button id="submit-button" class="btn">
                                         <div class="spinner hidden" id="spinner"></div>
                                         <span id="button-text">Pay now</span>
                                     </button>
-                                    <a class="btn mt-2" href="{% url 'view_box'%}">Update Box</a>
                                 </div>
                                 <div id="card-element-error"></div>
                             </fieldset>
