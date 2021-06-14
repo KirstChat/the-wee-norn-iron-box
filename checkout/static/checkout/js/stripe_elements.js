@@ -74,14 +74,15 @@ form.addEventListener('submit', function (event) {
 })
 
 // Show a spinner on payment submission
-var loading = function (isLoading) {
+// Code from Stripe Docs: https://stripe.com/docs/payments/integration-builder
+let loading = function (isLoading) {
     if (isLoading) {
         // Disable the button and show a spinner
-        document.getElementById('submit-button').disabled = true;
+        document.querySelector('button').disabled = true;
         document.querySelector('#spinner').classList.remove('hidden');
         document.querySelector('#button-text').classList.add('hidden');
     } else {
-        document.getElementById('submit-button').disabled = false;
+        document.querySelector('button').disabled = false;
         document.querySelector('#spinner').classList.add('hidden');
         document.querySelector('#button-text').classList.remove('hidden');
     }
