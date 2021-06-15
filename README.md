@@ -243,6 +243,8 @@ Box Items Model
   - GitHub was used to store the project code that was pushed from VS Code
 - [Heroku](https://www.heroku.com/)
   - Heroku is a cloud platform that was used to deploy and run the application from the GitHub repository
+- [Ngrok](https://ngrok.com/)
+  - Ngrok was used to setup an online tunnel to locally test the webhook endpoint in Stripe
 - [Stripe](https://stripe.com/docs)
   - Stripe was used to integrate online payment processing
 - [VS Code](https://code.visualstudio.com/)
