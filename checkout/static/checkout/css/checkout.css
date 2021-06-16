@@ -1,9 +1,25 @@
 #card-element,
-#payment-form .form-control {
-    border: 1px solid #161616;
+.form-control,
+.form-control input,
+.form-select,
+.form-select option {
+    border: 1px solid #8b8b8b;
     padding: .5rem;
+    border-radius: .25rem;
 }
 
 .hidden {
     display: none;
+}
+
+/* select,
+select option,
+.form-select {
+    color: #161616;
+    border: 1px solid #8b8b8b;
+    padding: .5rem;
+} */
+
+.form-select:invalid {
+    color: #8b8b8b;
 }

@@ -5,20 +5,49 @@
     <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
+{% block page_heading %}
+    <section
+        class="white-container d-flex flex-column justify-content-center align-items-center text-center">
+        <div class="container p-4">
+            <h1>Your Wee Norn Iron Box has been Ordered!</h1>
+            <div class="row mt-4">
+                <p>
+                    Your order number is
+                    <br>
+                    <span class="fw-bold">{{ order.order_number }}</span>
+                </p>
+                <p>
+                    Confirmation of your order has been sent to
+                    <br>
+                    <span class="fw-bold">{{ order.email }}</span>
+                </p>
+                <p class="fw-bold">Your box will be shipped to:</p>
+                <ul class="list-unstyled">
+                    <li>{{ order.address_line_1 }} {{ order.address_line_2 }}</li>
+                    <li>{{ order.town_or_city }}</li>
+                    <li>{{ order.county }}</li>
+                    <li>{{ order.postcode }}</li>
+                    <li>{{ order.country }}</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
 {% block content %}
     <section class="yellow-container">
-        <div class="row">
-            <div class="col">
-                <h2>Your Wee Norn Iron Box has been Ordered!</h2>
-                <p>Confirmation of your order has been sent to {{ order.email }}</p>
-            </div>
-            <div class="col">
-                <p>Here's what you ordered:</p>
-                <p>{{ order.order_number }}</p>
+        <div class="container p-4">
+            <h3 class="text-center mb-4">Here's what you ordered:</h3>
+            <!-- Box Items -->
+            <div class="row justify-content-center g-4">
                 {% for item in order.boxitems.all %}
-                    <p>{{ item.product.name }}</p>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card border-0 h-100 text-center p-4">
+                            <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                            <p class="fw-bold mt-2">{{ item.product.name }}</p>
+                        </div>
+                    </div>
                 {% endfor %}
-                <p>{{ order.first_name }}</p>
             </div>
         </div>
     </section>
