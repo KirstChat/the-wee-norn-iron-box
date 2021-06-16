@@ -125,13 +125,6 @@ a.nav-link:focus,
     background-size: cover;
     height: 40vh;
 }
-
-.box-heading-img {
-    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
-    url("/static/images/box-mock-up-2.jpg") no-repeat center 85%;
-    background-size: cover;
-    height: 40vh;
-}
 /* ---------- End Containers ----------*/
 
 /* ---------- Buttons ---------- */
