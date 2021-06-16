@@ -11,7 +11,7 @@
             <!-- Box Contents -->
             <div class="col-lg-6 p-4">
                 <h2 class="ps-4">Here's your Wee Norn Iron Box:</h2>
-                <div class="row g-4 px-4 py-2 justify-content-center">
+                <div class="row g-4 p-4 justify-content-center">
                     {% for item in box_items %}
                         <div class="col-md-6">
                             <div class="card checkout-preview border-0 h-100 text-center p-4">
@@ -34,8 +34,7 @@
                             {% csrf_token %}
                             <!-- Contact Details -->
                             <fieldset>
-                                {{ order_form.first_name | as_crispy_field }}
-                                {{ order_form.last_name | as_crispy_field }}
+                                {{ order_form.full_name | as_crispy_field }}
                                 {{ order_form.email | as_crispy_field }}
                                 {{ order_form.contact_number | as_crispy_field }}
                                 <br>
@@ -44,6 +43,7 @@
                                 {{ order_form.town_or_city | as_crispy_field }}
                                 {{ order_form.county | as_crispy_field }}
                                 {{ order_form.postcode | as_crispy_field }}
+                                {{ order_form.country | as_crispy_field }}
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="save-info" checked>
                                     <label class="form-check-label small" for="save-info">

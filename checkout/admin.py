@@ -15,11 +15,11 @@ class OrderAdmin(admin.ModelAdmin):
     inlines = (BoxItemsAdminInline,)
     readonly_fields = ('order_number', 'date', )
 
-    fields = ('order_number', 'date', 'first_name', 'last_name', 'email',
+    fields = ('order_number', 'date', 'full_name', 'email',
               'contact_number', 'address_line_1', 'address_line_2',
               'town_or_city', 'county', 'postcode', 'country', )
 
-    list_display = ('order_number', 'date', 'first_name', 'last_name', 'email',
+    list_display = ('order_number', 'date', 'full_name', 'email',
                     'postcode', )
 
     ordering = ('-date', )
