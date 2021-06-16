@@ -54,8 +54,10 @@
                             <!-- Stripe Card Element -->
                             <fieldset class="mt-4">
                                 <h4>Payment Details:</h4>
+                                <!-- Stripe Card Element -->
                                 <div id="card-element"></div>
                                 <div class="mt-4">
+                                    <!-- Error Messages -->
                                     <span id="card-element-error"></span>
                                     <!-- Code from Bootstrap docs: https://getbootstrap.com/docs/5.0/components/spinners/-->
                                     <button id="submit-button" class="btn">
@@ -63,6 +65,7 @@
                                         <span id="button-text">Pay now</span>
                                     </button>
                                 </div>
+                                <input type="hidden" value={{ client_secret }} name="client_secret">
                             </fieldset>
                         </form>
                     </div>

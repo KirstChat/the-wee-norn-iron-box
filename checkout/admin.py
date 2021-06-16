@@ -13,11 +13,12 @@ class BoxItemsAdminInline(admin.TabularInline):
 class OrderAdmin(admin.ModelAdmin):
     # Prevent fields from being editable
     inlines = (BoxItemsAdminInline,)
-    readonly_fields = ('order_number', 'date', )
+    readonly_fields = ('order_number', 'date', 'original_box', 'stripe_pid', )
 
     fields = ('order_number', 'date', 'full_name', 'email',
               'contact_number', 'address_line_1', 'address_line_2',
-              'town_or_city', 'county', 'postcode', 'country', )
+              'town_or_city', 'county', 'postcode', 'country',
+              'original_box', 'stripe_pid', )
 
     list_display = ('order_number', 'date', 'full_name', 'email',
                     'postcode', )

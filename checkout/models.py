@@ -21,6 +21,9 @@ class Order(models.Model):
     postcode = models.CharField(max_length=20, null=False, blank=False)
     country = CountryField(blank_label="Country *", null=False, blank=False)
     date = models.DateTimeField(auto_now_add=True)
+    original_box = models.TextField(null=False, blank=False, default='')
+    stripe_pid = models.CharField(
+        max_length=254, null=False, blank=False, default='')
 
     def _generate_order_number(self):
         # Generate Order Number using UUID
