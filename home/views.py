@@ -25,7 +25,7 @@ def add_review(request):
     if request.method == 'POST':
         review_form = ReviewForm(request.POST or None)
 
-        # Check if the form is valid
+        # Check if the review form is valid
         if review_form.is_valid():
             form_data = review_form.save(commit=False)
             form_data.save()

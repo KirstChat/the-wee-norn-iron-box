@@ -13,8 +13,8 @@ class Review(models.Model):
 
     title = models.CharField(max_length=50, null=True, blank=True)
     review = models.TextField(null=True, blank=True)
-    added_by = OneToOneField(User, on_delete=models.CASCADE)
-    rating = models.IntegerField(validators=[
+    posted_by = OneToOneField(User, on_delete=models.CASCADE)
+    rating = models.IntegerField(default=0, validators=[
         MinValueValidator(1),
         MaxValueValidator(5)])
 

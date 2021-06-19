@@ -3,32 +3,36 @@
 
 {% block page_heading %}
     <!-- Image, Heading and Search Bar -->
-    <section class="top-container d-flex flex-column align-items-center justify-content-center">
+    <section class="white-container d-flex flex-column align-items-center justify-content-center">
         <div class="container text-center p-4">
-            <h1>Reviews</h1>
+            <h1>How would you rate us?</h1>
         </div>
     </section>
 {% endblock %}
 
 {% block content %}
-    <section class="middle-container p-4">
+    <section class="yellow-container p-4">
         <div class="container">
-            <div class="row">
-                <div class="col">
+            <div class="row justify-content-center align-content-center">
+                <div class="col-sm-12 col-lg-8">
                     {% if request.user.is_authenticated %}
-                        <h2>How would you rate us?</h2>
-                        <form action="{% url 'add_review' %}" method="POST">
-                            {% csrf_token %}
-                            <fieldset>
-                                {{ review_form.title | as_crispy_field }}
-                                {{ review_form.review | as_crispy_field }}
-                                {{ review_form.added_by | as_crispy_field }}
-                                {{ review_form.rating | as_crispy_field }}
-                            </fieldset>
-                            <button type="submit">Add review</button>
-                        </form>
+                        <div class="card border-0 p-4">
+                            <form action="{% url 'add_review' %}" method="POST">
+                                {% csrf_token %}
+                                <fieldset>
+                                    {{ review_form.title | as_crispy_field }}
+                                    {{ review_form.review | as_crispy_field }}
+                                    {{ review_form.posted_by | as_crispy_field }}
+                                    {{ review_form.rating | as_crispy_field }}
+                                </fieldset>
+                                <div class="text-center mt-4">
+                                    <button class="btn" type="submit">Add review</button>
+                                    <a href="{% url 'home' %}" class="btn">Cancel</a>
+                                </div>
+                            </form>
+                        </div>
                     {% else %}
-                        <p>You must login to leave a review!</p>
+                        <p>You must <a href="{% url 'account_signup' %}">login</a> to leave a review!</p>
                     {% endif %}
                 </div>
             </div>

@@ -368,6 +368,10 @@ The following steps were used to store static files and media files in an Amazon
 - [length_is](https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#length-is)
   - The length_is filter was used in the Box app to display the button that will allow registered users to checkout out if they've added the total number of items required to their box.
 
+- [Review Form](https://www.youtube.com/watch?v=lSX8nzu9ozg&list=PLeyK9Dw9ShReHUdt5Nh2qlgF6keN6DI7z&index=32)
+
+- [Review Form Radio Inputs](https://django-crispy-forms.readthedocs.io/en/latest/crispy_tag_forms.html?highlight=radio#fundamentals)
+
 ### Content
 
 All product descriptions and sizes were taken the following sites:
