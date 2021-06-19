@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% comment %} {% block extra_css %}
+<link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
+{% endblock %} {% endcomment %}
+
+{% block page_heading %}
+    <section class="white-container">
+        <div class="container">
+            <h1>Welcome back {{ request.user }}</h1>
+        </div>
+    </section>
+{% endblock %}
+
+{% block content %}
+<section class="yellow-container">
+    <div class="row">
+        <!-- Box Contents -->
+        <div class="col-lg-6">
+            
+        </div>
+        <!-- Checkout Form -->
+        <div class="col-lg-6 bg-white">
+            
+        </div>
+    </div>
+</section>
+{% endblock %}
