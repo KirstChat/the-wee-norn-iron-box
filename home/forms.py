@@ -1,4 +1,5 @@
 from django import forms
+from django.utils.safestring import mark_safe
 from .models import Review
 
 from crispy_forms.helper import FormHelper
@@ -7,15 +8,27 @@ from crispy_forms.bootstrap import InlineRadios
 
 
 class ReviewForm(forms.ModelForm):
-    # Code from django docs:
+    # Code from django docs & stack overflow:
     # https://docs.djangoproject.com/en/3.2/topics/forms/modelforms/
+    # https://stackoverflow.com/questions/52436319/how-to-display-markup-instead-of-pure-text-in-django-form
     rating = forms.TypedChoiceField(
         choices=(
-            (1, '1 Star'),
-            (2, '2 Stars'),
-            (3, '3 Stars'),
-            (4, '4 Stars'),
-            (5, '5 Stars')
+            (1, mark_safe('<i class="fas fa-star"></i>\
+                    - Extremely Disappointed')),
+            (2, mark_safe('<i class="fas fa-star"></i>\
+                    <i class="fas fa-star"></i> - Disappointed')),
+            (3, mark_safe('<i class="fas fa-star"></i>\
+                    <i class="fas fa-star"></i>\
+                    <i class="fas fa-star"></i> - Neutral')),
+            (4, mark_safe('<i class="fas fa-star"></i>\
+                    <i class="fas fa-star"></i>\
+                    <i class="fas fa-star"></i>\
+                    <i class="fas fa-star"></i> - Happy')),
+            (5, mark_safe('<i class="fas fa-star"></i>\
+                    <i class="fas fa-star"></i>\
+                    <i class="fas fa-star"></i>\
+                    <i class="fas fa-star"></i>\
+                    <i class="fas fa-star"></i> - Extremely Happy!'))
             ),
         widget=forms.RadioSelect,
     )
