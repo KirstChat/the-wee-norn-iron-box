@@ -45,9 +45,22 @@
                         <div class="card border-0 h-100 text-center p-4">
                             <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                             <p class="fw-bold mt-2">{{ item.product.name }}</p>
+                            <!-- Product Description -->
+                            <div class="card-overlay rounded p-4">
+                                <p class="card-text fw-bold">
+                                    {{ item.product.name }}
+                                </p>
+                                <p class="card-text overflow-auto">
+                                    {{ item.product.description }}
+                                </p>
+                                <p class="card-text">
+                                    Size: {{ item.product.size }}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 {% endfor %}
+                <a class="btn mt-4" href="{% url 'profile' %}">Profile</a>
             </div>
         </div>
     </section>

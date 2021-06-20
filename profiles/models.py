@@ -8,6 +8,10 @@ from django_countries.fields import CountryField
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    default_full_name = models.CharField(
+        max_length=80, null=True, blank=True)
+    default_email = models.EmailField(
+        max_length=254, null=True, blank=True)
     default_contact_number = models.CharField(
         max_length=20, null=True, blank=True)
     default_address_line_1 = models.CharField(

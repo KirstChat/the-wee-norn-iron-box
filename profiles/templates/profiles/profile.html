@@ -27,10 +27,20 @@
         </div>
         <!-- Order History -->
         <div class="col-lg-6 bg-white">
-            <p>Order History:</p>
-            <form action="{% url 'profile' %}" method="POST">
-                {{ orders }}
-            </form>
+            {% comment %} {% if order %} {% endcomment %}
+                {% for order in orders %}
+                <a href="{% url 'order_history' order.order_number %}"
+                    title={{ order.order_number }}>{{ order.order_number|truncatechars:6 }}</a>
+                <p>{{ order.date }}</p>
+                <ul>
+                    {% for item in order.boxitems.all %}
+                    <li>{{ item.product }}</li>
+                    {% endfor %}
+                </ul>
+                {% endfor %}
+            {% comment %} {% else %}
+                <p>You haven't ordered anything yet!</p>
+            {% endif %} {% endcomment %}
         </div>
     </div>
 </section>

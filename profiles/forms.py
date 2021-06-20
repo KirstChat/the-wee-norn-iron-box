@@ -11,12 +11,15 @@ class UserProfileForm(forms.ModelForm):
         # Add placeholders and set autofocus on first field
         super().__init__(*args, **kwargs)
         placeholders = {
+            'default_full_name': 'Full Name',
+            'default_email': 'Email',
             'default_contact_number': 'Contact Number',
             'default_address_line_1': 'Address Line 1',
             'default_address_line_2': 'Address Line 2',
             'default_town_or_city': 'Town/City',
             'default_county': 'County',
             'default_postcode': 'Postcode',
+            'default_country': 'Country',
         }
 
         self.fields['default_contact_number'].widget.attrs['autofocus'] = True
