@@ -8,7 +8,7 @@
 {% block page_heading %}
     <section class="white-container">
         <div class="container">
-            <h1>'Bout ye {{ profile }}</h1>
+            <h1>'Bout ye {{ request.user }}</h1>
         </div>
     </section>
 {% endblock %}
@@ -16,13 +16,21 @@
 {% block content %}
 <section class="yellow-container">
     <div class="row">
-        <!-- Box Contents -->
-        <div class="col-lg-6">
-            
+        <!-- Default Delivery Address -->
+        <div class="col-lg-6 p-4">
+            <p>Default Delivery Address:</p>
+            <form action="{% url 'profile' %}" method="POST">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn">Update Address</button>
+            </form>
         </div>
-        <!-- Checkout Form -->
+        <!-- Order History -->
         <div class="col-lg-6 bg-white">
-            
+            <p>Order History:</p>
+            <form action="{% url 'profile' %}" method="POST">
+                {{ orders }}
+            </form>
         </div>
     </div>
 </section>

@@ -5,9 +5,17 @@ from .models import Order
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
-        fields = ('full_name', 'email', 'contact_number',
-                  'address_line_1', 'address_line_2', 'town_or_city',
-                  'county', 'postcode', 'country', )
+        fields = (
+            'full_name',
+            'email',
+            'contact_number',
+            'address_line_1',
+            'address_line_2',
+            'town_or_city',
+            'county',
+            'postcode',
+            'country',
+            )
 
     def __init__(self, *args, **kwargs):
         # Add placeholders and set autofocus on first name field

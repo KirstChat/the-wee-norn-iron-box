@@ -16,7 +16,7 @@
             </div>
         </div>
         <!-- Box Contents Summary -->
-        {% if box_items %}
+        {% if box_items and not on_profile_page %}
         <!-- Display box preview on products page -->
         <!-- Code from Stack Overflow: https://stackoverflow.com/questions/17829718/url-name-in-django-template-if-statement-->
         {% url 'products' as products %}
