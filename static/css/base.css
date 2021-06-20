@@ -39,6 +39,10 @@ p {
 /* ---------- End Font/Text ---------- */
 
 /* ---------- Nav Bar ---------- */
+a.nav-link.active {
+    color: var(--yellow);
+}
+
 .navbar {
     background: var(--black);
 }
