@@ -1,0 +1,19 @@
+Hello {{ order.full_name }},
+
+This is a confirmation email to confirm your order with The Wee Norn Iron Box.
+
+Your order number is: {{ order.order_number }}
+
+We'll deliver your box as soon as possible to:
+{{ order.address_line_1 }}
+{{ order.address_line_2 }}
+{{ order.town_or_city }}
+{{ order.county }}
+{{ order.postcode }}
+{{ order.country }}
+
+If you have any questions regarding your order, please email us at {{ contact_email }}. 
+
+Thanks for ordering from us. We hope you enjoy your box!
+
+The Wee Norn Iron Box Team

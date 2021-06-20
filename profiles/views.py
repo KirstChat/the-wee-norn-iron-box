@@ -1,4 +1,3 @@
-from profiles.forms import UserProfileForm
 from django.contrib import messages
 from django.shortcuts import get_object_or_404, render
 

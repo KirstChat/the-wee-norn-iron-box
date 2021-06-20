@@ -1,16 +1,12 @@
-from profiles.forms import UserProfileForm
 from django.shortcuts import (
     render, redirect, reverse, get_object_or_404, HttpResponse)
-
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
 
 from .forms import OrderForm
 from .models import Order, BoxItems
-
 from products.models import Product
-
 from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
 
@@ -26,7 +22,7 @@ def cache_checkout_data(request):
         stripe.api_key = settings.STRIPE_SECRET_KEY
         stripe.PaymentIntent.modify(pid, metadata={
             'box': json.dumps(request.session.get('box', {})),
-            'save_info': request.POST.get('save-info'),
+            'save_info': request.POST.get('save_info'),
             'username': request.user,
         })
         return HttpResponse(status=200)
