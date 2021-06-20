@@ -1,11 +1,14 @@
 from django import forms
 from .models import Review
+
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Div
 from crispy_forms.bootstrap import InlineRadios
 
 
 class ReviewForm(forms.ModelForm):
+    # Code from django docs:
+    # https://docs.djangoproject.com/en/3.2/topics/forms/modelforms/
     rating = forms.TypedChoiceField(
         choices=(
             (1, '1 Star'),
@@ -19,11 +22,14 @@ class ReviewForm(forms.ModelForm):
 
     class Meta:
         model = Review
-        fields = ('title', 'review', 'posted_by', 'rating')
+        fields = ('title', 'review', 'rating')
+        exclude = ['posted_by']
 
     def __init__(self, *args, **kwargs):
         # Add placeholders
         super().__init__(*args, **kwargs)
+        # Code from crispy forms docs:
+        # https://django-crispy-forms.readthedocs.io/en/latest/index.html
         self.helper = FormHelper()
         self.helper.layout = Layout(
             Div(
@@ -34,15 +40,12 @@ class ReviewForm(forms.ModelForm):
         placeholders = {
             'title': 'Review Title',
             'review': 'Review',
-            'posted_by': 'Posted By',
             'rating': 'Rating',
         }
 
         for field in self.fields:
-            if self.fields[field].required:
-                placeholder = f'{placeholders[field]}*'
-            else:
-                placeholder = placeholders[field]
+
+            placeholder = placeholders[field]
 
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].label = False

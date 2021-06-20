@@ -6,14 +6,14 @@ from .models import Review
 
 class ReviewsAdmin(admin.ModelAdmin):
 
-    readonly_fields = ('added_by', )
+    readonly_fields = ('posted_by', )
 
     list_display = (
         'title',
         'review',
-        'added_by',
+        'posted_by',
         'rating',
     )
 
 
-admin.site.register(Review)
+admin.site.register(Review, ReviewsAdmin)

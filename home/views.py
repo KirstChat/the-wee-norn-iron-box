@@ -23,11 +23,12 @@ def reviews(request):
 def add_review(request):
     # Add review to site
     if request.method == 'POST':
-        review_form = ReviewForm(request.POST or None)
+        review_form = ReviewForm(request.POST)
 
         # Check if the review form is valid
         if review_form.is_valid():
             form_data = review_form.save(commit=False)
+            form_data.posted_by = request.user
             form_data.save()
             messages.success(request, 'Review posted successfully')
             return redirect('home')

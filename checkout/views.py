@@ -38,7 +38,7 @@ def checkout(request):
 
     if request.method == 'POST':
         box = request.session.get('box', {})
-
+        # Get order form data
         form_data = {
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
@@ -50,7 +50,7 @@ def checkout(request):
             'postcode': request.POST['postcode'],
             'country': request.POST['country'],
         }
-
+        # Save order
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save(commit=False)
@@ -85,7 +85,7 @@ def checkout(request):
             amount=settings.FIXED_PRICE,
             currency=settings.STRIPE_CURRENCY,
         )
-
+        # Get saved address from user profile
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
@@ -109,6 +109,7 @@ def checkout(request):
         messages.warning(request, 'Stripe public key is missing! \
             Did you forget to set it in you environment?')
 
+    # If box items are less than 6 return view_box
     if len(list(box.keys())) < 6:
         return redirect(reverse('view_box'))
 
@@ -133,6 +134,7 @@ def checkout_success(request, order_number):
         order.user_profile = profile
         order.save()
 
+        # Save address to profile on checkout
         if save_info:
             profile_data = {
                 'default_contact_number': order.contact_number,

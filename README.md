@@ -233,6 +233,8 @@ Box Items Model
   - Bootstrap v5.0 was used to give the site a simple, responsive layout and to also add various Bootstrap components and utilities
 - [Django](https://www.djangoproject.com/)
   - Django was the web framework used to build the project
+- [Djecrety](https://djecrety.ir/)
+  - Djecrety was used generate a secret key
 - [Font Awesome](https://fontawesome.com/)
   - Font Awesome was used to add various icons throughout the site
 - [Google Fonts](https://fonts.google.com/)
@@ -367,8 +369,6 @@ The following steps were used to store static files and media files in an Amazon
 
 - [length_is](https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#length-is)
   - The length_is filter was used in the Box app to display the button that will allow registered users to checkout out if they've added the total number of items required to their box.
-
-- [Review Form](https://www.youtube.com/watch?v=lSX8nzu9ozg&list=PLeyK9Dw9ShReHUdt5Nh2qlgF6keN6DI7z&index=32)
 
 - [Review Form Radio Inputs](https://django-crispy-forms.readthedocs.io/en/latest/crispy_tag_forms.html?highlight=radio#fundamentals)
 

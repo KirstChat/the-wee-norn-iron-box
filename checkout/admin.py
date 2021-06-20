@@ -11,7 +11,6 @@ class BoxItemsAdminInline(admin.TabularInline):
 
 
 class OrderAdmin(admin.ModelAdmin):
-    # Prevent fields from being editable
     inlines = (BoxItemsAdminInline,)
     readonly_fields = ('order_number', 'date', 'original_box', 'stripe_pid', )
 
