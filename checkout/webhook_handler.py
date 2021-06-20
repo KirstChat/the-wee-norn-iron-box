@@ -1,7 +1,10 @@
+from profiles.models import UserProfile
 from django.http import HttpResponse
 
 from .models import BoxItems, Order
 from products.models import Product
+
+from profiles.models import UserProfile
 
 import json
 import time
@@ -24,7 +27,7 @@ class Stripe_Handler:
         intent = event.data.object
         pid = intent.id
         box = intent.metadata.box
-        # save_info = intent.metadata.save_info
+        save_info = intent.metadata.save_info
 
         billing_details = intent.charges.data[0].billing_details
         shipping_details = intent.shipping
@@ -33,6 +36,21 @@ class Stripe_Handler:
         for field, value in shipping_details.address.items():
             if value == '':
                 shipping_details.address[field] = None
+
+        # Update profile information if save_info is checked
+        profile = None
+        username = intent.metadata.username
+        if username:
+            profile = UserProfile.objects.get(user__username=username)
+            if save_info:
+                profile.default_contact_number = shipping_details.phone
+                profile.default_address_line_1 = shipping_details.address.line1
+                profile.default_address_line_2 = shipping_details.address.line2
+                profile.default_town_or_city = shipping_details.address.city
+                profile.default_county = shipping_details.address.state
+                profile.default_postcode = shipping_details.address.postal_code
+                profile.default_country = shipping_details.address.country
+                profile.save()
 
         order_exists = False
         attempt = 1
@@ -67,6 +85,7 @@ class Stripe_Handler:
             try:
                 order = Order.objects.create(
                     full_name=shipping_details.name,
+                    user_profile=profile,
                     email=billing_details.name,
                     contact_number=shipping_details.address.phone,
                     address_line_1=shipping_details.address.line1,
