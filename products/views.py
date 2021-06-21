@@ -58,7 +58,7 @@ def add_product(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Successfully added product!')
-            return redirect(reverse('add_product'))
+            return redirect(reverse('products'))
         else:
             messages.error(request, 'Failed to add new product.\
                 Please check that your form is valid')
@@ -99,3 +99,16 @@ def edit_product(request, product_id):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def delete_product(request, product_id):
+    # Delete an existing product
+    if not request.user.is_superuser:
+        messages.error(request, 'Only the admin can delete products.')
+        return redirect(reverse('home'))
+
+    product = get_object_or_404(Product, pk=product_id)
+    product.delete()
+    messages.success(request, 'Product deleted!')
+    return redirect(reverse('products'))
