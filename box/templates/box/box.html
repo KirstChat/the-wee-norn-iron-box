@@ -1,18 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_heading %}
-    <section class="white-container d-flex flex-column justify-content-center align-items-center text-center">
-        <div class="container p-4">
-            <h1>My Wee Box</h1>
-        </div>
-    </section>
-{% endblock %}
-
-{% block content %}
-    <div class="yellow-container">
-        <div class="container p-4">
+{% block content %} 
+    <section class="yellow-container large-container text-center p-4">
+        <div class="container">
             <div class="row justify-content-center g-4">
+                <h1>My Wee Box</h1>
                 <!-- Box Contents -->
                 {% if box_items %}
                     {% for item in box_items %}
@@ -53,18 +46,14 @@
             </div>
             <!-- Code from Django Docs: https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#length-is -->
             {% if box_items|length_is:"6" %}
-                <div class="row text-center">
-                    <div class="col">
-                        <a class="btn mt-4" href="{% url 'checkout' %}">Order My Box</a>
-                    </div>
+                <div class="text-center">
+                    <a class="btn mt-4" href="{% url 'checkout' %}">Order My Box</a>
                 </div>
             {% else %}
-                <div class="row text-center">
-                    <div class="col">
-                        <a class="btn mt-4" href="{% url 'products' %}">Add Products</a>
-                    </div>
+                <div class="text-center">
+                    <a class="btn mt-4" href="{% url 'products' %}">Add Products</a>
                 </div>
             {% endif %}
         </div>
-    </div>
+    </section>
 {% endblock %}

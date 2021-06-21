@@ -6,15 +6,15 @@
 {% endblock %}
 
 {% block content %}
-    <section class="yellow-container">
+    <section class="yellow-container text-center">
         <div class="row">
             <!-- Box Contents -->
             <div class="col-lg-6">
                 <div class="row g-4 p-4 justify-content-center">
-                    <h2 class="text-center">Here's your Wee Norn Iron Box:</h2>
+                    <h2>Here's your Wee Norn Iron Box:</h2>
                     {% for item in box_items %}
                         <div class="col-md-6">
-                            <div class="card checkout-preview border-0 h-100 text-center p-4">
+                            <div class="card border-0 h-100 p-4">
                                 <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                                 <p class="fw-bold mt-2">{{ item.product.name }}</p>
                             </div>
@@ -27,7 +27,7 @@
             <div class="col-lg-6 bg-white">
                 <div class="row p-4">
                     <div class="col">
-                        <h2 class="text-center">Where should we send it?</h2>
+                        <h2>Where should we send it?</h2>
                         <form class="pt-4" action="{% url 'checkout' %}" method="POST" id="payment-form">
                             {% csrf_token %}
                             <!-- Contact Details -->
@@ -50,10 +50,11 @@
                                 </div>
                             </fieldset>
                             <!-- Stripe Card Element -->
-                            <fieldset class="mt-4 text-center">
-                                <h4>Payment Details:</h4>
+                            <fieldset class="mt-4">
+                                <h4 class="m-4">Payment Details:</h4>
                                 <!-- Stripe Card Element -->
                                 <div id="card-element"></div>
+                                <span class="small">We'll charge your card £10</span>
                                 <!-- Pay Button & Errors -->
                                 <div class="mt-4">
                                     <!-- Error Messages -->
@@ -61,7 +62,7 @@
                                     <!-- Code from Bootstrap docs: https://getbootstrap.com/docs/5.0/components/spinners/-->
                                     <button id="submit-button" class="btn">
                                         <div class="spinner-border spinner-border-sm hidden" id="spinner"></div>
-                                        <span id="button-text">Pay</span>
+                                        <span id="button-text">Order My Box</span>
                                     </button>
                                 </div>
                                 <input type="hidden" value={{ client_secret }} name="client_secret">
