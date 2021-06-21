@@ -2,21 +2,21 @@
 {% load static %}
 
 {% block page_heading %}
-    <!-- Image & CTA Button -->
-    <section class="white-container p-4">
+    <!-- Image & Products Button -->
+    <section class="white-container">
         <div class="container">
             <div class="row">
                 <!-- Products Button -->
-                <div class="col-md-12 col-lg-5 order-2 order-lg-1 text-center align-self-center">
-                    <h1>The Taste of Home in a Wee Box</h1>
+                <div class="col-sm-12 col-md-5 col-lg-5 order-md-1 order-lg-1 order-2 text-center align-self-center">
+                    <h1 class="mt-2 mb-4">The Taste of Home in a Wee Box</h1>
                     {% if request.user.is_authenticated %}
-                        <a class="btn my-4 py-2 px-4" href="{% url 'products' %}">Our Wee Products</a>
+                        <a class="btn mb-4 py-2 px-4" href="{% url 'products' %}">Our Wee Products</a>
                     {% else %}
-                        <a class="btn my-4 py-2 px-4" href="{% url 'account_signup' %}">Get Started</a>
+                        <a class="btn mb-4 py-2 px-4" href="{% url 'account_signup' %}">Get Started</a>
                     {% endif %}
                 </div>
                 <!-- Box Mock Up Image -->
-                <div class="col-md-12 col-lg-7 order-sm-1 align-self-end">
+                <div class="col-sm-12 col-md-7 col-lg-7 order-sm-1 align-self-end">
                     <img class="img-fluid" src="{% static "images/box-mock-up.jpg" %}" alt="Box Mock Up">
                 </div>
             </div>
@@ -26,14 +26,14 @@
 
 {% block content %}
     <!-- How It Works-->
-    <section class="yellow-container steps p-4">
-        <div class="container text-center">
+    <section class="yellow-container text-center p-4">
+        <div class="container">
             <h2>How it Works</h2>
             <p class="mt-2 mb-4">
-                We'll deliver your favourite Northern Irish goods in a Wee Box all for £10!
+                We'll deliver your favourite Northern Irish goods to you in a Wee Box for £10!
             </p>
-            <!-- Steps -->
-            <div class="row g-4 steps">
+            <!-- Cards -->
+            <div class="row g-4 how-it-works">
                 <!-- Account -->
                 <div class="col-md-12 col-lg-4">
                     <div class="card border-0 h-100 p-4">
@@ -85,16 +85,16 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="white-container">
-        <div class="container p-4 text-center">
+    <!-- Reviews -->
+    <section class="white-container text-center p-4">
+        <div class="container">
             <h3 class="mb-4">Here's what our subscribers think</h2>
-            <!-- Review Carousel -->
-            <div class="row">
+            <!-- Review Cards -->
+            <div class="row g-4 justify-content-center">
                 {% for review in reviews %}
-                    <div class="col-lg-4">
+                    <div class="col-md-6 col-lg-4">
                         <div class="card border-0 h-100">
-                            <div class="card-header fw-bold">
+                            <div class="card-header black-container fw-bold">
                                 {{ review.title }}
                             </div>
                             <div class="card-body">
@@ -115,6 +115,7 @@
 {% endblock %}
 
 {% block postloadjs %}
-{{ block.super }}
+    {{ block.super }}
+    <!-- Display Star Ratings in Reviews -->
     <script src="{% static 'home/js/star_ratings.js' %}"></script>
 {% endblock %}
