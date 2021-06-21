@@ -1,15 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% comment %} {% block page_heading %}
-    <!-- Image, Heading and Search Bar -->
-    <section class="white-container d-flex flex-column align-items-center justify-content-center">
-        <div class="container text-center p-4">
-            <h1>How would you rate us?</h1>
-        </div>
-    </section>
-{% endblock %} {% endcomment %}
-
 {% block content %}
     <section class="yellow-container p-4">
         <div class="container">
@@ -18,7 +9,7 @@
                 <div class="col-sm-12 col-lg-6">
                     {% if request.user.is_authenticated %}
                         <div class="card border-0 p-4">
-                            <form action="{% url 'add_review' %}" method="POST">
+                            <form class="form" action="{% url 'add_review' %}" method="POST">
                                 {% csrf_token %}
                                 <fieldset>
                                     {{ review_form.title | as_crispy_field }}

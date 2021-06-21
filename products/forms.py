@@ -12,6 +12,6 @@ class ProductForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         categories = Category.objects.all()
         # List Comprehension
-        friendly_names = [(c.id, c.get_friendly_name()) for c in categories]
+        names = [(c.id, c.get_name()) for c in categories]
 
-        self.fields['category'].choices = friendly_names
+        self.fields['category'].choices = names

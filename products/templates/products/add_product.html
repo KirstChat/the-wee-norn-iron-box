@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <section class="yellow-container p-4">
+        <div class="container">
+            <h1 class="text-center mb-4">Add New Product</h1>
+            <div class="row justify-content-center align-content-center">
+                <div class="col-sm-12 col-lg-6">
+                    {% if request.user.is_authenticated %}
+                        <div class="card border-0 p-4">
+                            <form class="form" action="{% url 'add_product' %}" method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {{ form|crispy }}
+                                <div>
+                                    <button class="btn" type"submit">Add</button>
+                                    <a href="{% url 'products' %}" class="btn">Products</a>
+                                </div>
+                            </form>
+                        </div>
+                    {% else %}
+                        <p>You must <a href="{% url 'account_signup' %}">login</a> to leave a review!</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
