@@ -94,16 +94,13 @@
                 {% for review in reviews %}
                     <div class="col-lg-4">
                         <div class="card border-0 h-100">
-                            <div class="card-header">
+                            <div class="card-header fw-bold">
                                 {{ review.title }}
                             </div>
                             <div class="card-body">
                                 <p>{{ review.review }}</p>
-                                {% if review.rating == 5 %}
-                                    
-                                {% endif %}
-                                <p>{{ review.rating }}</p>
-                                <p>{{ review.posted_by }}</p>
+                                <p class="star-rating">{{ review.rating }}</p>
+                                <p class="fst-italic mt-3">Posted By: {{ review.posted_by }}</p>
                             </div>
                         </div>
                     </div>
@@ -115,4 +112,39 @@
             {% endif %}
         </div>
     </section>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}   
+    <script>
+        const starRating = document.querySelectorAll('.star-rating');
+
+        starRating.forEach(rating => {
+            if (rating.innerText === "5") {
+                rating.innerHTML = `
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>`
+            } else if (rating.innerText === "4") {
+                rating.innerHTML = `
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>`
+            } else if (rating.innerText === "3") {
+                rating.innerHTML = `
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>`
+            } else if (rating.innerText === "2") {
+                rating.innerHTML = `
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>`
+            } else {
+                rating.innerHTML = `<i class="fas fa-star"></i>`
+            };
+        });
+    </script>
 {% endblock %}

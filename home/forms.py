@@ -52,7 +52,7 @@ class ReviewForm(forms.ModelForm):
 
         placeholders = {
             'title': 'Review Title',
-            'review': 'Review',
+            'review': 'Tell us about your experience with us...',
             'rating': 'Rating',
         }
 
