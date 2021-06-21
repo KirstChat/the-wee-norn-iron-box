@@ -98,7 +98,7 @@
                                 <!-- Buttons -->
                                 {% if request.user.is_superuser %}
                                     <div>
-                                        <a class="btn edit m-1" href="#">
+                                        <a class="btn edit m-1" href="{% url 'edit_product' product.id %}">
                                             <i class="fas fa-pen p-2"></i>
                                             <span class="d-none d-md-inline-block">Edit</span>
                                         </a>

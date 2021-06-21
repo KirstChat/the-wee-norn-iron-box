@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import get_object_or_404, render, redirect, reverse
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 
 from .models import Product, Category
@@ -35,17 +36,23 @@ def all_products(request):
                 description__icontains=query)
             products = products.filter(queries)
 
+    template = 'products/products.html'
     context = {
         'products': products,
         'search_term': query,
         'current_categories': categories,
     }
 
-    return render(request, 'products/products.html', context)
+    return render(request, template, context)
 
 
+@login_required
 def add_product(request):
     # Add a new product
+    if not request.user.is_superuser:
+        messages.error(request, 'Only the admin can add new products.')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
@@ -59,6 +66,36 @@ def add_product(request):
     template = 'products/add_product.html'
     context = {
         'form': form,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def edit_product(request, product_id):
+    # Edit an existing product
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Only the admin can edit products.')
+        return redirect(reverse('home'))
+
+    product = get_object_or_404(Product, pk=product_id)
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Successfully updated {product.name}')
+            return redirect('products')
+        else:
+            messages.error(request, f'Failed to update {product.name}')
+    else:
+        form = ProductForm(instance=product)
+        messages.info(request, f'You are currently editing {product.name}')
+
+    template = 'products/edit_product.html'
+    context = {
+        'form': form,
+        'product': product,
     }
 
     return render(request, template, context)

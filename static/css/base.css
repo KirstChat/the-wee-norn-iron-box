@@ -152,6 +152,11 @@ a.nav-link.active {
     color: var(--white);
     transform: translateY(2px)
 }
+
+.edit,
+.delete {
+    width: 60px;
+}
 /* ---------- End Buttons ---------- */
 
 /* ---------- Cards ---------- */
@@ -259,6 +264,12 @@ footer h5 {
 
 /* For devices with a screen size bigger than 1024px */
 @media only screen and (min-width: 1024px) {
+    /* Product Edit and Delete Buttons */
+    .edit,
+    .delete {
+        width: 150px;
+    }
+
     .btn {
         font-size: 1rem;
     }
