@@ -54,13 +54,13 @@
     </head>
 
     <body>
+        <!-- NavBar from Bootstrap Docs: 
+            https://getbootstrap.com/docs/5.0/components/navbar/#toggler -->
         <header>
-            <!-- NavBar from Bootstrap Docs: https://getbootstrap.com/docs/5.0/components/navbar/#toggler-->
             <nav class="navbar navbar-expand-md justify-content-between fw-bold p-2">
                 <div class="container-fluid">
                     <!-- Brand/Logo -->
                     <a class="navbar-brand" href="{% url 'home' %}">
-                        <!-- Code from Django Docs: https://docs.djangoproject.com/en/3.2/howto/static-files/ -->
                         <img src={% static "images/twnib-logo.png" %} alt="The Wee Norn Iron Box Logo">
                         <span class="d-none d-md-inline-block ms-1">The Wee Norn Iron Box</span>
                     </a>
@@ -72,7 +72,7 @@
                     <!-- Navbar -->
                     <div class="collapse navbar-collapse justify-content-end" id="navbar">
                         <div class="navbar-nav text-center">
-                        <!-- Code from Stack Overflow:
+                        <!-- Code from Stack Overflow: 
                         https://stackoverflow.com/questions/46617375/how-do-i-show-an-active-link-in-a-django-navigation-bar-dropdown-list -->
                         {% with request.resolver_match.url_name as url_name %}
                             {% if request.user.is_authenticated %}
@@ -134,15 +134,8 @@
         </footer>
 
         {% block postloadjs %}
-            <!-- Code from Stack Overflow: https://stackoverflow.com/questions/63515279/how-to-initialize-toasts-with-javascript-in-bootstrap-5 -->
-            <script>
-                var toastElList = [].slice.call(document.querySelectorAll('.toast'))
-                var toastList = toastElList.map(function (toastEl) {
-                    return new bootstrap.Toast(toastEl)
-                });
-
-                toastList.forEach(toast => toast.show());
-            </script>
+            <!-- Initialise Bootstrap Toasts -->
+            <script src="{% static 'js/initialise_toasts.js' %}"></script>
         {% endblock %}
     </body>
 </html>

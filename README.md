@@ -350,16 +350,16 @@ The following steps were used to store static files and media files in an Amazon
 ### Code
 
 - [Bootstrap Documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
-  - The Bootstrap Documentation was used to add different components to the project including a Navbar, Nav Pills and Cards.
+  - The Bootstrap Documentation was used to add different components to the project including a Navbar and Cards, as well as to add various Bootstrap classes to style different elements.
 
 - [Code Institute Full Stack Frameworks Boutique Ado Project](https://codeinstitute.net/)
-  - The Boutique Ado project walkthrough from the Code Institute Full Stack Development course was used as a guide to help build this project.
+  - The Boutique Ado project walkthrough from the Code Institute Full Stack Development course was used as a guide to help build this project, particularly the section on creating Stripe webhooks.
 
-- [CSS linear-gradient()](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient())
-  - CSS linear-gradient was used to add a gradient background to the card overlay from the cards used in the products app.
+- [CSS linear-gradient](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient)
+  - CSS linear-gradient was used to add a gradient background to the card overlay for the cards used in the products app.
 
 - [Initialise Bootstrap 5 Toasts](https://stackoverflow.com/questions/63515279/how-to-initialize-toasts-with-javascript-in-bootstrap-5)
-  - This piece of code from Stack Overflow was used to initialise toasts within Bootstrap 5 using vanilla JavaScript, as Bootstrap 5 no longer uses jQuery.
+  - This piece of code from Stack Overflow was used to initialise toasts within Bootstrap 5 using vanilla JavaScript instead of jQuery as Bootstrap 5 no longer relies on jQuery.
 
 - [Get full URL path](https://docs.djangoproject.com/en/3.2/ref/request-response/#django.http.HttpRequest.get_full_path)
   - This django request object was used to return the URL with the appended query string in the Products app.
@@ -371,6 +371,9 @@ The following steps were used to store static files and media files in an Amazon
   - The length_is filter was used in the Box app to display the button that will allow registered users to checkout out if they've added the total number of items required to their box.
 
 - [Review Form Radio Inputs](https://django-crispy-forms.readthedocs.io/en/latest/crispy_tag_forms.html?highlight=radio#fundamentals)
+
+- [Active NavBar Classes](https://stackoverflow.com/questions/46617375/how-do-i-show-an-active-link-in-a-django-navigation-bar-dropdown-list)
+  - This code from Stack Overflow was used to add active classes to the navbar links to show the user which page they are currently viewing.
 
 ### Content
 
