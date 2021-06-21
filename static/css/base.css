@@ -123,6 +123,16 @@ a.nav-link.active {
     color: var(--white);
 }
 
+.account-container {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+.account-container a {
+    color: var(--dark-red);
+}
+
 .products-heading-img {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
         url("/static/images/ulster-fry.jpg") no-repeat center center;
