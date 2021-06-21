@@ -13,8 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 
-from os import path
-if path.exists('env.py'):
+if os.path.exists('env.py'):
     import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
