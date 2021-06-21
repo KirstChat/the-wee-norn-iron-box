@@ -11,7 +11,13 @@
                     {% for item in box_items %}
                         <div class="col-md-6 col-lg-4">
                             <div class="card border-0 h-100 text-center p-4">
-                                <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                {% if item.product.image %}
+                                    <img src="{{ item.product.image.url }}" class="card-img-top img-fluid"
+                                    alt="{{ item.product.name }}">
+                                {% else %}
+                                    <img src="{{ MEDIA_URL }}no-image.png" alt="{{ item.product.name }}"
+                                    class="card-img-top img-fluid">
+                                {% endif %}
                                 <p class="fw-bold mt-2">{{ item.product.name }}</p>
                                 <!-- Remove Item Button -->
                                 <div class="card-overlay rounded p-4">

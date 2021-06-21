@@ -25,7 +25,13 @@
                     {% for item in box_items %}
                         <div class="row">
                             <div class="col">
-                                <img class="w-50 pb-1" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                {% if item.product.image %}
+                                    <img src="{{ item.product.image.url }}" class="card-img-top img-fluid"
+                                    alt="{{ product.name }}">
+                                {% else %}
+                                    <img src="{{ MEDIA_URL }}no-image.png" alt="{{ item.product.name }}"
+                                    class="card-img-top img-fluid">
+                                {% endif %}
                                 <p>{{ item.product.name }}</p>
                             </div>
                         </div>

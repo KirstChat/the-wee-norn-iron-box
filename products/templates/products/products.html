@@ -74,7 +74,11 @@
                     <div class="col-md-6 col-lg-4">
                         <!-- Product Cards -->
                         <div class="card border-0 h-100 text-center p-4">
-                            <img src="{{ product.image.url }}" class="card-img-top img-fluid" alt="{{ product.name }}">
+                            {% if product.image %}
+                                <img src="{{ product.image.url }}" class="card-img-top img-fluid" alt="{{ product.name }}">
+                            {% else %}
+                                <img src="{{ MEDIA_URL }}no-image.png" alt="{{ product.name }}" class="card-img-top img-fluid">
+                            {% endif %}
                             <p class="card-text fw-bold mt-2">
                                 {{ product.name }}
                             </p>
@@ -124,18 +128,19 @@
                 {% endfor %}
             </div>
         </div>
+        {% if user.is_superuser %}
+            <div class="position-relative">
+                <a href="{% url 'add_product' %}" class="btn position-fixed bottom-0 end-0 m-4 w-auto"><i
+                        class="fas fa-plus pe-2"></i>Add New Product</a>
+            </div>
+        {% endif %}
     </section>
 
     <!-- Contact Us -->
     <section class="white-container">
         <div class="container text-center p-4">
-            {% if request.user.is_superuser %}
-                <a href="#" class="btn">Add Product</a>
-                <a href="#" class="btn">Product Admin</a>
-            {% else %}
-                <h3>Can't find your favourite food or drink?</h3>
-                <p class="mt-4">Let us know by emailing us or by sending us a message on one of our social media pages!</p>
-            {% endif %}
+            <h3>Can't find your favourite food or drink?</h3>
+            <p class="mt-4">Let us know by emailing us or by sending us a message on one of our social media pages!</p>
         </div>
     </section>
 {% endblock %}
