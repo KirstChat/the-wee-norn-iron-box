@@ -1,13 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %}
+
 {% block page_heading %}
     <!-- Image, Heading and Search Bar -->
-    <section class="black-container products-heading-img d-flex flex-column align-items-center justify-content-center">
-        <div class="container text-center p-4">
+    <section class="white-container container-height text-center p-4">
+        <div class="container">
             {% if current_categories == None %}
                 <h1>Our Wee Products</h1>
-                <p class="text-center">
+                <p>
                     All your favourite Northern Irish treats can be found here.
                     <br>
                     From soda bread, to Tayto crisps and even Maine lemonade!
@@ -26,7 +30,7 @@
             {% endif %}
 
             <!-- Search Bar -->
-            <form class="form w-50 mx-auto mt-4" method="GET" action="{% url 'products' %}">
+            <form class="form w-75 mx-auto mt-2" method="GET" action="{% url 'products' %}">
                 <div class="input-group">
                     <input class="form-control text-center w-75" type="text" name="q" placeholder="Find a Product"
                         aria-label="Search Button" aria-describedby="search-button">
@@ -41,8 +45,8 @@
 
 {% block content %}
     <!-- Products -->
-    <section class="yellow-container">
-        <div class="container p-4">
+    <section class="yellow-container p-4">
+        <div class="container">
             <!-- Product Categories -->
             <div class="row align-items-center mb-2">
                 <!-- Nav from Bootstrap Docs: https://getbootstrap.com/docs/5.0/components/navs-tabs -->

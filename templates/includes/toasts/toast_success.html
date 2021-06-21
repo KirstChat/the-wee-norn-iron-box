@@ -17,34 +17,34 @@
         </div>
         <!-- Box Contents Summary -->
         {% if box_items and not on_profile_page %}
-        <!-- Display box preview on products page -->
-        <!-- Code from Stack Overflow: https://stackoverflow.com/questions/17829718/url-name-in-django-template-if-statement-->
-        {% url 'products' as products %}
-        {% if request.path == products %}
-        <div class="box-preview">
-            {% for item in box_items %}
-            <div class="row">
-                <div class="col">
-                    <img class="w-50 pb-1" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                    <p class="fw-bold">{{ item.product.name }}</p>
+            <!-- Display box preview on products page -->
+            <!-- Code from Stack Overflow: https://stackoverflow.com/questions/17829718/url-name-in-django-template-if-statement-->
+            {% url 'products' as products %}
+            {% if request.path == products %}
+                <div class="box-preview">
+                    {% for item in box_items %}
+                        <div class="row">
+                            <div class="col">
+                                <img class="w-50 pb-1" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                <p class="fw-bold">{{ item.product.name }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
-            </div>
-            {% endfor %}
-        </div>
-        <!-- Products and box buttons -->
-        <div class="row">
-            <div class="col">
-                <a class="btn mb-2" href="{% url 'view_box' %}">My Box</a>
-            </div>
-        </div>
-        {% else %}
-        <!-- Dont't display box preview on box page -->
-        <div class="row">
-            <div class="col">
-                <a class="btn mb-2" href="{% url 'products' %}">Add Products</a>
-            </div>
-        </div>
-        {% endif %}
+                <!-- Products and box buttons -->
+                <div class="row">
+                    <div class="col">
+                        <a class="btn mb-2" href="{% url 'view_box' %}">My Box</a>
+                    </div>
+                </div>
+            {% else %}
+                <!-- Dont't display box preview on box page -->
+                <div class="row">
+                    <div class="col">
+                        <a class="btn mb-2" href="{% url 'products' %}">Add Products</a>
+                    </div>
+                </div>
+            {% endif %}
         <!-- No items in box -->
         {% elif product_count == 0 %}
             <p>Your box is empty!</p>

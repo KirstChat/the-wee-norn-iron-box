@@ -365,7 +365,7 @@ The following steps were used to store static files and media files in an Amazon
   - This django request object was used to return the URL with the appended query string in the Products app.
 
 - [URL in if statement](https://stackoverflow.com/questions/17829718/url-name-in-django-template-if-statement)
-  - Check url path - Used on toasts
+  - This code was used to check the url path to display box contents when the user is on the products page but not when the user is on the view box page.
 
 - [length_is](https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#length-is)
   - The length_is filter was used in the Box app to display the button that will allow registered users to checkout out if they've added the total number of items required to their box.

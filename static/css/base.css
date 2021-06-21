@@ -110,6 +110,12 @@ a.nav-link.active {
 .white-container {
     background: var(--white);
     color: var(--black);
+    display: flex;
+    align-items: center; 
+}
+
+.container-height {
+    height: 40vh;
 }
 
 .yellow-container {
@@ -131,13 +137,6 @@ a.nav-link.active {
 
 .account-container a {
     color: var(--dark-red);
-}
-
-.products-heading-img {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-        url("/static/images/ulster-fry.jpg") no-repeat center center;
-    background-size: cover;
-    height: 40vh;
 }
 /* ---------- End Containers ----------*/
 
@@ -162,7 +161,7 @@ a.nav-link.active {
 /* ---------- Cards ---------- */
 .yellow-container img {
     width: 100%;
-    height: 20vh;
+    height: 15vh;
     object-fit: contain;
 }
 
@@ -255,41 +254,6 @@ footer h5 {
 }
 /* ---------- End Footer ---------- */
 
-/* ---------- Products App ---------- */
-.black-container button#search-button {
-    background: var(--black);
-    box-shadow: none;
-}
-
-.black-container button#search-button:hover {
-    background: var(--red);
-    box-shadow: none;
-    transform: none;
-}
-
-.black-container button#search-button.form-control:focus {
-    color: var(--white);
-}
-
-.black-container input.form-control {
-    border: 2px solid var(--black);
-    box-shadow: none;
-}
-
-.black-container input.form-control:focus {
-    border: 2px solid var(--red);
-    box-shadow: none;
-}
-
-.yellow-container .nav-link {
-    color: var(--black);
-}
-
-.yellow-container .nav-link:hover {
-    color: var(--white);
-}
-/* ---------- End Products App ---------- */
-
 /* ---------- Media Queries --------- */
 
 /* For devices with a screen size bigger than 425px */
@@ -305,6 +269,10 @@ footer h5 {
 @media only screen and (min-width: 1024px) {
     .btn {
         font-size: 1rem;
+    }
+
+    .yellow-container img {
+        height: 20vh;
     }
 }
 /* ---------- End Media Queries --------- */
