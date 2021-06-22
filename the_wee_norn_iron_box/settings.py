@@ -125,17 +125,21 @@ WSGI_APPLICATION = 'the_wee_norn_iron_box.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if 'DATABASE_URL' in os.environ:
-    DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
+# if 'DATABASE_URL' in os.environ:
+#     DATABASES = {
+#         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+#     }
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': BASE_DIR / 'db.sqlite3',
+#         }
+#     }
+
+DATABASES = {
+    'default': dj_database_url.parse('postgres://udhxeshuukpqcd:2869a19acf3fdcfcb3a8ca013585e10356505d5275a907808a5eb83e1ff1636e@ec2-34-247-118-233.eu-west-1.compute.amazonaws.com:5432/dehvcr7et6tspv')
+}
 
 
 # Password validation

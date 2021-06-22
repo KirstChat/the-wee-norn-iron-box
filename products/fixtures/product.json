@@ -1,0 +1,350 @@
+[
+{
+  "model": "products.product",
+  "pk": 1,
+  "fields": {
+    "name": "Genesis Crafty Toaster Wheaten Bread",
+    "description": "Baked from our family recipe using buttermilk & the finest blend of flour so it's light, moist & very tasty for you!",
+    "brand": "Genesis Crafty",
+    "category": 1,
+    "size": "420g",
+    "image": "genesis_wheaten.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 2,
+  "fields": {
+    "name": "Irwin's Nutty Krust",
+    "description": "Baked on the sole of the oven to create that unique flavour. The technique of baking batch bread has been handed down through generations of the Irwin’s family.",
+    "brand": "Irwin's",
+    "category": 1,
+    "size": "800g",
+    "image": "irwins_nutty_krust.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 3,
+  "fields": {
+    "name": "Irwin's Potato Farls",
+    "description": "Made with a high content of potato, perfect grilled for breakfast. Irwin’s potato farls are only 80 calories per serving, low in sugar and least free!",
+    "brand": "Irwin's",
+    "category": 1,
+    "size": "6 Pack",
+    "image": "irwins_potato_farls.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 4,
+  "fields": {
+    "name": "Irwin's Sliced Sodas",
+    "description": "Irwin’s sodas are sliced for convenience, toaster friendly, only 88 calories per slice, low in fat and low in sugar!",
+    "brand": "Irwin's",
+    "category": 1,
+    "size": "4 Pack",
+    "image": "irwins_sliced_sodas.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 5,
+  "fields": {
+    "name": "Irwin's Veda Malt Loaf",
+    "description": "One of the products that Northern Irish expats miss the most.",
+    "brand": "Irwin's",
+    "category": 1,
+    "size": "400g",
+    "image": "irwins_veda.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 6,
+  "fields": {
+    "name": "Irwin's Wheaten Bread",
+    "description": "The perfect accompaniment for salads and soups, our moist wheaten bread will add bite to your lunchtime.",
+    "brand": "Irwin's",
+    "category": 1,
+    "size": "450g",
+    "image": "irwins_wheaten.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 7,
+  "fields": {
+    "name": "Ormo Potato Farls",
+    "description": "Ormo have been 'baking you happy' for generations, since 1875 in fact.",
+    "brand": "Ormo",
+    "category": 1,
+    "size": "6 Pack",
+    "image": "ormo_potato_farls.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 8,
+  "fields": {
+    "name": "Ormo Sodas",
+    "description": "Ormo have been 'baking you happy' for generations, since 1875 in fact.",
+    "brand": "Ormo",
+    "category": 1,
+    "size": "2 Pack",
+    "image": "ormo_sodas.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 9,
+  "fields": {
+    "name": "Sunblest Veda Malt Loaf",
+    "description": "It's magic so it is! Our wee loaf contains no animal fats and is suitable for vegetarians & vegans.",
+    "brand": "Sunblest",
+    "category": 1,
+    "size": "400g",
+    "image": "sunblest_veda.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 10,
+  "fields": {
+    "name": "BPM Focus Energy Drink",
+    "description": "Berry Flavour Energy Drink with Glucose and Ginseng Extract.",
+    "brand": "BPM",
+    "category": 2,
+    "size": "500ml",
+    "image": "bpm_energy.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 11,
+  "fields": {
+    "name": "Sukie Apple & Blackcurrant",
+    "description": "This fruit drink is rich in Vitamin C and a source of Vitamin A.",
+    "brand": "Dale Farm",
+    "category": 2,
+    "size": "500ml",
+    "image": "sukie_blackcurrant.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 12,
+  "fields": {
+    "name": "Sukie Orange",
+    "description": "This fruit drink is rich in Vitamin C and a source of Vitamin A.",
+    "brand": "Dale Farm",
+    "category": 2,
+    "size": "500ml",
+    "image": "sukie_orange.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 13,
+  "fields": {
+    "name": "Sukie Strawberry",
+    "description": "This fruit drink is rich in Vitamin C and a source of Vitamin A.",
+    "brand": "Dale Farm",
+    "category": 2,
+    "size": "500ml",
+    "image": "sukie_strawberry.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 14,
+  "fields": {
+    "name": "Club Orange",
+    "description": "Carbonated Orange soft drink with sugar and sweetener.",
+    "brand": "Club",
+    "category": 2,
+    "size": "500ml",
+    "image": "club_orange.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 15,
+  "fields": {
+    "name": "Club Rock Shandy",
+    "description": "Carbonated Orange and Lemon Soft Drink with Sugar and Sweetener.",
+    "brand": "Club",
+    "category": 2,
+    "size": "500ml",
+    "image": "club_rock_shandy.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 16,
+  "fields": {
+    "name": "Club Lemon",
+    "description": "Carbonated Lemon soft drink with sugar and sweetener.",
+    "brand": "Club",
+    "category": 2,
+    "size": "500ml",
+    "image": "club_lemon.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 17,
+  "fields": {
+    "name": "Maine Cloudy Lime",
+    "description": "Carbonated Lime flavour soft drink with sugar and sweeteners.",
+    "brand": "Maine",
+    "category": 2,
+    "size": "500ml",
+    "image": "maine_cloudy_lime.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 18,
+  "fields": {
+    "name": "Maine Pineappleade",
+    "description": "Carbonated Pineapple flavour soft drink with sugar and sweeteners.",
+    "brand": "Maine",
+    "category": 2,
+    "size": "500ml",
+    "image": "maine_pineapple.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 19,
+  "fields": {
+    "name": "Maine Bubblegum",
+    "description": "Carbonated Bubblegum flavour soft drink with sugar and sweeteners.",
+    "brand": "Maine",
+    "category": 2,
+    "size": "500ml",
+    "image": "maine_bubblegum.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 20,
+  "fields": {
+    "name": "Maine Attaboy",
+    "description": "Attaboy has been a well known soft drinks flavour throughout Belfast for many generations. The distinctive mixed fruit flavour is still as popular as ever!",
+    "brand": "Maine",
+    "category": 2,
+    "size": "500ml",
+    "image": "maine_attaboy.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 21,
+  "fields": {
+    "name": "Tayto Bikers",
+    "description": "Delicious Spicy Flavoured Baked Corn Snacks that will really spin your wheels!",
+    "brand": "Tayto",
+    "category": 3,
+    "size": "35g",
+    "image": "tayto_bikers.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 22,
+  "fields": {
+    "name": "Tayto Cheese & Onion",
+    "description": "Cheese & Onion flavoured crisps.",
+    "brand": "Tayto",
+    "category": 3,
+    "size": "35g",
+    "image": "tayto_cheese_onion.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 23,
+  "fields": {
+    "name": "Tayto Curry Chips",
+    "description": "Our Curry Flavour stick shaped corn snacks are baked not fried and are very, very tasty!",
+    "brand": "Tayto",
+    "category": 3,
+    "size": "35g",
+    "image": "tayto_curry_chips.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 24,
+  "fields": {
+    "name": "Tayto High Fives",
+    "description": "Our delicious Bacon flavour baked corn snacks are a great wee treat!",
+    "brand": "Tayto",
+    "category": 3,
+    "size": "35g",
+    "image": "tayto_high_fives.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 25,
+  "fields": {
+    "name": "Tayto Onion Rings",
+    "description": "Tayto Onion Rings are famous for their fantastic and unique flavour – a true 'Taste of Home'!",
+    "brand": "Tayto",
+    "category": 3,
+    "size": "35g",
+    "image": "tayto_onion_rings.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 26,
+  "fields": {
+    "name": "Tayto Pickled Onion",
+    "description": "Pickled Onion flavoured crisps.",
+    "brand": "Tayto",
+    "category": 3,
+    "size": "35g",
+    "image": "tayto_pickled_onion.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 27,
+  "fields": {
+    "name": "Tayto Prawn Cocktail",
+    "description": "Prawn Cocktail flavoured crisps.",
+    "brand": "Tayto",
+    "category": 3,
+    "size": "35g",
+    "image": "tayto_prawn_cocktail.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 28,
+  "fields": {
+    "name": "Tayto Roast Chicken",
+    "description": "Roast Chicken flavoured crisps.",
+    "brand": "Tayto",
+    "category": 3,
+    "size": "35g",
+    "image": "tayto_roast_chicken.jpg"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 29,
+  "fields": {
+    "name": "Tayto Smoky Bacon",
+    "description": "Smoky Bacon flavoured crisps.",
+    "brand": "Tayto",
+    "category": 3,
+    "size": "35g",
+    "image": "tayto_smoky_bacon.jpg"
+  }
+}
+]
