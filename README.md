@@ -273,6 +273,8 @@ Box Items Model
   - This simple Django utility allows you to utilize the 12factor inspired DATABASE_URL environment variable to configure your Django application
 - [psycopg2-binary](https://pypi.org/project/psycopg2-binary/)
   - Psycopg is the most popular PostgreSQL database adapter for the Python programming language
+- [gunicorn](https://pypi.org/project/gunicorn/)
+  - Gunicorn ‘Green Unicorn’ is a Python WSGI HTTP Server for UNIX
 
 [Contents](#contents)
 
