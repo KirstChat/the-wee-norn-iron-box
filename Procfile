@@ -1,1 +1,1 @@
-web: gunicorn the_wee_norn_iron_box:application
+web: gunicorn the_wee_norn_iron_box.wsgi:application
