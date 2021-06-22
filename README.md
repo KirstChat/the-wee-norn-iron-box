@@ -275,6 +275,10 @@ Box Items Model
   - Psycopg is the most popular PostgreSQL database adapter for the Python programming language
 - [gunicorn](https://pypi.org/project/gunicorn/)
   - Gunicorn ‘Green Unicorn’ is a Python WSGI HTTP Server for UNIX
+- [boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
+  - Use the AWS SDK for Python (Boto3) to create, configure, and manage AWS services, such as Amazon Elastic Compute Cloud (Amazon EC2) and Amazon Simple Storage Service (Amazon S3)
+- [django-storages](https://django-storages.readthedocs.io/en/latest/)
+  - A collection of custom storage backends for Django
 
 [Contents](#contents)
 
@@ -329,7 +333,7 @@ This project was coded in VS Code and pushed to GitHub using the following steps
 The following steps were used to host the project on Heroku:
 
 - Before creating a Heroku app, open the repository in VS Code and create a requirements file that lists all the applications and dependencies required to run the application: ```pip3 freeze --local > requirements.txt```
-- Create a Heroku specific file called a Procfile - this is what Heroku looks for to know which file runs the app and how to run it: ```**Add This Later**```
+- Create a Heroku specific file called a Procfile - this is what Heroku looks for to know which file runs the app and how to run it: ```web: gunicorn the_wee_norn_iron_box:application```
 - Open [Heroku](www.heroku.com) and login to your account or sign up for an account if you don't already have one
 - Open the dashboard and select **"New"** to create a new app
 - Name the app and set the region to Europe
@@ -342,11 +346,38 @@ The following steps were used to host the project on Heroku:
 - Once connected, **"Enable Automatic Deployments"** and select the **"Master"** or **"Main"** branch to deploy
 - Click the **"Deploy Branch"** button to deploy the app to Heroku
 
-### AWS Amazon S3
+### AWS Amazon S3 Bucket
 
 The following steps were used to store static files and media files in an Amazon S3 Bucket:
 
-- **Add These Steps Later**
+- Login in to your [AWS](https://aws.amazon.com/) account or create an account if you don't already have one
+- Click on My Account and open the AWS Management Console
+- Search for S3 in services and create a new bucket
+- Give the bucket a name, set the region closest to you and uncheck **"Block all Public Access"**
+- Open the new bucket and enable static website hosting located at the bottom of the page
+- Open the permissions tab and edit the CORS configuration at the bottom of the page to set up the required access between the heroku app and the bucket:
+
+```bash
+[
+  {
+      "AllowedHeaders": [
+          "Authorization"
+      ],
+      "AllowedMethods": [
+          "GET"
+      ],
+      "AllowedOrigins": [
+          "*"
+      ],
+      "ExposeHeaders": []
+  }
+]
+```
+
+- Open Bucket Policy on the permissions tab and open the policy generator
+- Set the policy type to **"S3 Bucket Policy"**, the principal to **"*"**, the action to **"GetObject"** and add the ARN which can be found on the Bucket Policy Editor page
+- Add the statement and then generate the policy
+- Copy and paste the generated policy into the Bucket Policy Editor, adding a **"/*"** to the end of the resource key
 
 [Contents](#contents)
 
