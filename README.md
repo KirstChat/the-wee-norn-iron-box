@@ -269,6 +269,10 @@ Box Items Model
   - A Python library for Stripe’s API
 - [dj-stripe](https://dj-stripe.readthedocs.io/en/master/)
   - dj-stripe implements all of the Stripe models, for Django
+- [dj_database_url](https://pypi.org/project/dj-database-url/)
+  - This simple Django utility allows you to utilize the 12factor inspired DATABASE_URL environment variable to configure your Django application
+- [psycopg2-binary](https://pypi.org/project/psycopg2-binary/)
+  - Psycopg is the most popular PostgreSQL database adapter for the Python programming language
 
 [Contents](#contents)
 
@@ -327,6 +331,7 @@ The following steps were used to host the project on Heroku:
 - Open [Heroku](www.heroku.com) and login to your account or sign up for an account if you don't already have one
 - Open the dashboard and select **"New"** to create a new app
 - Name the app and set the region to Europe
+- Open the resources tab and add ```heroku-postgresql``` to the add-ons
 - Open the settings tab and open **"Reveal Config Vars"**
 - Add the environment variables from the **env.py** file:
   - **Add These Later**

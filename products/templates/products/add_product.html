@@ -14,7 +14,13 @@
                     <div class="card border-0 p-4">
                         <form class="form" action="{% url 'add_product' %}" method="POST" enctype="multipart/form-data">
                             {% csrf_token %}
-                            {{ form|crispy }}
+                            {% for field in form %}
+                                {% if field.name != 'image' %}
+                                    {{ field | as_crispy_field}}
+                                {% else %}
+                                    {{ field}}
+                                {% endif %}
+                            {% endfor %}
                             <div>
                                 <button class="btn" type"submit">Add</button>
                                 <a href="{% url 'products' %}" class="btn">Products</a>
