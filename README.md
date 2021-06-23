@@ -172,6 +172,7 @@ Order Model
 | Field | Field Type | Field Options |
 | :---: | :---: | :---:|
 | order_number | CharField | max_length=32, null=False, editable=False |
+| user_profile | ForeignKey | UserProfile, on_delete=models.SET_NULL, null=True, blank=False, related_name='orders' |
 | first_name | CharField | max_length=25, null=False, blank=False |
 | last_name | CharField | max_length=25, null=False, blank=False |
 | email | EmailField | max_length=254, null=False, blank=False |
@@ -199,29 +200,36 @@ Box Items Model
 
 ## Features
 
-### Features to Include
-
-- Home App:
-  - Testimonials Section - Add When User Profiles are Complete
-
 ### Existing Features
 
+- Responsive on all devices with a mobile-first design using Bootstrap
 - An easy to use navigation bar located at the top of every page with a toggle button to trigger the nav on mobile devices
 - A home page with an about section that explains the purpose of the site
-- A products page with a search bar and a filter by category option
+- Login, Log Out and Sign Up functionality
+- Add, Edit and Delete functionality for superusers
+- A reviews section on the home page that displays reviews left by users and allows logged in users to leave their own review
+- A products page with a search bar and category filters
+- Product descriptions that display when the user hovers over the product card
+- A box page to allow the user to see the contents of their box before they order
+- A profile page that displays previous orders and a saved delivery address for future orders
+- A checkout page that allows the user to purchase their box using Stripe payments
 - A footer located on every page with links to social media pages
 - Toasts to let the user know when they've successfully completed an action or to let them know if there was a error completing an action
 
 ### Features Left to be Implemented
 
-- Blog Feature
-- Subscription Feature
-- Box Tracking
-- Apple/Google Pay
-- Skip Month(s)
-- Change Shipping Date
-- Email Reminders for Shipping/Subscription Payment
-- Favourites Section
+In future releases of this project and as I continue to progress as a developer, I would like to add some additional features to improve the users overall experience:
+
+- Subscription Payments:
+  - I initially wanted to make this project a subscription box service but due to work commitments and time restraints, I opted for a single payment service to meet the project requirements
+  - In future, I would like to try adding the stripe subscription payments again as this feature would allow users to have the option to receive a box every month rather than having to log on each time they wish to purchase one
+  - Along with this, I would also like to give users the option to pause or stop their subscription at any time
+
+- Multiple Payment Options:
+  - This feature would give users various options to pay for their box or subscription using Apple Pay or Google Pay
+
+- **Poll to vote for next product added**
+- **Favourites Section**
 
 [Contents](#contents)
 
@@ -269,7 +277,6 @@ Box Items Model
 
 ### Dependencies
 
-- **Update This Throughout**
 - [django-allauth](https://django-allauth.readthedocs.io/en/latest/overview.html)
   - Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication
 - [Pillow](https://pillow.readthedocs.io/en/stable/)
@@ -315,13 +322,13 @@ This project was developed on macOS using VS Code, with Git and GitHub used for 
 
 To clone the repository and make a local copy on your computer, follow these steps:
 
-- Open GitHub and locate the GitHub repository: **Add Link Later**
+- Open GitHub and locate the GitHub repository: [https://github.com/KirstChat/the-wee-norn-iron-box](https://github.com/KirstChat/the-wee-norn-iron-box)
 - Under the repository name, click **"Code"** and copy the link to clone the repository using **"HTTPS"**
 - After copying the link, open a terminal on your computer - this step can also be done in the terminal in your preferred IDE or Code Editor
 - Change the current working directory to the location where you want the cloned directory to be saved
-- Type ```git clone```, and then paste the URL: **Add Link Later**
+- Type ```git clone```, and then paste the URL: [https://github.com/KirstChat/the-wee-norn-iron-box.git](https://github.com/KirstChat/the-wee-norn-iron-box.git)
 - Press Enter to create a local clone
-- Create a **env.py** file to store environment variables: **Add These Later**
+- Create a **env.py** file to store environment variables
 - Add the **env.py** file and the virtual environment folder (**"venv"**) to a **".gitignore"** file to ensure this information isn't pushed to the repository on GitHub
 - Before installing any required dependencies, create a virtual environment - this will ensure that packages installed are only installed in the virtual environment folder: ```python3 -m venv venv```
 - Run the following command to ensure you are installing packages in the virtual environment and not on your local drive: ```source ./venv/bin/activate```
@@ -355,7 +362,20 @@ The following steps were used to host the project on Heroku:
 - Open the resources tab and add ```heroku-postgresql``` to the add-ons
 - Open the settings tab and open **"Reveal Config Vars"**
 - Add the environment variables from the **env.py** file:
-  - **Add These Later**
+
+| KEY | VALUE |
+| :---: | :---: |
+| AWS_ACCESS_KEY_ID | YOUR_AWS_ACCESS_KEY_ID |
+| AWS_SECRET_ACCESS_KEY | YOUR_AWS_SECRET_ACCESS_KEY |
+| DATABASE_URL | YOUR_DATABASE_URL |
+| EMAIL_HOST_PASS | YOUR_EMAIL_HOST_PASS |
+| EMAIL_HOST_USER | YOUR_EMAIL_HOST_USER |
+| SECRET_KEY | YOUR_SECRET_KEY |
+| STRIPE_PUBLIC_KEY | YOUR_STRIPE_PUBLIC_KEY |
+| STRIPE_SECRET_KEY | YOUR_STRIPE_SECRET_KEY |
+| STRIPE_WEBHOOK_SECRET | YOUR_STRIPE_WEBHOOK_SECRET |
+| USE_AWS | True |
+
 - Temporarily add the DATABASE_URL to settings.py:
 
 ```bash
@@ -421,7 +441,7 @@ The following steps were used to store static files and media files in an Amazon
 ### Code
 
 - [Bootstrap Documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
-  - The Bootstrap Documentation was used to add different components to the project including a Navbar and Cards, as well as to add various Bootstrap classes to style different elements.
+  - The Bootstrap Documentation was used to add different components to the project including a Navbar, Toasts and Cards, as well as to add various Bootstrap classes to style different elements.
 
 - [Code Institute Full Stack Frameworks Boutique Ado Project](https://codeinstitute.net/)
   - The Boutique Ado project walkthrough from the Code Institute Full Stack Development course was used as a guide to help build this project, particularly the section on creating Stripe webhooks.
@@ -429,22 +449,23 @@ The following steps were used to store static files and media files in an Amazon
 - [CSS linear-gradient](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient)
   - CSS linear-gradient was used to add a gradient background to the card overlay for the cards used in the products app.
 
+- [Django Documentation](https://docs.djangoproject.com/en/3.2/)
+  - The Django Documentation was used to create form choices, return a full URL path with a string query and to check the length of a dictionary in the template.
+
 - [Initialise Bootstrap 5 Toasts](https://stackoverflow.com/questions/63515279/how-to-initialize-toasts-with-javascript-in-bootstrap-5)
   - This piece of code from Stack Overflow was used to initialise toasts within Bootstrap 5 using vanilla JavaScript instead of jQuery as Bootstrap 5 no longer relies on jQuery.
-
-- [Get full URL path](https://docs.djangoproject.com/en/3.2/ref/request-response/#django.http.HttpRequest.get_full_path)
-  - This django request object was used to return the URL with the appended query string in the Products app.
 
 - [URL in if statement](https://stackoverflow.com/questions/17829718/url-name-in-django-template-if-statement)
   - This code was used to check the url path to display box contents when the user is on the products page but not when the user is on the view box page.
 
-- [length_is](https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#length-is)
-  - The length_is filter was used in the Box app to display the button that will allow registered users to checkout out if they've added the total number of items required to their box.
-
 - [Review Form Radio Inputs](https://django-crispy-forms.readthedocs.io/en/latest/crispy_tag_forms.html?highlight=radio#fundamentals)
+  - This code was used to set the widget for ratings as radio buttons.
 
 - [Active NavBar Classes](https://stackoverflow.com/questions/46617375/how-do-i-show-an-active-link-in-a-django-navigation-bar-dropdown-list)
   - This code from Stack Overflow was used to add active classes to the navbar links to show the user which page they are currently viewing.
+
+- [Indent Datadump](https://coderwall.com/p/mvsoyg/django-dumpdata-and-loaddata)
+  - This command was used to indent the products and categories datadump to make it easier for users to read.
 
 ### Content
 
