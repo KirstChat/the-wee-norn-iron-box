@@ -81,7 +81,7 @@ Registered users will receive a box containing their chosen Northern Irish goods
 - As a **Site Owner/Superuser**, I want to be able to add new products
 - As a **Site Owner/Superuser**, I want to be able to edit products
 - As a **Site Owner/Superuser**, I want to be able to remove products
-- As a **Site Owner/Superuser**, I want to be able to view registered users order details so I know what products to add to their box
+- As a **Site Owner/Superuser**, I want to be able to access the admin panel to view registered users order details so I know what products to add to their box
 
 ### Design
 
@@ -102,13 +102,15 @@ The colour palette for this project is based on the colours of the Harland and W
 
 Throughout the site, I used two different fonts from Google Fonts. These were [Anton](https://fonts.google.com/specimen/Anton#standard-styles) with the suggested pairing of [Roboto](https://fonts.google.com/specimen/Roboto).
 
-The Anton font was used for all main headings on the site and as the font for the logo text.
+The Anton font was used for all main headings on the site and as the font for the logo text, with Roboto being used for all other text.
 
 #### Imagery
 
 The images used for this project are product images sourced from a variety of different websites. As this project is for educational purposes, I have credited the websites at the bottom of this document in the [credits](#credits) section. The product images used are of well known Northern Irish/Irish brands including [Tayto](https://www.tayto.com/) and [Maine Lemonade](https://www.mainesoftdrinks.co.uk/).
 
 I designed a simple logo for the site using [Affinity Photo](https://affinity.serif.com/en-gb/photo/). The logo is made up of an outline of the map of Northern Ireland and some text with the name of the site - "The Wee Norn Iron Box". I then downloaded a PSD box mock-up from [Free Pik](https://www.freepik.com/) and added the logo to the box to use on the landing page. The outline of the map of Northern Ireland is also used for site favicon.
+
+I also used [Affinity Photo](https://affinity.serif.com/en-gb/photo/) to create a simple **No Image Available** image that will display if there isn't an image available for a product.
 
 #### Wireframes (**UPDATE THESE!!!**)
 
@@ -132,6 +134,17 @@ Links to the wireframes can be found below. Each link contains the wireframes fo
 ## Database Models
 
 [SQLite3](https://www.sqlite.org/index.html) was used in development as part of the Django framework and [Heroku Postgres](https://www.heroku.com/postgres) was used for Production.
+
+**Home App:**
+
+Review Model
+
+| Field | Field Type | Field Options |
+| :---: | :---: | :---: |
+| title | CharField | max_length=50, null=True, blank=True |
+| review | TextField | null=True, blank=True |
+| posted_by | ForeignKey | User, on_delete=models.CASCADE |
+| rating | IntegerField | default=0, validators=[MinValueValidator(1),MaxValueValidator(5)] |
 
 **Products App:**
 
@@ -170,12 +183,14 @@ Order Model
 | postcode | CharField | max_length=20, null=False, blank=False |
 | country | CountryField | blank_label="Country *", null=False, blank=False |
 | date | DateTimeField | auto_now_add=True |
+| original_box | TextField | null=False, blank=False, default='' |
+| stripe_pid | CharField | max_length=254, null=False, blank=False, default='' |
 
 Box Items Model
 
 | Field | Field Type | Field Options |
 | :---: | :---: | :---:|
-| order | ForeignKey | Order, null=False, blank=False, on_delete=models.CASCADE |
+| order | ForeignKey | Order, null=False, blank=False, on_delete=models.CASCADE, related_name="boxitems" |
 | product | ForeignKey | Product, null=False, blank=False, on_delete=models.CASCADE |
 
 [Contents](#contents)
