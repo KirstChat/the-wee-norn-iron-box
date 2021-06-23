@@ -4,7 +4,7 @@ The Wee Norn Iron Box is a snack box service that will allow registered users to
 
 Multi Device Website Mockup Generator: **Insert Mockup Generator Image Later**
 
-A demo of the project can be found here: **Insert Heroku Link Later**
+A demo of the project can be found here: [The Wee Norn Iron Box](https://the-wee-norn-iron-box.herokuapp.com/)
 
 ## Contents
 
@@ -341,6 +341,24 @@ The following steps were used to host the project on Heroku:
 - Open the settings tab and open **"Reveal Config Vars"**
 - Add the environment variables from the **env.py** file:
   - **Add These Later**
+- Temporarily add the DATABASE_URL to settings.py:
+
+```bash
+DATABASES = {
+  'default': dj_database_url.parse('Postgres database URL')
+}
+```
+
+- Migrate the database models to the Postgres database using ```python3 manage.py migrate```
+- Load the data fixtures starting with categories and then products using ```python3 manage.py loaddata <fixture_name>```
+- You can create fixtures by using the following command:
+
+```bash
+python3 manage.py dumpdata --<app_name>.<model_name> --indent 2 > <fixtures_name>.json
+```
+
+- Create a superuser for the Postgres database to access the admin panel using ```python3 manage.py createsuperuser```
+- Remove the Postgres database URL from settings.py as this cannot be deployed to GitHub for security reasons
 - To deploy the app from GitHub, open the deploy tab and change the deployment method to GitHub
 - Connect to your GitHub account and search for the name of the repository to connect to
 - Once connected, **"Enable Automatic Deployments"** and select the **"Master"** or **"Main"** branch to deploy
