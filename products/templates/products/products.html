@@ -6,40 +6,52 @@
 {% endblock %}
 
 {% block page_heading %}
-    <!-- Image, Heading and Search Bar -->
-    <section class="white-container container-height text-center p-4">
+    <!-- Heading -->
+    <section class="white-container text-center pt-4">
         <div class="container">
             {% if current_categories == None %}
                 <h1>Our Wee Products</h1>
-                <p>
+                <p class="mb-0">
                     All your favourite Northern Irish treats can be found here.
                     <br>
-                    From soda bread, to Tayto crisps and even Maine lemonade!
+                    From Soda Bread, to Tayto Crisps and even Maine Lemonade!
                 </p>
             {% else %}
                 {% for c in current_categories %}
                     <h1>Our Wee {{ c.name }}</h1>
                     {% if c.name == "Breads" %}
-                        <p>Choose two of your favouruite breads.</p>
+                        <p class="mb-0">The very best selection of potato, soda, wheaten and veda bread!</p>
                     {% elif c.name == "Drinks" %}
-                        <p>Choose two of your favourite drinks.</p>
+                        <p class="mb-0">A selection of drinks from Dale Farm, Club and the Maine Lemonade Man!</p>
                     {% elif c.name == "Snacks" %}
-                        <p>Choose two of your favourite snacks.</p>
+                        <p class="mb-0">A few of our personal favourites straight from the Tayto Factory!</p>
                     {% endif %}
                 {% endfor %}
             {% endif %}
-
-            <!-- Search Bar -->
-            <form class="form w-75 mx-auto mt-2" method="GET" action="{% url 'products' %}">
-                <div class="input-group">
-                    <input class="form-control text-center w-75" type="text" name="q" placeholder="Find a Product"
-                        aria-label="Search Button" aria-describedby="search-button">
-                    <button class="btn form-control" type="submit" id="search-button">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
-            </form>
         </div>
+
+        <!-- Product Category Tabs -->
+        <!-- Nav from Bootstrap Docs: https://getbootstrap.com/docs/5.0/components/navs-tabs -->
+        {% with request.get_full_path as url_name %}
+        <ul class="nav nav-tabs fw-bold justify-content-center p-0 mt-4">
+            <li class="nav-item">
+                <a class="nav-link {% if 'category' not in url_name %}active{% endif %}" href="{% url 'products' %}">All
+                    Products</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% if 'Breads' in url_name %}active{% endif %}"
+                    href="{% url 'products' %}?category=Breads">Breads</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% if 'Drinks' in url_name %}active{% endif %}"
+                    href="{% url 'products' %}?category=Drinks">Drinks</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% if 'Snacks' in url_name %}active{% endif %}"
+                    href="{% url 'products' %}?category=Snacks">Snacks</a>
+            </li>
+        </ul>
+        {% endwith %}
     </section>
 {% endblock %}
 
@@ -47,24 +59,18 @@
     <!-- Products -->
     <section class="yellow-container p-4">
         <div class="container">
-            <!-- Product Categories -->
-            <div class="row align-items-center mb-2">
-                <!-- Nav from Bootstrap Docs: https://getbootstrap.com/docs/5.0/components/navs-tabs -->
-                <div class="col-12 mb-2">
-                    <ul class="nav fw-bold justify-content-center">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'products' %}">All Products</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'products' %}?category=Breads">Breads</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'products' %}?category=Drinks">Drinks</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'products' %}?category=Snacks">Snacks</a>
-                        </li>
-                    </ul>
+            <!-- Search Bar -->
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <form class="form mb-4" method="GET" action="{% url 'products' %}">
+                        <div class="input-group">
+                            <input class="form-control text-center" type="text" name="q" placeholder="Find a Product"
+                                aria-label="Search Button" aria-describedby="search-button">
+                            <button class="btn" type="submit" id="search-button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
 
@@ -120,7 +126,10 @@
                                         </div>
                                     </form>
                                 {% else %}
-                                    <a class="btn py-2 px-4" href="{% url 'account_signup' %}">Sign Up</a>
+                                    <div class="row">
+                                        <a class="btn py-2 px-4 m-1" href="{% url 'account_signup' %}">Sign Up</a>
+                                        <a class="btn py-2 px-4 m-1" href="{% url 'account_login' %}">Login</a>
+                                    </div>
                                 {% endif %}
                             </div>
                         </div>

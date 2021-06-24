@@ -110,12 +110,6 @@ a.nav-link.active {
 .white-container {
     background: var(--white);
     color: var(--black);
-    display: flex;
-    align-items: center; 
-}
-
-.container-height {
-    height: 40vh;
 }
 
 .yellow-container {
@@ -144,7 +138,7 @@ a.nav-link.active {
     font-size: 0.9rem;
     font-weight: 700;
     text-transform: uppercase;
-    width: 250px;
+    width: 210px;
 }
 
 .btn:hover {
@@ -156,6 +150,10 @@ a.nav-link.active {
 .edit,
 .delete {
     width: 60px;
+}
+
+.card .btn {
+    width: 140px;
 }
 /* ---------- End Buttons ---------- */
 
@@ -264,7 +262,10 @@ footer h5 {
 
 /* For devices with a screen size bigger than 1024px */
 @media only screen and (min-width: 1024px) {
-    /* Product Edit and Delete Buttons */
+    h1 {
+        font-size: 3rem;
+    }
+
     .edit,
     .delete {
         width: 150px;

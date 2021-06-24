@@ -1,35 +1,39 @@
 /* ---------- Products App ---------- */
-.white-container button#search-button {
+.yellow-container button#search-button {
     background: var(--black);
     box-shadow: none;
+    width: 20%;
 }
 
-.white-container button#search-button:hover {
+.yellow-container button#search-button:hover {
     background: var(--dark-red);
     box-shadow: none;
     transform: none;
 }
 
-.white-container button#search-button.form-control:focus {
+.yellow-container button#search-button.form-control:focus {
     color: var(--white);
 }
 
-.white-container input.form-control {
-    border: 2px solid var(--black);
-    box-shadow: none;
-}
-
-.white-container input.form-control:focus {
+.yellow-container input.form-control:focus {
     border: 2px solid var(--dark-red);
     box-shadow: none;
 }
 
-.yellow-container .nav-link {
-    color: var(--black);
+.white-container .nav-tabs {
+    border-bottom: 0;
 }
 
-.yellow-container .nav-link:hover {
-    color: var(--white);
+.white-container .nav-link {
+    color: var(--black);
+    border: none;
+    padding: 8px 12px;
+}
+
+.white-container .nav-link.active,
+.white-container .nav-link:hover {
+    background: var(--yellow);
+    color: var(--black);
 }
 
 /* ---------- End Products App ---------- */
