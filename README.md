@@ -12,7 +12,7 @@ A demo of the project can be found here: [The Wee Norn Iron Box](https://the-wee
   - Project Goals
   - User Stories
     - First Time Visitor
-    - Subscriber
+    - Registered User
     - Superuser
   - Design
     - Colour Scheme
@@ -112,7 +112,7 @@ I designed a simple logo for the site using [Affinity Photo](https://affinity.se
 
 I also used [Affinity Photo](https://affinity.serif.com/en-gb/photo/) to create a simple **No Image Available** image that will display if there isn't an image available for a product.
 
-#### Wireframes (**UPDATE THESE!!!**)
+#### Wireframes (**UPLOAD THESE!!!**)
 
 The wireframes for my site were created using [Balsamiq](https://balsamiq.com/). I created wireframes for mobile, tablet and desktop devices.
 
@@ -123,8 +123,9 @@ Links to the wireframes can be found below. Each link contains the wireframes fo
 - [Home Page](https://github.com/KirstChat/the-wee-norn-iron-box/blob/master/wireframes/home.pdf)
 - [Products Page](https://github.com/KirstChat/the-wee-norn-iron-box/blob/master/wireframes/products.pdf)
 - [Add/Edit/Delete Products](https://github.com/KirstChat/the-wee-norn-iron-box/blob/master/wireframes/add-edit-delete-products.pdf) _(Superuser Only)_
-- User Profile
 - Box Contents
+- Checkout
+- User Profile
 - Add Review
 
 [Contents](#contents)

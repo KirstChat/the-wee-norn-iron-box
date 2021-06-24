@@ -20,7 +20,7 @@ def add_to_box(request, item_id):
     # Add product to box
 
     product = get_object_or_404(Product, pk=item_id)
-    category = product.category.id
+    quantity = 1
     redirect_url = request.POST.get('redirect_url')
 
     box = request.session.get('box', {})
@@ -29,16 +29,8 @@ def add_to_box(request, item_id):
         messages.error(
             request, f'You\'ve already added {product.name} to your box')
     else:
-        box[item_id] = category
+        box[item_id] = quantity
         messages.success(request, f'You\'ve added {product.name} to your box!')
-
-    if list(
-            box.values()).count(1) > 2 or list(
-            box.values()).count(2) > 2 or list(
-                box.values()).count(3) > 2:
-        del box[item_id]
-        messages.error(
-            request, f'You can\'t add anymore {product.category} to your box')
 
     request.session['box'] = box
     return redirect(redirect_url)
