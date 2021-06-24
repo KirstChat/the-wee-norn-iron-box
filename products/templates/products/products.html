@@ -10,21 +10,26 @@
     <section class="white-container text-center pt-4">
         <div class="container">
             {% if current_categories == None %}
-                <h1>Our Wee Products</h1>
-                <p class="mb-0">
-                    All your favourite Northern Irish treats can be found here.
+                <h1 class="px-4">Our Wee Products</h1>
+                <p class="px-4 mt-4 mb-0">
+                    All your favourite Northern Irish treats can be found here. 
                     <br>
                     From Soda Bread, to Tayto Crisps and even Maine Lemonade!
+                    <br>
+                    <span class="fw-bold">Friendly reminder that you can only add 6 products to your box.</span>
                 </p>
             {% else %}
                 {% for c in current_categories %}
                     <h1>Our Wee {{ c.name }}</h1>
                     {% if c.name == "Breads" %}
                         <p class="mb-0">The very best selection of potato, soda, wheaten and veda bread!</p>
+                        <span class="fw-bold">Friendly reminder that you can only add 6 products to your box.</span>
                     {% elif c.name == "Drinks" %}
                         <p class="mb-0">A selection of drinks from Dale Farm, Club and the Maine Lemonade Man!</p>
+                        <span class="fw-bold">Friendly reminder that you can only add 6 products to your box.</span>
                     {% elif c.name == "Snacks" %}
                         <p class="mb-0">A few of our personal favourites straight from the Tayto Factory!</p>
+                        <span class="fw-bold">Friendly reminder that you can only add 6 products to your box.</span>
                     {% endif %}
                 {% endfor %}
             {% endif %}
@@ -149,7 +154,12 @@
     <section class="white-container">
         <div class="container text-center p-4">
             <h3>Can't find your favourite food or drink?</h3>
-            <p class="mt-4">Let us know by emailing us or by sending us a message on one of our social media pages!</p>
+            <p class="mt-4">Let us know by <a
+                    href="mailto:chattertonkirsty@gmail.com?subject=The Wee Norn Iron Box Product Request"
+                    class="fw-bold link">emailing us</a> or sending us a message on one of our social
+                media pages.
+                <br>
+                We'll aim to stock that product for you as soon as possible!</p>
         </div>
     </section>
 {% endblock %}

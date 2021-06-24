@@ -27,14 +27,28 @@ h2,
 h3,
 h4,
 h5,
-.navbar-brand {
+.navbar-brand,
+.link {
     font-family: 'Anton', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
+h1 {
+    font-size: 2.2rem;
+}
+
 p {
     font-size: 1rem;
+}
+
+.link {
+    color: var(--black);
+    text-decoration: none;
+}
+
+.link:hover {
+    color: var(--dark-red);
 }
 /* ---------- End Font/Text ---------- */
 
@@ -135,7 +149,7 @@ a.nav-link.active {
     background: var(--red);
     box-shadow: 0 2px var(--dark-red);
     color: var(--white);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
     width: 210px;
@@ -153,14 +167,14 @@ a.nav-link.active {
 }
 
 .card .btn {
-    width: 140px;
+    width: 100px;
 }
 /* ---------- End Buttons ---------- */
 
 /* ---------- Cards ---------- */
 .yellow-container img {
     width: 100%;
-    height: 15vh;
+    height: 20vh;
     object-fit: contain;
 }
 
@@ -253,6 +267,11 @@ footer h5 {
 
 /* For devices with a screen size bigger than 425px */
 @media only screen and (min-width: 425px) {
+    /* Card Product Images */
+    .yellow-container img {
+        height: 15vh;
+    }
+    
     /* Product Edit and Delete Buttons */
     .edit,
     .delete {
