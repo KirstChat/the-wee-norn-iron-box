@@ -65,17 +65,17 @@
     </section>
 
     <!-- Reviews -->
-    <section class="white-container text-center py-4">
-        <h3 class="mb-4">Here's what some of our members think</h2>
+    <section class="white-container text-center">
+        <h3 class="pt-4 px-4">Here's what some of our members think</h2>
         <!-- Review Cards -->
         <!-- Code from Bootstrap Docs:
         https://getbootstrap.com/docs/5.0/components/carousel/#dark-variant -->
         <div id="reviewCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
+            <div class="carousel-inner m-auto">
                 {% for review in reviews %}
                 <div class="carousel-item {% if forloop.first %}active{% endif %}">
                     <p class="star-rating">{{ review.rating }}</p>
-                    <p>{{ review.review }}</p>
+                    <p class="w-50 mx-auto">{{ review.review }}</p>
                     <p class="fst-italic mt-3">Posted By: {{ review.posted_by }}</p>
                 </div>
                 {% endfor %}

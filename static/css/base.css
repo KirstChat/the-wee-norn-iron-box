@@ -229,12 +229,21 @@ a.nav-link.active {
 }
 /* ---------- End How It Works Cards ---------- */
 
-/* ---------- Review Cards ---------- */
+/* ---------- Review Carousel ---------- */
+.carousel {
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    padding: 10px;
+}
+
 .star-rating i {
     color: var(--yellow);
-    font-size: 1.2rem;
+    font-size: 1.6rem;
 }
-/* ---------- End Review Cards ----------- */
+/* ---------- End Review Carousel ----------- */
 
 /* ---------- Footer ---------- */
 .fab {
