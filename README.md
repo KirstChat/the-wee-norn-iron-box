@@ -468,6 +468,9 @@ The following steps were used to store static files and media files in an Amazon
 - [Indent Datadump](https://coderwall.com/p/mvsoyg/django-dumpdata-and-loaddata)
   - This command was used to indent the products and categories datadump to make it easier for users to read.
 
+- [Bootstrap Carousel in for loop](https://stackoverflow.com/questions/30483186/bootstrap-carousel-and-django)
+- This code from stack overflow was used to add a Bootstrap Carousel with a for loop to display reviews on the home page.
+
 ### Content
 
 All product descriptions and sizes were taken the following sites:

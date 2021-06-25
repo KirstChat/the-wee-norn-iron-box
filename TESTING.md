@@ -67,12 +67,9 @@
 
 ## Known Bugs
 
-Box App Toasts:
+Search Bar in Products App:
 
-- Currently, subscribers box contents are limited to two products from each product category
-- If a subscriber exceeds this limit for a category by trying to add a product from that specific category, both a success and an error toast will display
-- The success toast will inform the subscriber that they've successfully added that item to their box even though that item isn't added to their box
-- The error toast works as it should, informing the user that they've reached their limit for that specific category
+- When searching for a product that doesn't exist, the error message fails to display
 
 [Contents](#contents)
 

@@ -35,7 +35,7 @@ h5,
 }
 
 h1 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
 }
 
 p {
@@ -142,6 +142,12 @@ a.nav-link.active {
     display: flex;
     align-items: center;
 }
+
+.carousel-container {
+    height: 30vh;
+    display: flex;
+    align-items: center;
+}
 /* ---------- End Containers ----------*/
 
 /* ---------- Buttons ---------- */
@@ -152,7 +158,7 @@ a.nav-link.active {
     font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
-    width: 210px;
+    width: 140px;
 }
 
 .btn:hover {
@@ -161,20 +167,20 @@ a.nav-link.active {
     transform: translateY(2px)
 }
 
+.product-btn {
+    width: 100px;
+}
+
 .edit,
 .delete {
     width: 60px;
-}
-
-.card .btn {
-    width: 100px;
 }
 /* ---------- End Buttons ---------- */
 
 /* ---------- Cards ---------- */
 .yellow-container img {
     width: 100%;
-    height: 20vh;
+    height: 15vh;
     object-fit: contain;
 }
 
@@ -269,9 +275,9 @@ footer h5 {
 @media only screen and (min-width: 425px) {
     /* Card Product Images */
     .yellow-container img {
-        height: 15vh;
+        height: 20vh;
     }
-    
+
     /* Product Edit and Delete Buttons */
     .edit,
     .delete {
@@ -292,10 +298,7 @@ footer h5 {
 
     .btn {
         font-size: 1rem;
-    }
-
-    .yellow-container img {
-        height: 20vh;
+        width: 180px;
     }
 }
 /* ---------- End Media Queries --------- */

@@ -9,7 +9,6 @@ class ReviewsAdmin(admin.ModelAdmin):
     readonly_fields = ('posted_by', )
 
     list_display = (
-        'title',
         'review',
         'posted_by',
         'rating',

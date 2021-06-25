@@ -8,9 +8,9 @@
             <div class="row">
                 <!-- Products Button -->
                 <div class="col-sm-12 col-md-5 col-lg-5 order-md-1 order-lg-1 order-2 text-center align-self-center">
-                    <h1 class="mt-2 mb-4">The Taste of Home in a Wee Box</h1>
+                    <h1 class="mt-2 mb-4">The Taste of Home in a Wee Box for £10</h1>
                     {% if request.user.is_authenticated %}
-                        <a class="btn mb-4 py-2 px-4" href="{% url 'products' %}">Our Wee Products</a>
+                        <a class="btn mb-4 py-2 px-4" href="{% url 'products' %}">View Products</a>
                     {% else %}
                         <a class="btn mb-4 py-2 px-4" href="{% url 'account_signup' %}">Get Started</a>
                     {% endif %}
@@ -28,89 +28,70 @@
     <!-- How It Works-->
     <section class="yellow-container text-center p-4">
         <div class="container">
-            <h2>How it Works</h2>
-            <p class="mt-2 mb-4">
-                We'll deliver your favourite Northern Irish goods to you in a Wee Box for £10!
-            </p>
-            <!-- Cards -->
-            <div class="row g-4 how-it-works">
-                <!-- Account -->
-                <div class="col-md-12 col-lg-4">
-                    <div class="card border-0 h-100 p-4">
-                        <i class="fas fa-box mb-4"></i>
-                        <p class="fw-bold">
-                            All you need to do is sign up for an account to start adding your favourite items to your box
-                        </p>
-                        <p>
-                            Click the <span class="fw-bold">Sign Up</span> button below to sign up for an account
-                            now
-                        </p>
-                    </div>
-                </div>
-                <!-- Payment -->
-                <div class="col-md-12 col-lg-4">
-                    <div class="card border-0 h-100 p-4">
-                        <i class="fas fa-credit-card mb-4"></i>
-                        <p class="fw-bold">
-                            Once you've filled up your box, simply pay for your box and tell us where to send it
-                        </p>
-                        <p>
-                            Box items are limited to
-                            <br>
-                            2 x Breads, 2 x Drinks and 2 x Snacks
-                        </p>
-                    </div>
-                </div>
-                <!-- Delivery -->
-                <div class="col-md-12 col-lg-4">
-                    <div class="card border-0 h-100 p-4">
-                        <i class="fas fa-truck mb-4"></i>
-                        <p class="fw-bold">
-                            We'll quickly deliver your box to you at no extra cost
-                        </p>
-                        <p>
-                            All baked goods are delivered fresh so you won't need to worry about expiry dates
-                        </p>
-                    </div>
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-lg-6">
+                    <h2>How it Works</h2>
+                    <!-- Step 1 -->
+                    <p class="fw-bold mt-4 mb-2"><i class="fas fa-box pe-2"></i>Step 1</p>
+                    <p>
+                        Sign up for an account to start adding your favourite products to your wee box.
+                        <br>
+                        You can add a total of <span class="fw-bold">6 products</span> to your box.
+                    </p>
+                    <!-- Step 2 -->
+                    <p class="fw-bold mt-4 mb-2"><i class="fas fa-credit-card pe-2"></i>Step 2</p>
+                    <p>
+                        Once you've filled up your box, simply pay <span class="fw-bold">£10</span> your box and tell us where to send it.
+                    </p>
+                    <!-- Step 3 -->
+                    <p class="fw-bold mt-4 mb-2"><i class="fas fa-truck pe-2"></i>Step 3</p>
+                    <p>
+                        We'll quickly deliver your box to you at no extra cost.
+                        <br>
+                        All baked goods are delivered fresh so you won't need to worry about expiry dates!
+                    </p>
+                    <!-- Admin/Registered User Button -->
+                    {% if request.user.is_superuser %}
+                        <a class="btn py-2 px-4" href="#">Product Admin</a>
+                    {% elif request.user.is_authenticated %}
+                        <a class="btn py-2 px-4" href="{% url 'view_box' %}">My Box</a>
+                    {% else %}
+                        <a href="{% url 'account_login' %}" class="btn py-2 px-4 mx-2 mt-2">Login</a>
+                        <a href="{% url 'account_signup' %}" class="btn py-2 px-4 mx-2 mt-2">Sign Up</a>
+                    {% endif %}
                 </div>
             </div>
-            <!-- Admin/Registered User Button -->
-            {% if request.user.is_superuser %}
-                <a class="btn mt-4 py-2 px-4" href="#">Product Admin</a>
-            {% elif request.user.is_authenticated %}
-                <a class="btn mt-4 py-2 px-4" href="{% url 'view_box' %}">My Box</a>
-            {% else %}
-                <a href="{% url 'account_signup' %}" class="btn mt-4 py-2 px-4">Sign Up</a>
-            {% endif %}
         </div>
     </section>
 
     <!-- Reviews -->
-    <section class="white-container text-center p-4">
-        <div class="container">
-            <h3 class="mb-4">Here's what some of our members think</h2>
-            <!-- Review Cards -->
-            <div class="row g-4 justify-content-center">
+    <section class="white-container text-center py-4">
+        <h3 class="mb-4">Here's what some of our members think</h2>
+        <!-- Review Cards -->
+        <div id="reviewCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
                 {% for review in reviews %}
-                    <div class="col-md-6 col-lg-4">
-                        <div class="card border-0 h-100">
-                            <div class="card-header black-container fw-bold">
-                                {{ review.title }}
-                            </div>
-                            <div class="card-body">
-                                <p>{{ review.review }}</p>
-                                <p class="star-rating">{{ review.rating }}</p>
-                                <p class="fst-italic mt-3">Posted By: {{ review.posted_by }}</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                    <p class="star-rating">{{ review.rating }}</p>
+                    <p>{{ review.review }}</p>
+                    <p class="fst-italic mt-3">Posted By: {{ review.posted_by }}</p>
+                </div>
                 {% endfor %}
             </div>
-            <!-- Add Review -->
-            {% if request.user.is_authenticated %}
-                <a href="{% url 'add_review' %}" class="btn mt-4 py-2 px-4">Add Review</a>
-            {% endif %}
+            <button class="carousel-control-prev" type="button" data-bs-target="#reviewCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#reviewCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
+
+        <!-- Add Review Button -->
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'add_review' %}" class="btn mt-4 py-2 px-4">Add Review</a>
+        {% endif %}
     </section>
 {% endblock %}
 

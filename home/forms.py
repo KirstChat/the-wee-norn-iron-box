@@ -35,7 +35,7 @@ class ReviewForm(forms.ModelForm):
 
     class Meta:
         model = Review
-        fields = ('title', 'review', 'rating')
+        fields = ('review', 'rating')
         exclude = ['posted_by']
 
     def __init__(self, *args, **kwargs):
@@ -51,7 +51,6 @@ class ReviewForm(forms.ModelForm):
         )
 
         placeholders = {
-            'title': 'Review Title',
             'review': 'Tell us about your experience with us...',
             'rating': 'Rating',
         }

@@ -11,8 +11,7 @@ class Review(models.Model):
     class Meta:
         verbose_name_plural = "Reviews"
 
-    title = models.CharField(max_length=50, null=True, blank=True)
-    review = models.TextField(null=True, blank=True)
+    review = models.TextField(null=True, blank=False)
     posted_by = ForeignKey(User, on_delete=models.CASCADE)
     rating = models.IntegerField(default=0, validators=[
         MinValueValidator(1),

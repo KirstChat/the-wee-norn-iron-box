@@ -123,7 +123,8 @@
                                         {% csrf_token %}
                                         <div class="row">
                                             <div class="col">
-                                                <button type="submit" class="btn"><i class="fas fa-box-open pe-2"></i>Add to
+                                                <button type="submit" class="btn product-btn"><i
+                                                        class="fas fa-box-open pe-2"></i>Add to
                                                     Box</button>
                                             </div>
                                             <!-- Code from Django Docs: https://docs.djangoproject.com/en/3.2/ref/request-response/#django.http.HttpRequest.get_full_path-->
@@ -132,8 +133,10 @@
                                     </form>
                                 {% else %}
                                     <div class="row">
-                                        <a class="btn py-2 px-4 m-1" href="{% url 'account_signup' %}">Sign Up</a>
-                                        <a class="btn py-2 px-4 m-1" href="{% url 'account_login' %}">Login</a>
+                                        <a class="btn py-2 px-4 mx-2 product-btn"
+                                            href="{% url 'account_login' %}">Login</a>
+                                        <a class="btn py-2 px-4 mx-2 product-btn" href="{% url 'account_signup' %}">Sign
+                                            Up</a>
                                     </div>
                                 {% endif %}
                             </div>
