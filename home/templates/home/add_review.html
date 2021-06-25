@@ -12,7 +12,6 @@
                             <form class="form" action="{% url 'add_review' %}" method="POST">
                                 {% csrf_token %}
                                 <fieldset>
-                                    {{ review_form.title | as_crispy_field }}
                                     {{ review_form.review | as_crispy_field }}
                                     <legend>How happy were you with your box?</legend>
                                     {{ review_form.rating | as_crispy_field }}
