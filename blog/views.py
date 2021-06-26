@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404, redirect, render
+from django.shortcuts import get_object_or_404, redirect, render, reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
@@ -50,3 +50,37 @@ def add_post(request):
         'post_form': post_form,
     }
     return render(request, template, context)
+
+
+@login_required
+def edit_post(request, post_id):
+    # Edit a blog post
+    post = get_object_or_404(Post, pk=post_id)
+
+    if request.user != post.posted_by:
+        print('request.user')
+        messages.error(
+            request, 'Only the user that posted this post can edit it!'
+        )
+        return redirect(reverse('blog_posts'))
+
+    if request.method == 'POST':
+        post_form = PostForm(request.POST, instance=post)
+        if post_form.is_valid():
+            post_form.save()
+            messages.success(
+                request, f'Successfully updated {post.title} post')
+            return redirect('blog_posts')
+        else:
+            messages.error(request, f'Failed to update {post.title}')
+    else:
+        post_form = PostForm(instance=post)
+        messages.info(request, f'You are currently editing {post.title}')
+
+        template = 'blog/edit_post.html'
+        context = {
+            'post_form': post_form,
+            'post': post,
+        }
+
+        return render(request, template, context)

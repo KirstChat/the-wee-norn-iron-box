@@ -12,7 +12,7 @@ class Post(models.Model):
     post = models.TextField(null=False, blank=False)
     posted_by = models.ForeignKey(User, on_delete=models.CASCADE)
     date_posted = models.DateTimeField(auto_now_add=True)
-    status = models.BooleanField(choices=STATUS, default=0)
+    status = models.BooleanField(choices=STATUS, default=1)
 
     def __str__(self):
         return self.post
