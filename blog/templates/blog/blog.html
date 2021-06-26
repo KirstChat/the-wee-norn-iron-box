@@ -2,5 +2,24 @@
 {% load static %}
 
 {% block content %}
-<h1>Hello</h1>
+    <section class="yellow-container h-100 p-4">
+        <div class="container">
+            <div class="row justify-content-center">
+                <h1 class="text-center">The Wee Norn Iron Blog</h1>
+                <div class="col-lg-6">
+                    {% for post in posts %}
+                        <div class="card border-0 p-4 my-4">
+                            <p class="fw-bold text-uppercase">{{ post.title }}</p>
+                            <p class="text-muted">Posted By: {{ post.posted_by }} | Date Published: {{ post.date_posted }}
+                            </p>
+                            <p class="text-truncate">{{ post.post }}</p>
+                            <a href="{% url 'post_detail' post.id %}" class="btn">Read More<i class="fas fa-arrow-right ps-2"></i></a>
+                        </div>
+                    {% endfor %}
+                    <a href="" class="btn">Add Post</a>
+                    <a href="" class="btn">View Drafts</a>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

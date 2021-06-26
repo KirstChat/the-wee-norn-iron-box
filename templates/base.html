@@ -88,7 +88,9 @@
                                 <a class="nav-link {% if url_name == 'account_login' %}active{% endif %}"
                                     href="{% url 'account_login' %}">Login</a>
                             {% endif %}
-                            <a class="nav-link {% if url_name == 'products' %}active{% endif %}"
+                                <a class="nav-link {% if url_name == 'blog_posts' %}active{% endif %}"
+                                    href="{% url 'blog_posts' %}">The Wee Blog</a>
+                                <a class="nav-link {% if url_name == 'products' %}active{% endif %}"
                                 href="{% url 'products' %}">Products</a>
                         {% endwith %}
                         </div>

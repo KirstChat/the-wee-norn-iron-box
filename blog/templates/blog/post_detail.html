@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="yellow-container h-100 p-4">
+    <div class="container">
+        <div class="row justify-content-center">
+            <h1 class="text-center">The Wee Norn Iron Blog</h1>
+            <div class="col-lg-6">
+                <div class="card border-0 p-4 my-4">
+                    <p class="fw-bold text-uppercase">{{ post.title }}</p>
+                    <p class="text-muted">Posted By: {{ post.posted_by }} | Date Published: {{ post.date_posted }}
+                    </p>
+                    <p>{{ post.post }}</p>
+                    {% if post.posted_by == request.user %}
+                        <a href="#" class="btn">Edit</a>
+                        <a href="#" class="btn">Delete</a>
+                    {% endif %}
+                </div>
+                <a href="{% url 'blog_posts' %}" class="btn">Back to Posts</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
