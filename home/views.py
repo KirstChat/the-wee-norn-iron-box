@@ -9,7 +9,7 @@ from .models import Review
 
 
 def reviews(request):
-    # A view to return reviews the index page
+    # A view to return reviews on the index page
     reviews = Review.objects.all()
 
     context = {

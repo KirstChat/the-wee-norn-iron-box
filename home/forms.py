@@ -35,11 +35,14 @@ class ReviewForm(forms.ModelForm):
 
     class Meta:
         model = Review
-        fields = ('review', 'rating')
+        fields = ['review', 'rating']
         exclude = ['posted_by']
+        widgets = {
+            'review': forms.Textarea(attrs={
+                'placeholder': 'Leave your review here...'})
+        }
 
     def __init__(self, *args, **kwargs):
-        # Add placeholders
         super().__init__(*args, **kwargs)
         # Code from crispy forms docs:
         # https://django-crispy-forms.readthedocs.io/en/latest/index.html
@@ -49,15 +52,3 @@ class ReviewForm(forms.ModelForm):
                 InlineRadios('rating'),
             ),
         )
-
-        placeholders = {
-            'review': 'Leave your review here...',
-            'rating': 'Rating',
-        }
-
-        for field in self.fields:
-
-            placeholder = placeholders[field]
-
-            self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].label = False
