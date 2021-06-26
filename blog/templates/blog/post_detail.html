@@ -14,7 +14,7 @@
                     <p>{{ post.post }}</p>
                     {% if post.posted_by == request.user %}
                         <a href="{% url 'edit_post' post.id %}" class="btn">Edit</a>
-                        <a href="#" class="btn">Delete</a>
+                        <a href="{% url 'delete_post' post.id %}" class="btn">Delete</a>
                     {% endif %}
                 </div>
                 <a href="{% url 'blog_posts' %}" class="btn">Back to Posts</a>

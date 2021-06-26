@@ -5,6 +5,7 @@ from .models import UserProfile
 from .forms import UserProfileForm
 
 from checkout.models import Order
+from blog.models import Post
 
 
 def profile(request):
@@ -21,11 +22,13 @@ def profile(request):
     else:
         form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
+    posts = Post.objects.filter(status=0).order_by('-date_posted')
 
     template = 'profiles/profile.html'
     context = {
         'form': form,
         'orders': orders,
+        'posts': posts,
         'on_profile_page': True,
     }
 

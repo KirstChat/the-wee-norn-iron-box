@@ -7,7 +7,7 @@ from .forms import PostForm
 
 
 def blog_posts(request):
-    # A view to return blog posts
+    # A view to return all published blog posts
     posts = Post.objects.filter(status=1).order_by('-date_posted')
 
     context = {
@@ -18,6 +18,7 @@ def blog_posts(request):
 
 
 def post_detail(request, post_id):
+    # A view to display an individual blog post
     post = get_object_or_404(Post, pk=post_id)
 
     context = {
@@ -29,7 +30,7 @@ def post_detail(request, post_id):
 
 @login_required
 def add_post(request):
-    # Add blog post to site
+    # Add blog post
     if request.method == 'POST':
         post_form = PostForm(request.POST)
 
@@ -58,7 +59,6 @@ def edit_post(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
 
     if request.user != post.posted_by:
-        print('request.user')
         messages.error(
             request, 'Only the user that posted this post can edit it!'
         )
@@ -84,3 +84,17 @@ def edit_post(request, post_id):
         }
 
         return render(request, template, context)
+
+
+@login_required
+def delete_post(request, post_id):
+    # Delete a blog post
+    post = get_object_or_404(Post, pk=post_id)
+    if request.user != post.posted_by:
+        messages.error(
+            request, 'Only the user that posted this post can delete it!'
+        )
+        return redirect(reverse('blog_posts'))
+    post.delete()
+    messages.success(request, 'Post deleted!')
+    return redirect(reverse('blog_posts'))

@@ -29,19 +29,39 @@
         <div class="col-lg-6 bg-white">
             {% comment %} {% if order %} {% endcomment %}
                 {% for order in orders %}
-                <a href="{% url 'order_history' order.order_number %}"
-                    title={{ order.order_number }}>{{ order.order_number|truncatechars:6 }}</a>
-                <p>{{ order.date }}</p>
-                <ul>
-                    {% for item in order.boxitems.all %}
-                    <li>{{ item.product }}</li>
-                    {% endfor %}
-                </ul>
+                    <a href="{% url 'order_history' order.order_number %}"
+                        title={{ order.order_number }}>{{ order.order_number|truncatechars:6 }}</a>
+                    <p>{{ order.date }}</p>
+                    <ul>
+                        {% for item in order.boxitems.all %}
+                        <li>{{ item.product }}</li>
+                        {% endfor %}
+                    </ul>
                 {% endfor %}
             {% comment %} {% else %}
                 <p>You haven't ordered anything yet!</p>
             {% endif %} {% endcomment %}
         </div>
+    </div>
+    <div class="row">
+        <h2>Blog Drafts</h2>
+        {% for post in posts %}
+            {% if request.user == post.posted_by %}
+                <div class="card border-0 p-4 my-4">
+                    <p class="fw-bold text-uppercase">{{ post.title }}</p>
+                    <p class="text-muted">Posted By: {{ post.posted_by }} | Date Published: {{ post.date_posted }}
+                    </p>
+                    <p class="text-truncate">{{ post.post }}</p>
+                    <a href="{% url 'post_detail' post.id %}" class="btn">Read More
+                        <i class="fas fa-arrow-right ps-2"></i>
+                    </a>
+                </div>
+            {% endif %}
+        {% endfor %}
+        {% if not posts.exist %}
+            <p>You haven't saved any drafts</p>
+            <a href="{% url 'add_post' %}" class="btn">Add Post</a>
+        {% endif %}
     </div>
 </section>
 {% endblock %}
