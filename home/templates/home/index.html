@@ -28,38 +28,50 @@
     <!-- How It Works-->
     <section class="yellow-container text-center p-4">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-sm-12 col-lg-6">
-                    <h2>How it Works</h2>
+            <div class="row justify-content-center g-4">
+                <h2>How it Works</h2>
+                <div class="col-sm-12 col-lg-4">
                     <!-- Step 1 -->
-                    <p class="fw-bold mt-4 mb-2"><i class="fas fa-box pe-2"></i>Step 1</p>
-                    <p>
-                        Sign up for an account to start adding your favourite products to your wee box.
-                        <br>
-                        You can add a total of <span class="fw-bold">6 products</span> to your box.
-                    </p>
-                    <!-- Step 2 -->
-                    <p class="fw-bold mt-4 mb-2"><i class="fas fa-credit-card pe-2"></i>Step 2</p>
-                    <p>
-                        Once you've filled up your box, simply pay <span class="fw-bold">£10</span> your box and tell us where to send it.
-                    </p>
-                    <!-- Step 3 -->
-                    <p class="fw-bold mt-4 mb-2"><i class="fas fa-truck pe-2"></i>Step 3</p>
-                    <p>
-                        We'll quickly deliver your box to you at no extra cost.
-                        <br>
-                        All baked goods are delivered fresh so you won't need to worry about expiry dates!
-                    </p>
-                    <!-- Admin/Registered User Button -->
-                    {% if request.user.is_superuser %}
-                        <a class="btn py-2 px-4" href="#">Product Admin</a>
-                    {% elif request.user.is_authenticated %}
-                        <a class="btn py-2 px-4" href="{% url 'view_box' %}">My Box</a>
-                    {% else %}
-                        <a href="{% url 'account_login' %}" class="btn py-2 px-4 mx-2 mt-2">Login</a>
-                        <a href="{% url 'account_signup' %}" class="btn py-2 px-4 mx-2 mt-2">Sign Up</a>
-                    {% endif %}
+                    <div class="card border-0 h-100 p-4">
+                        <p class="fw-bold fs-5 text-uppercase mt-4 mb-2">Step 1<i class="fas fa-box ps-2"></i></p>
+                        <p>
+                            Sign up for an account to start adding your favourite products to your wee box.
+                            <br>
+                            You can add a total of <span class="fw-bold">6 products</span> to your box.
+                        </p>
+                    </div>
                 </div>
+                <div class="col-sm-12 col-lg-4">
+                    <!-- Step 2 -->
+                    <div class="card border-0 h-100 p-4">
+                        <p class="fw-bold fs-5 text-uppercase mt-4 mb-2">Step 2<i class="fas fa-credit-card ps-2"></i>
+                        </p>
+                        <p>
+                            Once you've filled up your box, simply pay <span class="fw-bold">£10</span> your box and
+                            tell us where to send it.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-4">
+                    <!-- Step 3 -->
+                    <div class="card border-0 h-100 p-4">
+                        <p class="fw-bold fs-5 text-uppercase mt-4 mb-2">Step 3<i class="fas fa-truck ps-2"></i></p>
+                        <p>
+                            We'll quickly deliver your box to you at no extra cost.
+                            <br>
+                            All baked goods are delivered fresh so you won't need to worry about expiry dates!
+                        </p>
+                    </div>
+                </div>
+                <!-- Admin/Registered User Button -->
+                {% if request.user.is_superuser %}
+                    <a class="btn py-2 px-4" href="{% url 'products' %}">View Products</a>
+                {% elif request.user.is_authenticated %}
+                    <a class="btn py-2 px-4" href="{% url 'view_box' %}">My Box</a>
+                {% else %}
+                    <a href="{% url 'account_login' %}" class="btn py-2 px-4 mx-2 mt-2">Login</a>
+                    <a href="{% url 'account_signup' %}" class="btn py-2 px-4 mx-2 mt-2">Sign Up</a>
+                {% endif %}
             </div>
         </div>
     </section>
@@ -71,9 +83,9 @@
         <!-- Code from Bootstrap Docs:
         https://getbootstrap.com/docs/5.0/components/carousel/#dark-variant -->
         <div id="reviewCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
-            <div class="carousel-inner m-auto">
+            <div class="carousel-inner">
                 {% for review in reviews %}
-                <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <div class="carousel-item {% if forloop.first %}active{% endif %} p-4">
                     <p class="star-rating">{{ review.rating }}</p>
                     <p class="w-50 mx-auto">{{ review.review }}</p>
                     <p class="fst-italic mt-3">Posted By: {{ review.posted_by }}</p>

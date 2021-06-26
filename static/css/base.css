@@ -231,7 +231,7 @@ a.nav-link.active {
 
 /* ---------- Review Carousel ---------- */
 .carousel {
-    height: 30vh;
+    height: 35vh;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -292,6 +292,14 @@ footer h5 {
 @media only screen and (min-width: 1024px) {
     h1 {
         font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2.6rem;
+    }
+
+    .carousel {
+        height: 30vh;
     }
 
     .edit,
