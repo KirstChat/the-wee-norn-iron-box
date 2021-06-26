@@ -25,7 +25,7 @@ class OrderForm(forms.ModelForm):
             'email': 'Email Address',
             'contact_number': 'Contact Number',
             'address_line_1': 'Address Line 1',
-            'address_line_2': 'Address Line 2',
+            'address_line_2': 'Address Line 2 (Optional)',
             'town_or_city': 'Town/City',
             'county': 'County',
             'postcode': 'Postcode',

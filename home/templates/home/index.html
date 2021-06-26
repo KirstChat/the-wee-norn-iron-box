@@ -92,7 +92,7 @@
 
         <!-- Add Review Button -->
         {% if request.user.is_authenticated %}
-        <a href="{% url 'add_review' %}" class="btn mt-4 py-2 px-4">Add Review</a>
+            <a href="{% url 'add_review' %}" class="btn mb-4 py-2 px-4">Add Review</a>
         {% endif %}
     </section>
 {% endblock %}
