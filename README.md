@@ -2,7 +2,9 @@
 
 The Wee Norn Iron Box is a snack box service that will allow registered users to choose from a selecting of different Northern Irish treats to be posted to them each month in a 'wee' box.
 
-Multi Device Website Mockup Generator: **Insert Mockup Generator Image Later**
+![Mockup Generator from Am I Responsive](wireframes/images/mockup.png)
+
+The image above is a screenshot of the site displayed on different devices using [Am I Responsive](http://ami.responsivedesign.is/).
 
 A demo of the project can be found here: [The Wee Norn Iron Box](https://the-wee-norn-iron-box.herokuapp.com/)
 
@@ -50,11 +52,7 @@ A demo of the project can be found here: [The Wee Norn Iron Box](https://the-wee
 
 The goal of this project is to create a snack box service that will allow registered users to choose from a range of drinks, foods and snacks that are only available in Northern Ireland. The project is aimed at anyone who lives/studies/works abroad or elsewhere in the UK, and misses the taste of home!
 
-Registered users will receive a box containing their chosen Northern Irish goods all for the price of £10, including fast and free delivery. Registered users can add the following to their box:
-
-- 2 x breads
-- 2 x drinks
-- 2 x snacks
+Registered users will receive a box containing 6 of their chosen Northern Irish goods all for the price of £10, including fast and free delivery.
 
 ### User Stories
 
@@ -95,7 +93,7 @@ The colour palette for this project is based on the colours of the Harland and W
 - ![#161616](https://via.placeholder.com/15/161616/000000?text=+) `#161616`:
 - ![#A30000](https://via.placeholder.com/15/a30000/000000?text=+) `#A30000`:
 - ![#E00000](https://via.placeholder.com/15/e00000/000000?text=+) `#E00000`:
-- ![#FFB700](https://via.placeholder.com/15/ffb700/000000?text=+) `#FFB700`:
+- ![#FF9F1C](https://via.placeholder.com/15/ffb700/000000?text=+) `#FF9F1C`:
 - ![#FFFFFF](https://via.placeholder.com/15/ffffff/000000?text=+) `#FFFFFF`:
 
 #### Typography
