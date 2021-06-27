@@ -29,7 +29,8 @@ def all_products(request):
             query = request.GET['q']
             if not query:
                 messages.error(
-                    request, "Sorry, we couldn't find that product!")
+                    request,
+                    "You didn't search for any products. Try searching again!")
                 return redirect(reverse('products'))
 
             queries = Q(name__icontains=query) | Q(

@@ -67,7 +67,7 @@
             <!-- Search Bar -->
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4">
-                    <form class="form mb-4" method="GET" action="{% url 'products' %}">
+                    <form class="form my-2" method="GET" action="{% url 'products' %}">
                         <div class="input-group">
                             <input class="form-control text-center" type="text" name="q" placeholder="Find a Product"
                                 aria-label="Search Button" aria-describedby="search-button">
@@ -76,6 +76,20 @@
                             </button>
                         </div>
                     </form>
+                </div>
+            </div>
+
+            <div class="row justify-content-center pb-4">
+                <!-- Product Search Count -->
+                <div class="col-md-6 col-lg-4">
+                    {% if search_term or current_categories == 'None_None' %}
+                        <div class="card h-100 p-4 text-center">
+                            <p>
+                                Your search returned {{ products|length }} Products for
+                                <span class="fw-bold">"{{ search_term }}"</span>
+                            </p>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
 

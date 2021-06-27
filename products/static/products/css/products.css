@@ -6,7 +6,9 @@
     width: 20%;
 }
 
-.yellow-container input.form-control {
+.yellow-container input,
+.yellow-container textarea,
+.yellow-container select {
     border-radius: 0;
     border: 2px solid var(--black);
 }
@@ -21,7 +23,9 @@
     color: var(--white);
 }
 
-.yellow-container input.form-control:focus {
+.yellow-container input:focus,
+.yellow-container textarea:focus,
+.yellow-container select:focus {
     border: 2px solid var(--red);
     box-shadow: none;
 }
@@ -44,6 +48,10 @@
 }
 
 /* ---------- End Products App ---------- */
+
+/* ---------- Edit Product ---------- */
+
+/* ---------- End Edit Product ---------- */
 
 /* ---------- Product Form Widget ---------- */
 .btn-file {
