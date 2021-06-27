@@ -7,6 +7,8 @@
         </button>
     </div>
     <div class="toast-body bg-white text-center rounded-1">
-        {{ message }}
+        <p>{{ message }}</p>
+        <p class="fw-bold">You've reached the limit of 6 items in your box.</p>
+        <a href="{% url 'view_box' %}" class="btn solid">View My Box</a>
     </div>
 </div>

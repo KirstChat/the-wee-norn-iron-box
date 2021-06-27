@@ -25,10 +25,10 @@ def add_to_box(request, item_id):
 
     if item_id in box:
         messages.error(
-            request, f'You\'ve already added {product.name} to your wee box')
+            request, f'You\'ve already added {product.name} to your wee box.')
     elif len(box.keys()) >= 6:
         messages.error(
-            request, 'You can\'t add anymore items to your wee box'
+            request, 'You can\'t add anymore items to your wee box.'
         )
     else:
         box[item_id] = quantity
@@ -50,7 +50,7 @@ def remove_from_box(request, item_id):
         if item_id in box:
             box.pop(item_id)
             messages.success(
-                request, f'You\'ve removed {product.name} from your wee box')
+                request, f'You\'ve removed {product.name} from your wee box.')
 
         request.session['box'] = box
         return redirect(reverse('view_box'))

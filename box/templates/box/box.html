@@ -10,7 +10,7 @@
                 {% if box_items %}
                     {% for item in box_items %}
                         <div class="col-md-6 col-lg-4">
-                            <div class="card border-0 h-100 text-center p-4">
+                            <div class="card h-100 text-center p-4">
                                 {% if item.product.image %}
                                     <img src="{{ item.product.image.url }}" class="card-img-top img-fluid"
                                     alt="{{ item.product.name }}">
@@ -33,7 +33,7 @@
                                     <form action="{% url 'remove_from_box' item.product.id %}" method="POST" class="form">
                                         <!-- Add Quantity here? -->
                                         {% csrf_token %}
-                                        <button id="remove-item" class="btn" type="submit">Remove From Box</button>
+                                        <button id="remove-item" class="btn solid" type="submit">Remove From Box</button>
                                     </form>
                                 </div>
                             </div>

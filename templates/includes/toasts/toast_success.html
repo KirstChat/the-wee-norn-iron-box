@@ -12,7 +12,8 @@
     <div class="toast-body bg-white text-center rounded-1">
         <div class="row">
             <div class="col">
-                <p class="fw-bold">{{ message }}</p>
+                <p>{{ message }}</p>
+                <p class="fw-bold">You currently have {{ box_items|length }} item(s) in your box.</p>
             </div>
         </div>
         <!-- Box Contents Summary -->
@@ -32,28 +33,25 @@
                                     <img src="{{ MEDIA_URL }}no-image.png" alt="{{ item.product.name }}"
                                     class="card-img-top img-fluid">
                                 {% endif %}
-                                <p>{{ item.product.name }}</p>
+                                <p class="fw-bold">{{ item.product.name }}</p>
                             </div>
                         </div>
                     {% endfor %}
                 </div>
-                <!-- Products and box buttons -->
+                <!-- View My Box Button -->
                 <div class="row">
                     <div class="col">
-                        <a class="btn mb-2" href="{% url 'view_box' %}">View My Box</a>
+                        <a class="btn solid mb-2" href="{% url 'view_box' %}">View My Box</a>
                     </div>
                 </div>
             {% else %}
-                <!-- Dont't display box preview on box page -->
+                <!-- Dont't display box preview on box page when products are removed -->
                 <div class="row">
                     <div class="col">
-                        <a class="btn mb-2" href="{% url 'products' %}">Add Products</a>
+                        <a class="btn solid mb-2" href="{% url 'products' %}">Add Products</a>
                     </div>
                 </div>
             {% endif %}
-        <!-- No items in box -->
-        {% elif product_count == 0 %}
-            <p>Your box is empty!</p>
         {% endif %}
     </div>
 </div>
