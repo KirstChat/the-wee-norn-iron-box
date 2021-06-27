@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-<section class="yellow-container h-100 p-4">
+<section class="yellow-container p-4">
     <div class="container">
         <div class="row justify-content-center">
             <h1 class="text-center">The Wee Norn Iron Blog</h1>
@@ -18,6 +18,34 @@
                     {% endif %}
                 </div>
                 <a href="{% url 'blog_posts' %}" class="btn">Back to Posts</a>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                {% if request.user.is_authenticated %}
+                    {% for comment in comments %}
+                        <div class="card border-0 p-4">
+                            {{ comment.comment }}
+                            <p class="text-muted">Posted By:{{ comment.posted_by }} | {{ comment.date_commented }}</p>
+                        </div>
+                    {% endfor %}
+                    {% if request.user.is_authenticated %}
+                    <div class="card border-0 p-4">
+                        <form class="form" method="POST">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                            <div class="text-center mt-2">
+                                <button class="btn m-2" type="submit">Add Comment</button>
+                                <a href="{% url 'post_detail' post.id %}" class="btn m-2">Cancel</a>
+                            </div>
+                        </form>
+                    </div>
+                    {% else %}
+                    <p>You must <a href="{% url 'account_signup' %}">login</a> to leave a review!</p>
+                    {% endif %}
+                {% else %}
+                    <p>You must <a href="{% url 'account_signup' %}">login</a> to leave a review!</p>
+                {% endif %}
             </div>
         </div>
     </div>

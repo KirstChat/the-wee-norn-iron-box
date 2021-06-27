@@ -21,6 +21,7 @@ def profile(request):
             messages.error(request, 'Failed to update profile.')
     else:
         form = UserProfileForm(instance=profile)
+
     orders = profile.orders.all()
     posts = Post.objects.filter(status=0).order_by('-date_posted')
 

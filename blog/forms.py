@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post
+from .models import Post, Comment
 
 
 class PostForm(forms.ModelForm):
@@ -9,19 +9,10 @@ class PostForm(forms.ModelForm):
         fields = ('title', 'post', 'status', )
         exclude = ('posted_by', 'date_posted', )
 
-    # def __init__(self, *args, **kwargs):
-    #     # Add placeholders
-    #     placeholders = {
-    #         'title': 'Post Title',
-    #         'post': 'Blog Post',
-    #     }
 
-    #     for field in self.fields:
-    #         # Add * to placeholder if required
-    #         if self.fields[field].required:
-    #             placeholder = f'{placeholders[field]}*'
-    #         else:
-    #             placeholder = placeholders[field]
-    #         # Set placeholder attribute to values from dictionary above
-    #         self.fields[field].widget.attrs['placeholder'] = placeholder
-    #         self.fields[field].label = False
+class CommentForm(forms.ModelForm):
+
+    class Meta:
+        model = Comment
+        fields = ('comment', )
+        exclude = ('posted_by', 'date_commented', )

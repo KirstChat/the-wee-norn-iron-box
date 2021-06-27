@@ -10,9 +10,11 @@ class ProductAdmin(admin.ModelAdmin):
         'brand',
         'category',
         'size')
+
     list_filter = (
         'category',
         'size')
+
     search_fields = (
         'name',
         'brand',

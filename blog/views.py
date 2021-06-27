@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 from .models import Post
-from .forms import PostForm
+from .forms import CommentForm, PostForm
 
 
 def blog_posts(request):
@@ -20,9 +20,26 @@ def blog_posts(request):
 def post_detail(request, post_id):
     # A view to display an individual blog post
     post = get_object_or_404(Post, pk=post_id)
+    comments = post.comments.filter(post=post_id).order_by('-date_commented')
+
+    new_comment = None
+
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            new_comment = form.save(commit=False)
+            new_comment.post = post
+            new_comment.posted_by = request.user
+            new_comment.save()
+            messages.success(request, 'Comment successfully posted')
+    else:
+        form = CommentForm()
 
     context = {
         'post': post,
+        'form': form,
+        'comments': comments,
+        'new_comment': new_comment,
     }
 
     return render(request, 'blog/post_detail.html', context)

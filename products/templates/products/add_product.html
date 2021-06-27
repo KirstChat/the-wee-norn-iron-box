@@ -16,9 +16,9 @@
                             {% csrf_token %}
                             {% for field in form %}
                                 {% if field.name != 'image' %}
-                                    {{ field | as_crispy_field}}
+                                    {{ field | as_crispy_field }}
                                 {% else %}
-                                    {{ field}}
+                                    {{ field }}
                                 {% endif %}
                             {% endfor %}
                             <div>
