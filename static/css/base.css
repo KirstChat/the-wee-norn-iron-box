@@ -207,6 +207,10 @@ a.nav-link.active {
     opacity: 1;
     transition: .3s ease-in;
 }
+
+.profile-card {
+    height: 80vh;
+}
 /* ---------- End Cards ---------- */
 
 /* ---------- Review Carousel ---------- */

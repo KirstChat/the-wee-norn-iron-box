@@ -13,7 +13,7 @@
                             <p class="fw-bold text-uppercase">{{ post.title }}</p>
                             <p class="text-muted">Posted By: {{ post.posted_by }} | Date Published: {{ post.date_posted }}
                             </p>
-                            <p class="text-truncate">{{ post.post }}</p>
+                            <p>{{ post.post|truncatechars:100 }}</p>
                             <a href="{% url 'post_detail' post.id %}" class="btn solid">
                                 Read More
                                 <i class="fas fa-arrow-right ps-2"></i>

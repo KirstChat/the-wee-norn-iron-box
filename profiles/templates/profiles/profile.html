@@ -1,61 +1,88 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% comment %} {% block extra_css %}
-<link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
-{% endblock %} {% endcomment %}
-
 {% block page_heading %}
-    <section class="white-container">
+    <section class="white-container text-center p-4">
         <div class="container">
-            <h1>'Bout ye {{ request.user }}</h1>
+            <h1>'Bout ye {{ request.user }}!</h1>
+            <p class="pt-2 px-4">
+                Welcome to your profile where you can view your
+                <br>
+                order history, blog drafts and update your default delivery address.</p>
         </div>
     </section>
 {% endblock %}
 
 {% block content %}
-<section class="yellow-container">
-    <div class="row">
-        <!-- Default Delivery Address -->
-        <div class="col-lg-6 p-4">
-            <p>Default Delivery Address:</p>
-            <form action="{% url 'profile' %}" method="POST">
-                {% csrf_token %}
-                {{ form|crispy }}
-                <button class="btn">Update Address</button>
-            </form>
-        </div>
-        <!-- Order History -->
-        <div class="col-lg-6 bg-white">
-            {% for order in orders %}
-                <a href="{% url 'order_history' order.order_number %}"
-                title={{ order.order_number }}>{{ order.order_number|truncatechars:6 }}</a>
-                <p>{{ order.date }}</p>
-                <ul>
-                    {% for item in order.boxitems.all %}
-                        <li>{{ item.product }}</li>
-                    {% endfor %}
-                </ul>
-            {% empty %}
-                <p>You haven't ordered anything</p>
-            {% endfor %}
-        </div>
-    </div>
-    <div class="row">
-        <h2>Blog Drafts</h2>
-        {% for post in posts %}
-            {% if post.posted_by == request.user %}
-                <div class="card border-0 p-4 my-4">
-                    <p class="fw-bold text-uppercase">{{ post.title }}</p>
-                    <p class="text-muted">Posted By: {{ post.posted_by }} | Date Published: {{ post.date_posted }}
-                    </p>
-                    <p class="text-truncate">{{ post.post }}</p>
-                    <a href="{% url 'post_detail' post.id %}" class="btn">Read More
-                        <i class="fas fa-arrow-right ps-2"></i>
-                    </a>
+    <section class="yellow-container text-center p-4">
+        <div class="row justify-content-center g-4">
+            <!-- Default Delivery Address -->
+            <div class="col-sm-12 col-lg-8">
+                <h3 class="mb-4">Default Delivery Address:</h3>
+                <div class="card p-4">
+                    <form action="{% url 'profile' %}" method="POST">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <button class="btn solid">Update Address</button>
+                    </form>
                 </div>
-            {% endif %}
-        {% endfor %}
-    </div>
-</section>
+            </div>
+
+            <!-- Order History -->
+            <div class="col-sm-12 col-lg-8">
+                <h3 class="my-4">Order History:</h3>
+                <div class="card profile-card p-4 overflow-auto">
+                    {% for order in orders %}
+                        <table class="table text-start">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Order Number</th>
+                                    <th scope="col">Order Date</th>
+                                    <th scope="col">Items Ordered</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">
+                                        <a href="{% url 'order_history' order.order_number %}"
+                                            title={{ order.order_number }} class="link">
+                                            {{ order.order_number|truncatechars:5 }}
+                                        </a>
+                                    </th>
+                                    <td>{{ order.date|date:"SHORT_DATE_FORMAT" }}</td>
+                                    <td>
+                                        {% for item in order.boxitems.all %}
+                                        <ul class="list-unstyled">
+                                            <li>{{ item.product }}</li>
+                                        </ul>
+                                        {% endfor %}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    {% empty %}
+                    <p>You haven't ordered anything</p>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Blog Drafts -->
+            <div class="col-sm-12 col-lg-8">
+                <h3 class="my-4">Blog Drafts:</h3>
+                {% for post in posts %}
+                    {% if post.posted_by == request.user %}
+                        <div class="card border-0 p-4 my-4">
+                            <p class="fw-bold text-uppercase">{{ post.title }}</p>
+                            <p class="text-muted">Posted By: {{ post.posted_by }} | Date Published: {{ post.date_posted }}
+                            </p>
+                            <p class="text-truncate">{{ post.post }}</p>
+                            <a href="{% url 'post_detail' post.id %}" class="btn">Read More
+                                <i class="fas fa-arrow-right ps-2"></i>
+                            </a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
 {% endblock %}
