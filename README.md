@@ -469,7 +469,13 @@ The following steps were used to store static files and media files in an Amazon
   - This command was used to indent the products and categories datadump to make it easier for users to read.
 
 - [Bootstrap Carousel in for loop](https://stackoverflow.com/questions/30483186/bootstrap-carousel-and-django)
-- This code from stack overflow was used to add a Bootstrap Carousel with a for loop to display reviews on the home page.
+  - This code from stack overflow was used to add a Bootstrap Carousel with a for loop to display reviews on the home page.
+
+- [Blog Application with Django](https://djangocentral.com/building-a-blog-application-with-django/)
+  - This tutorial was used as a guide to add a blog application to the project to allow users and superusers to create blog posts.
+
+- [Comments System with Django](https://djangocentral.com/creating-comments-system-with-django/)
+  - This tutorial was used as a guide to add comments to blog posts.
 
 ### Content
 
