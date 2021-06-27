@@ -12,8 +12,11 @@
     <div class="toast-body bg-white text-center rounded-1">
         <div class="row">
             <div class="col">
-                <p>{{ message }}</p>
-                <p class="fw-bold">You currently have {{ box_items|length }} item(s) in your box.</p>
+                <p class="my-auto">{{ message }}</p>
+                {% url 'products' as products %}
+                {% if request.path == products %}
+                    <p class="fw-bold">You currently have {{ box_items|length }} item(s) in your box.</p>
+                {% endif %}
             </div>
         </div>
         <!-- Box Contents Summary -->

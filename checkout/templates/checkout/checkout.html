@@ -14,7 +14,7 @@
                     <h2>Here's your Wee Norn Iron Box:</h2>
                     {% for item in box_items %}
                         <div class="col-md-6">
-                            <div class="card border-0 h-100 p-4">
+                            <div class="card h-100 p-4">
                                 {% if item.product.image %}
                                     <img src="{{ item.product.image.url }}" class="card-img-top img-fluid"
                                     alt="{{ item.product.name }}">
@@ -26,7 +26,7 @@
                             </div>
                         </div>
                     {% endfor %}
-                    <a class="btn" href="{% url 'view_box'%}">Update Box</a>
+                    <a class="btn solid" href="{% url 'view_box' %}">Update Box</a>
                 </div>
             </div>
             <!-- Checkout Form -->
@@ -60,13 +60,13 @@
                                 <h4 class="m-4">Payment Details:</h4>
                                 <!-- Stripe Card Element -->
                                 <div id="card-element"></div>
-                                <span class="small">We'll charge your card £10</span>
+                                <p class="small text-muted mt-4">You will be charged £10 for your box including delivery.</p>
                                 <!-- Pay Button & Errors -->
                                 <div class="mt-4">
                                     <!-- Error Messages -->
                                     <span id="card-element-error"></span>
                                     <!-- Code from Bootstrap docs: https://getbootstrap.com/docs/5.0/components/spinners/-->
-                                    <button id="submit-button" class="btn">
+                                    <button id="submit-button" class="btn solid">
                                         <div class="spinner-border spinner-border-sm hidden" id="spinner"></div>
                                         <span id="button-text">Order My Box</span>
                                     </button>

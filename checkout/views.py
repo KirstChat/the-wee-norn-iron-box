@@ -27,7 +27,7 @@ def cache_checkout_data(request):
         })
         return HttpResponse(status=200)
     except Exception as e:
-        messages.error(request, 'Sorry, your payment can\'t be processed right now.\
+        messages.error(request, 'Sorry, your payment can not be processed right now.\
             Please try again later.')
         return HttpResponse(content=e, status=400)
 
@@ -149,9 +149,7 @@ def checkout_success(request, order_number):
             if user_profile_form.is_valid():
                 user_profile_form.save()
 
-    messages.success(request, f'Your order was successful!\
-        Your order number is {order_number}. A confirmation email\
-            has been sent to {order.email}')
+    messages.success(request, 'Your order has been successful!')
 
     if 'box' in request.session:
         del request.session['box']

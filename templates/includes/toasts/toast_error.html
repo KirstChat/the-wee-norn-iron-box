@@ -8,7 +8,9 @@
     </div>
     <div class="toast-body bg-white text-center rounded-1">
         <p>{{ message }}</p>
-        <p class="fw-bold">You've reached the limit of 6 items in your box.</p>
+        {% if box_items|length == 6 %}
+            <p class="fw-bold">You've reached the limit of 6 items in your box.</p>
+        {% endif %}
         <a href="{% url 'view_box' %}" class="btn solid">View My Box</a>
     </div>
 </div>

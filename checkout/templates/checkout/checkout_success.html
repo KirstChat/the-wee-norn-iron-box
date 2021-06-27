@@ -42,7 +42,7 @@
             <div class="row justify-content-center g-4">
                 {% for item in order.boxitems.all %}
                     <div class="col-md-6 col-lg-4">
-                        <div class="card border-0 h-100 text-center p-4">
+                        <div class="card h-100 text-center p-4">
                             {% if item.product.image %}
                                 <img src="{{ item.product.image.url }}" class="card-img-top img-fluid" alt="{{ item.product.name }}">
                             {% else %}
@@ -65,7 +65,7 @@
                         </div>
                     </div>
                 {% endfor %}
-                <a class="btn mt-4" href="{% url 'profile' %}">Profile</a>
+                <a class="btn solid mt-4" href="{% url 'profile' %}">Profile</a>
             </div>
         </div>
     </section>

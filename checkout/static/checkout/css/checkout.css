@@ -1,24 +1,16 @@
-#card-element,
-.form-control,
-.form-control input,
-.form-select,
-.form-select option {
-    border: 1px solid #8b8b8b;
+#card-element {
+    border: 2px solid var(--black);
     padding: .5rem;
-    border-radius: .25rem;
+    border-radius: 9;
+}
+
+#card-element:focus {
+    border: 2px solid var(--red);
 }
 
 .hidden {
     display: none;
 }
-
-/* select,
-select option,
-.form-select {
-    color: #161616;
-    border: 1px solid #8b8b8b;
-    padding: .5rem;
-} */
 
 .form-select:invalid {
     color: #8b8b8b;
