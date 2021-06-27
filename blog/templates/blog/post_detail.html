@@ -7,35 +7,37 @@
         <div class="row justify-content-center">
             <h1 class="text-center">The Wee Norn Iron Blog</h1>
             <div class="col-lg-6">
-                <div class="card border-0 p-4 my-4">
+                <div class="card p-4 my-4">
                     <p class="fw-bold text-uppercase">{{ post.title }}</p>
                     <p class="text-muted">Posted By: {{ post.posted_by }} | Date Published: {{ post.date_posted }}
                     </p>
                     <p>{{ post.post }}</p>
                     {% if post.posted_by == request.user %}
-                        <a href="{% url 'edit_post' post.id %}" class="btn">Edit</a>
-                        <a href="{% url 'delete_post' post.id %}" class="btn">Delete</a>
+                        <div class="text-center"> 
+                            <a href="{% url 'edit_post' post.id %}" class="btn solid m-2">Edit</a>
+                            <a href="{% url 'delete_post' post.id %}" class="btn m-2">Delete</a>
+                        </div>
                     {% endif %}
                 </div>
-                <a href="{% url 'blog_posts' %}" class="btn">Back to Posts</a>
             </div>
         </div>
         <div class="row justify-content-center">
+            <h3 class="text-center">Comments:</h3>
             <div class="col-lg-6">
                 {% if request.user.is_authenticated %}
                     {% for comment in comments %}
-                        <div class="card border-0 p-4">
+                        <div class="card p-4 mb-4">
                             {{ comment.comment }}
-                            <p class="text-muted">Posted By:{{ comment.posted_by }} | {{ comment.date_commented }}</p>
+                            <p class="text-muted">Posted By: {{ comment.posted_by }} | {{ comment.date_commented }}</p>
                         </div>
                     {% endfor %}
                     {% if request.user.is_authenticated %}
-                    <div class="card border-0 p-4">
+                    <div class="card p-4">
                         <form class="form" method="POST">
                             {% csrf_token %}
                             {{ form|crispy }}
                             <div class="text-center mt-2">
-                                <button class="btn m-2" type="submit">Add Comment</button>
+                                <button class="btn solid m-2" type="submit">Add Comment</button>
                                 <a href="{% url 'post_detail' post.id %}" class="btn m-2">Cancel</a>
                             </div>
                         </form>
@@ -48,6 +50,13 @@
                 {% endif %}
             </div>
         </div>
+    </div>
+    <!-- Back to Blog Posts Button -->
+    <div class="position-relative">
+        <a href="{% url 'blog_posts' %}" class="btn solid position-fixed bottom-0 end-0 m-4 w-auto">
+            <i class="fas fa-arrow-left"></i>
+            <p class="d-none d-md-inline ps-2">Back to Posts</p>
+        </a>
     </div>
 </section>
 {% endblock %}

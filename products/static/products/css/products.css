@@ -1,35 +1,4 @@
 /* ---------- Products App ---------- */
-.yellow-container button#search-button {
-    background: var(--black);
-    box-shadow: none;
-    color: var(--white);
-    width: 20%;
-}
-
-.yellow-container input,
-.yellow-container textarea,
-.yellow-container select {
-    border-radius: 0;
-    border: 2px solid var(--black);
-}
-
-.yellow-container button#search-button:hover {
-    background: var(--red);
-    box-shadow: none;
-    transform: none;
-}
-
-.yellow-container button#search-button.form-control:focus {
-    color: var(--white);
-}
-
-.yellow-container input:focus,
-.yellow-container textarea:focus,
-.yellow-container select:focus {
-    border: 2px solid var(--red);
-    box-shadow: none;
-}
-
 .white-container .nav-tabs {
     border-bottom: 0;
 }
@@ -48,10 +17,6 @@
 }
 
 /* ---------- End Products App ---------- */
-
-/* ---------- Edit Product ---------- */
-
-/* ---------- End Edit Product ---------- */
 
 /* ---------- Product Form Widget ---------- */
 .btn-file {

@@ -23,14 +23,12 @@
                     <h1>Our Wee {{ c.name }}</h1>
                     {% if c.name == "Breads" %}
                         <p class="mb-0">The very best selection of potato, soda, wheaten and veda bread!</p>
-                        <span class="fw-bold">Friendly reminder that you can only add 6 products to your box.</span>
                     {% elif c.name == "Drinks" %}
                         <p class="mb-0">A selection of drinks from Dale Farm, Club and the Maine Lemonade Man!</p>
-                        <span class="fw-bold">Friendly reminder that you can only add 6 products to your box.</span>
                     {% elif c.name == "Snacks" %}
                         <p class="mb-0">A few of our personal favourites straight from the Tayto Factory!</p>
-                        <span class="fw-bold">Friendly reminder that you can only add 6 products to your box.</span>
                     {% endif %}
+                    <span class="fw-bold">Friendly reminder that you can only add 6 products to your box.</span>
                 {% endfor %}
             {% endif %}
         </div>
@@ -86,7 +84,7 @@
                         <div class="card h-100 p-4 text-center">
                             <p>
                                 Your search returned {{ products|length }} Products for
-                                <span class="fw-bold">"{{ search_term }}"</span>
+                                <span class="fw-bold">"{{ search_term }}." Try searching for something else!</span>
                             </p>
                         </div>
                     {% endif %}
@@ -159,8 +157,10 @@
         </div>
         {% if user.is_superuser %}
             <div class="position-relative">
-                <a href="{% url 'add_product' %}" class="btn solid position-fixed bottom-0 end-0 m-4 w-auto"><i
-                        class="fas fa-plus pe-2"></i>Add New Product</a>
+                <a href="{% url 'add_product' %}" class="btn solid position-fixed bottom-0 end-0 m-4 w-auto">
+                    <i class="fas fa-plus"></i>
+                    <p class="d-none d-md-inline ps-2">Add New Product</p>
+                </a>
             </div>
         {% endif %}
     </section>
