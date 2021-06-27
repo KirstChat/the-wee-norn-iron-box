@@ -141,7 +141,7 @@ Links to the wireframes can be found below. Each link contains the wireframes fo
 Review Model
 
 | Field | Field Type | Field Options |
-| :---: | :---: | :---: |
+| --- | --- | --- |
 | title | CharField | max_length=50, null=True, blank=True |
 | review | TextField | null=True, blank=True |
 | posted_by | ForeignKey | User, on_delete=models.CASCADE |
@@ -152,13 +152,13 @@ Review Model
 Category Model
 
 | Field | Field Type | Field Options |
-| :---: | :---: | :---: |
+| --- | --- | --- |
 | name | CharField | max_length=200 |
 
 Products Model
 
 | Field | Field Type | Field Options |
-| :---: | :---: | :---: |
+| --- | --- | --- |
 | name | CharField | max_length=254, null=True |
 | description | TextField | null=True, blank=True |
 | brand | CharField | max_length=254, null=True, blank=True |
@@ -171,7 +171,7 @@ Products Model
 Order Model
 
 | Field | Field Type | Field Options |
-| :---: | :---: | :---:|
+| --- | --- | ---|
 | order_number | CharField | max_length=32, null=False, editable=False |
 | user_profile | ForeignKey | UserProfile, on_delete=models.SET_NULL, null=True, blank=False, related_name='orders' |
 | first_name | CharField | max_length=25, null=False, blank=False |
@@ -194,6 +194,27 @@ Box Items Model
 | :---: | :---: | :---:|
 | order | ForeignKey | Order, null=False, blank=False, on_delete=models.CASCADE, related_name="boxitems" |
 | product | ForeignKey | Product, null=False, blank=False, on_delete=models.CASCADE |
+
+**Blog App**:
+
+Post Model
+
+| Field | Field Type | Field Options |
+| :---: | :---: | :---: |
+| title | CharField | max_length=254, null=False, blank=False |
+| post | TextField | null=False, blank=False |
+| posted_by | ForeignKey | User, on_delete=models.CASCADE |
+| date_posted | DateTimeField | auto_now_add=True |
+| status | BooleanField | choices=STATUS, default=1 |
+
+Comment Model
+
+| Field | Field Type | Field Options |
+| :---: | :---: | :---: |
+| comment | TextField | null=False, blank=False |
+| posted_by | ForeignKey | User, on_delete=models.CASCADE |
+| date_commented | DateTimeField | auto_now_add=True |
+| post | ForeignKey | Post, on_delete=models.CASCADE, related_name="comments" |
 
 [Contents](#contents)
 
@@ -228,9 +249,6 @@ In future releases of this project and as I continue to progress as a developer,
 
 - Multiple Payment Options:
   - This feature would give users various options to pay for their box or subscription using Apple Pay or Google Pay
-
-- **Poll to vote for next product added**
-- **Favourites Section**
 
 [Contents](#contents)
 
