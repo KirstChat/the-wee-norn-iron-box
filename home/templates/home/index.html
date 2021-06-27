@@ -29,33 +29,33 @@
     <section class="yellow-container text-center p-4">
         <div class="container">
             <h2 class="mb-4">How it Works</h2>
-            <div class="row justify-content-center g-4">
+            <div class="row g-4">
                 <!-- Step 1 -->
-                <div class="col-md-12 col-lg-4">
+                <div class="col-md-12 col-lg-6">
                     <div class="card steps h-100 p-4">
                         <i class="fas fa-box fs-3"></i>
                         <span class="fw-bold fs-5 text-uppercase my-2">Step 1</span>
                         <p>
                             Sign up for an account to start adding your favourite products to your wee box.
                             <br>
-                            You can add a total of <span class="fw-bold">6 products</span> to your box.
+                            You can add a total of <span class="fw-bold text-uppercase">6 products</span> to your box.
                         </p>
                     </div>
                 </div>
                 <!-- Step 2 -->
-                <div class="col-md-12 col-lg-4">
+                <div class="col-md-12 col-lg-6">
                     <div class="card steps h-100 p-4">
                         <i class="fas fa-credit-card fs-3"></i>
                         <span class="fw-bold fs-5 text-uppercase my-2">Step 2</span>
                         <p>
                             Once you've filled up your box, simply pay 
-                            <span class="fw-bold">£10</span> your box and
+                            <span class="fw-bold text-uppercase">£10</span> for your box and
                             tell us where to send it.
                         </p>
                     </div>
                 </div>
                 <!-- Step 3 -->
-                <div class="col-md-12 col-lg-4">
+                <div class="col-md-12 col-lg-6">
                     <div class="card steps h-100 p-4">
                         <i class="fas fa-truck fs-3"></i>
                         <span class="fw-bold fs-5 text-uppercase my-2">Step 3</span>
@@ -63,11 +63,25 @@
                             We'll quickly deliver your box to you at no extra cost.
                             <br>
                             All baked goods are delivered  
-                            <span class="fw-bold">fresh</span>
+                            <span class="fw-bold text-uppercase">fresh</span>
                             so you won't need to worry about expiry dates!
                         </p>
                     </div>
                 </div>
+                <!-- Step 4 -->
+                <div class="col-md-12 col-lg-6">
+                    <div class="card steps h-100 p-4">
+                        <i class="fas fa-file-alt fs-3"></i>
+                        <span class="fw-bold fs-5 text-uppercase my-2">Step 4</span>
+                        <p>
+                            With an account, you'll also gain access to our
+                            <span class="fw-bold text-uppercase">blog</span>
+                            where you can share anything from Northern Irish recipies to some of your favourite places to visit!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-4">
                 <!-- Admin/Registered User Button -->
                 {% if request.user.is_superuser %}
                     <a class="btn solid py-2 px-4" href="{% url 'products' %}">View Products</a>
@@ -108,7 +122,9 @@
         </div>
 
         <!-- Add Review Button -->
-        {% if request.user.is_authenticated %}
+        {% if request.user.is_superuser %}
+            <a href="{% url 'add_review' %}" class="btn mb-4 py-2 px-4">Manage Reviews</a>
+        {% elif request.user.is_authenticated %}
             <a href="{% url 'add_review' %}" class="btn mb-4 py-2 px-4">Add Review</a>
         {% endif %}
     </section>
