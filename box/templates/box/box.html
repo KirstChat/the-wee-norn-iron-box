@@ -41,7 +41,7 @@
                     {% endfor %}
                 {% else %}
                     <div class="col-6">
-                        <div class="card border-0 h-100 p-4 text-center">
+                        <div class="card h-100 p-4 text-center">
                             <h4>You haven't added any items to your wee box yet</h4>
                             <p class="my-4">We don't want to send you an empty box, so why not visit our products
                                 page to start
@@ -53,11 +53,11 @@
             <!-- Code from Django Docs: https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#length-is -->
             {% if box_items|length_is:"6" %}
                 <div class="text-center">
-                    <a class="btn mt-4" href="{% url 'checkout' %}">Order My Box</a>
+                    <a class="btn solid mt-4" href="{% url 'checkout' %}">Order My Box</a>
                 </div>
             {% else %}
                 <div class="text-center">
-                    <a class="btn mt-4" href="{% url 'products' %}">Add Products</a>
+                    <a class="btn solid mt-4" href="{% url 'products' %}">Add Products</a>
                 </div>
             {% endif %}
         </div>
