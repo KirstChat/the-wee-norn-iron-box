@@ -2,20 +2,19 @@
 :root {
     --white: #fff;
     --black: #161616;
-    --yellow: #ffa600;
-    --red: #e00000;
-    --dark-red: #b80000;
+    --yellow: #FF9F1C;
+    --red: #b80000;
 }
 
-html {
+/* html {
     height: 100%;
-}
+} */
 
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    height: 100vh;
+    /* height: 100vh; */
 
     color: var(--black);
     font-family: 'Roboto', sans-serif;
@@ -146,28 +145,19 @@ a.nav-link.active {
 
 /* ---------- Buttons ---------- */
 .btn {
-    background: var(--red);
-    box-shadow: 0 2px var(--dark-red);
-    color: var(--white);
+    background: var(--white);
+    border: 2px solid var(--black);
+    border-radius: 0;
+    color: var(--black);
     font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
-    width: 150px;
 }
 
 .btn:hover {
-    background: var(--dark-red);
+    background: var(--red);
+    border: 2px solid var(--red);
     color: var(--white);
-    transform: translateY(2px)
-}
-
-.product-btn {
-    width: 100px;
-}
-
-.edit,
-.delete {
-    width: 60px;
 }
 /* ---------- End Buttons ---------- */
 
@@ -180,6 +170,8 @@ a.nav-link.active {
 
 .card {
     background: var(--white);
+    border: 2px solid var(--black);
+    border-radius: 0;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     position: relative;
     width: 100%;
