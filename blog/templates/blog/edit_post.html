@@ -2,30 +2,32 @@
 {% load static %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+    <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
 {% endblock %}
 
 {% block content %}
-<section class="yellow-container p-4">
-    <div class="container">
-        <h1 class="text-center mb-4">Edit Post</h1>
-        <div class="row justify-content-center align-content-center">
-            <div class="col-sm-12 col-lg-6">
-                <div class="card border-0 p-4">
-                    <form class="form" action="{% url 'edit_post' post.id %}" method="POST"
-                        enctype="multipart/form-data">
-                        {% csrf_token %}
-                        {% for field in post_form %}
-                            {{ field | as_crispy_field }}
-                        {% endfor %}
-                        <div>
-                            <button class="btn" type"submit">Update</button>
-                            <a href="{% url 'blog_posts' %}" class="btn">Cancel</a>
-                        </div>
-                    </form>
+    <section class="yellow-container p-4">
+        <div class="container">
+            <h1 class="text-center mb-4">Edit Post</h1>
+            <!-- Edit Post Form -->
+            <div class="row justify-content-center align-content-center">
+                <div class="col-sm-12 col-lg-6">
+                    <div class="card p-4">
+                        <form class="form" action="{% url 'edit_post' post.id %}" method="POST"
+                            enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {% for field in post_form %}
+                                {{ field | as_crispy_field }}
+                            {% endfor %}
+                            <!-- Update and Cancel Buttons -->
+                            <div class="text-center">
+                                <button class="btn solid m-2" type"submit">Update</button>
+                                <a href="{% url 'blog_posts' %}" class="btn m-2">Cancel</a>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 {% endblock %}

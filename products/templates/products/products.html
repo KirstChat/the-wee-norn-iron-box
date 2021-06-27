@@ -77,14 +77,14 @@
                 </div>
             </div>
 
+            <!-- Product Search Count -->
             <div class="row justify-content-center pb-4">
-                <!-- Product Search Count -->
                 <div class="col-md-6 col-lg-4">
                     {% if search_term or current_categories == 'None_None' %}
                         <div class="card h-100 p-4 text-center">
-                            <p>
+                            <p class="m-auto">
                                 Your search returned {{ products|length }} Products for
-                                <span class="fw-bold">"{{ search_term }}." Try searching for something else!</span>
+                                <span class="fw-bold">"{{ search_term }}."</span>
                             </p>
                         </div>
                     {% endif %}
@@ -120,33 +120,39 @@
 
                                 <!-- Buttons -->
                                 {% if request.user.is_superuser %}
+                                    <!-- Edit/Delete Buttons -->
                                     <div>
-                                        <a class="btn solid edit m-1" href="{% url 'edit_product' product.id %}">
+                                        <a class="btn solid small m-1" href="{% url 'edit_product' product.id %}">
                                             <i class="fas fa-pen p-1"></i>
                                         </a>
-                                        <a class="btn solid delete m-1" href="{% url 'delete_product' product.id %}">
+                                        <a class="btn solid small m-1" href="{% url 'delete_product' product.id %}">
                                             <i class="fas fa-trash p-1"></i>
                                         </a>
                                     </div>
                                 {% elif request.user.is_authenticated %}
+                                    <!-- Add To Box Button -->
                                     <form class="form" action="{% url 'add_to_box' product.id %}" method="POST">
                                         {% csrf_token %}
                                         <div class="row">
                                             <div class="col">
-                                                <button type="submit" class="btn product-btn"><i
-                                                        class="fas fa-box-open pe-2"></i>Add to
-                                                    Box</button>
+                                                <button type="submit" class="btn solid">
+                                                    <i class="fas fa-box-open pe-2"></i>
+                                                    Add to Box
+                                                </button>
                                             </div>
                                             <!-- Code from Django Docs: https://docs.djangoproject.com/en/3.2/ref/request-response/#django.http.HttpRequest.get_full_path-->
                                             <input type="hidden" name="redirect_url" value="{{ request.get_full_path }}">
                                         </div>
                                     </form>
                                 {% else %}
+                                    <!-- Login/Sign Up Buttons -->
                                     <div class="row">
-                                        <a class="btn py-2 px-4 mx-2 product-btn"
-                                            href="{% url 'account_login' %}">Login</a>
-                                        <a class="btn py-2 px-4 mx-2 product-btn" href="{% url 'account_signup' %}">Sign
-                                            Up</a>
+                                        <a class="btn solid small mx-2" href="{% url 'account_login' %}">
+                                            Login
+                                        </a>
+                                        <a class="btn small product-btn" href="{% url 'account_signup' %}">
+                                            Sign Up
+                                        </a>
                                     </div>
                                 {% endif %}
                             </div>
@@ -155,6 +161,8 @@
                 {% endfor %}
             </div>
         </div>
+        
+        <!-- Add New Product Button -->
         {% if user.is_superuser %}
             <div class="position-relative">
                 <a href="{% url 'add_product' %}" class="btn solid position-fixed bottom-0 end-0 m-4 w-auto">

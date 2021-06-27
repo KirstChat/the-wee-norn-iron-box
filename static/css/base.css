@@ -40,6 +40,7 @@ h3 {
 
 .link {
     color: var(--black);
+    font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -126,6 +127,11 @@ a.nav-link.active {
 .yellow-container {
     background: var(--yellow);
     color: var(--black);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
 }
 
 .black-container {
@@ -151,9 +157,8 @@ a.nav-link.active {
     color: var(--white);
 }
 
-.btn.edit,
-.btn.delete {
-    width: 80px;
+.btn.small {
+    width: 90px;
 }
 
 .btn:hover {
@@ -290,8 +295,7 @@ footer h5 {
     }
 
     /* Product Edit and Delete Buttons */
-    .btn.edit,
-    .btn.delete {
+    .btn.small {
         width: 110px;
     }
 

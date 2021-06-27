@@ -10,9 +10,9 @@
                 <div class="col-sm-12 col-md-5 col-lg-5 order-md-1 order-lg-1 order-2 text-center align-self-center">
                     <h1 class="mt-2 mb-4">The Taste of Home in a Wee Box for £10</h1>
                     {% if request.user.is_authenticated %}
-                        <a class="btn mb-4 py-2 px-4" href="{% url 'products' %}">View Products</a>
+                        <a class="btn solid mb-4" href="{% url 'products' %}">View Products</a>
                     {% else %}
-                        <a class="btn mb-4 py-2 px-4" href="{% url 'account_signup' %}">Get Started</a>
+                        <a class="btn solid mb-4" href="{% url 'account_signup' %}">Get Started</a>
                     {% endif %}
                 </div>
                 <!-- Box Mock Up Image -->
@@ -29,9 +29,10 @@
     <section class="yellow-container text-center p-4">
         <div class="container">
             <h2 class="mb-4">How it Works</h2>
-            <div class="row g-4">
+            <!-- Steps -->
+            <div class="row justify-content-center g-4">
                 <!-- Step 1 -->
-                <div class="col-md-12 col-lg-6">
+                <div class="col-md-12 col-lg-8">
                     <div class="card steps h-100 p-4">
                         <i class="fas fa-box fs-3"></i>
                         <span class="fw-bold fs-5 text-uppercase my-2">Step 1</span>
@@ -43,7 +44,7 @@
                     </div>
                 </div>
                 <!-- Step 2 -->
-                <div class="col-md-12 col-lg-6">
+                <div class="col-md-12 col-lg-8">
                     <div class="card steps h-100 p-4">
                         <i class="fas fa-credit-card fs-3"></i>
                         <span class="fw-bold fs-5 text-uppercase my-2">Step 2</span>
@@ -55,7 +56,7 @@
                     </div>
                 </div>
                 <!-- Step 3 -->
-                <div class="col-md-12 col-lg-6">
+                <div class="col-md-12 col-lg-8">
                     <div class="card steps h-100 p-4">
                         <i class="fas fa-truck fs-3"></i>
                         <span class="fw-bold fs-5 text-uppercase my-2">Step 3</span>
@@ -69,7 +70,7 @@
                     </div>
                 </div>
                 <!-- Step 4 -->
-                <div class="col-md-12 col-lg-6">
+                <div class="col-md-12 col-lg-8">
                     <div class="card steps h-100 p-4">
                         <i class="fas fa-file-alt fs-3"></i>
                         <span class="fw-bold fs-5 text-uppercase my-2">Step 4</span>
@@ -81,15 +82,16 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Admin/Registered User Buttons -->
             <div class="row justify-content-center mt-4">
-                <!-- Admin/Registered User Button -->
                 {% if request.user.is_superuser %}
-                    <a class="btn solid py-2 px-4" href="{% url 'products' %}">View Products</a>
+                    <a class="btn solid" href="{% url 'products' %}">View Products</a>
                 {% elif request.user.is_authenticated %}
-                    <a class="btn solid py-2 px-4" href="{% url 'view_box' %}">My Box</a>
+                    <a class="btn solid" href="{% url 'view_box' %}">My Box</a>
                 {% else %}
-                    <a href="{% url 'account_login' %}" class="btn solid py-2 px-4 mx-2 mt-2">Login</a>
-                    <a href="{% url 'account_signup' %}" class="btn py-2 px-4 mx-2 mt-2">Sign Up</a>
+                    <a href="{% url 'account_login' %}" class="btn solid mx-2 mt-2">Login</a>
+                    <a href="{% url 'account_signup' %}" class="btn mx-2 mt-2">Sign Up</a>
                 {% endif %}
             </div>
         </div>
@@ -98,7 +100,7 @@
     <!-- Reviews -->
     <section class="white-container text-center">
         <h3 class="pt-4 px-4">Here's what some of our members think</h2>
-        <!-- Review Cards -->
+        <!-- Review Carousel -->
         <!-- Code from Bootstrap Docs:
         https://getbootstrap.com/docs/5.0/components/carousel/#dark-variant -->
         <div id="reviewCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
@@ -121,11 +123,11 @@
             </button>
         </div>
 
-        <!-- Add Review Button -->
+        <!-- Add/Manage Reviews Button -->
         {% if request.user.is_superuser %}
-            <a href="{% url 'add_review' %}" class="btn mb-4 py-2 px-4">Manage Reviews</a>
+            <a href="{% url 'add_review' %}" class="btn solid mb-4">Manage Reviews</a>
         {% elif request.user.is_authenticated %}
-            <a href="{% url 'add_review' %}" class="btn mb-4 py-2 px-4">Add Review</a>
+            <a href="{% url 'add_review' %}" class="btn solid mb-4">Add Review</a>
         {% endif %}
     </section>
 {% endblock %}
