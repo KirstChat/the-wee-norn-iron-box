@@ -133,6 +133,10 @@ a.nav-link.active {
     justify-content: center;
 }
 
+.yellow-container.auto-height {
+    min-height: auto;
+}
+
 .black-container {
     background: var(--black);
     color: var(--white);
@@ -148,7 +152,7 @@ a.nav-link.active {
     font-size: 1rem;
     font-weight: 700;
     text-transform: uppercase;
-    width: 180px;
+    width: 200px;
 }
 
 .btn.solid {
@@ -214,7 +218,7 @@ a.nav-link.active {
 
 /* ---------- Review Carousel ---------- */
 .carousel {
-    height: 50vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -290,8 +294,11 @@ footer h5 {
 
 /* ---------- Media Queries --------- */
 
-/* For devices with a screen size bigger than 425px */
-@media only screen and (min-width: 425px) {
+/* For devices with a screen size bigger than 375px */
+@media only screen 
+    and (min-width: 375px)
+    and (max-device-width: 812px)
+    and (orientation: landscape) {
    /* Card Product Images */
     .card img {
         height: 20vh;
@@ -304,7 +311,18 @@ footer h5 {
 
     /* Review Carousel */
     .carousel {
-        height: 30vh;
+        height: 70vh;
+    }
+}
+
+/* For devices with a screen size bigger than 768px */
+@media only screen 
+    and (min-device-width: 768px)
+    and (max-device-width: 1024px)
+    and (orientation: portrait) {
+    /* Review Carousel */
+    .carousel {
+        height: 40vh;
     }
 }
 
@@ -330,6 +348,11 @@ footer h5 {
     /* Buttons */
     .btn {
         width: 200px;
+    }
+
+    /* Review Carousel */
+    .carousel {
+        height: 30vh;
     }
 }
 /* ---------- End Media Queries --------- */

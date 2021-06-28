@@ -76,8 +76,8 @@
                         https://stackoverflow.com/questions/46617375/how-do-i-show-an-active-link-in-a-django-navigation-bar-dropdown-list -->
                         {% with request.resolver_match.url_name as url_name %}
                             {% if request.user.is_superuser %}
-                                <a class="nav-link {% if url_name == 'profile' %}active{% endif %}"
-                                    href="{% url 'profile' %}">Admin Profile</a>
+                                <a class="nav-link"
+                                    href="{% url 'admin:index' %}">Admin Panel</a>
                                 <a class="nav-link {% if url_name == 'account_logout' %}active{% endif %}"
                                     href="{% url 'account_logout' %}">Logout</a>
                             {% elif request.user.is_authenticated %}
