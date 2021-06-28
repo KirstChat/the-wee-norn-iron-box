@@ -7,23 +7,23 @@ starRating.forEach(rating => {
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>`
+                    <i class="fas fa-star"></i>`;
     } else if (rating.innerText === "4") {
         rating.innerHTML = `
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>`
+                    <i class="fas fa-star"></i>`;
     } else if (rating.innerText === "3") {
         rating.innerHTML = `
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>`
+                    <i class="fas fa-star"></i>`;
     } else if (rating.innerText === "2") {
         rating.innerHTML = `
                     <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>`
+                    <i class="fas fa-star"></i>`;
     } else {
-        rating.innerHTML = `<i class="fas fa-star"></i>`
-    };
+        rating.innerHTML = `<i class="fas fa-star"></i>`;
+    }
 });

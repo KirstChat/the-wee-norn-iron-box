@@ -24,25 +24,27 @@
                     {% endfor %}
                 </div>
             </div>
+            {% if drafts %}
             {% if request.user.is_superuser %}
-            <div class="row justify-content-center">
-                <h3 class="text-center">Drafts</h3>
-                <div class="col-sm-12 col-lg-6">
-                    {% for draft in drafts %}
-                        <div class="card p-4 my-4">
-                            <p class="fw-bold text-uppercase">{{ draft.title }}</p>
-                            <p class="text-muted">Posted By: {{ draft.posted_by }} | Date Published:
-                                {{ draft.date_posted }}
-                            </p>
-                            <p>{{ draft.post|truncatechars:100 }}</p>
-                            <a href="{% url 'post_detail' draft.id %}" class="btn solid">
-                                Read More
-                                <i class="fas fa-arrow-right ps-2"></i>
-                            </a>
-                        </div>
-                    {% endfor %}
+                <div class="row justify-content-center">
+                    <h3 class="text-center">Drafts</h3>
+                    <div class="col-sm-12 col-lg-6">
+                        {% for draft in drafts %}
+                            <div class="card p-4 my-4">
+                                <p class="fw-bold text-uppercase">{{ draft.title }}</p>
+                                <p class="text-muted">Posted By: {{ draft.posted_by }} | Date Published:
+                                    {{ draft.date_posted }}
+                                </p>
+                                <p>{{ draft.post|truncatechars:100 }}</p>
+                                <a href="{% url 'post_detail' draft.id %}" class="btn solid">
+                                    Read More
+                                    <i class="fas fa-arrow-right ps-2"></i>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    </div>
                 </div>
-            </div>
+            {% endif %}
             {% endif %}
         </div>
         <!-- Add New Post Button -->

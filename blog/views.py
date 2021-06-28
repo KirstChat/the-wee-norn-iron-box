@@ -78,12 +78,6 @@ def edit_post(request, post_id):
     # Edit a blog post
     post = get_object_or_404(Post, pk=post_id)
 
-    if request.user != post.posted_by:
-        messages.error(
-            request, 'Only the user that posted this post can edit it!'
-        )
-        return redirect(reverse('blog_posts'))
-
     if request.method == 'POST':
         post_form = PostForm(request.POST, instance=post)
         if post_form.is_valid():
@@ -110,11 +104,6 @@ def edit_post(request, post_id):
 def delete_post(request, post_id):
     # Delete a blog post
     post = get_object_or_404(Post, pk=post_id)
-    if request.user != post.posted_by:
-        messages.error(
-            request, 'Only the user that posted this post can delete it!'
-        )
-        return redirect(reverse('blog_posts'))
     post.delete()
     messages.success(request, 'Post deleted!')
     return redirect(reverse('blog_posts'))

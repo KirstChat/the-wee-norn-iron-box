@@ -14,7 +14,7 @@
                 <p class="text-muted">Posted By: {{ post.posted_by }} | Date Published: {{ post.date_posted }}
                 </p>
                 <p>{{ post.post }}</p>
-                {% if post.posted_by == request.user %}
+                {% if post.posted_by == request.user or request.user.is_superuser %}
                     <div class="text-center">
                         <a href="{% url 'edit_post' post.id %}" class="btn solid m-2">Edit</a>
                         <a href="{% url 'delete_post' post.id %}" class="btn m-2">Delete</a>

@@ -23,7 +23,7 @@ var style = {
 };
 
 var cardElement = elements.create('card', {
-    style: style 
+    style: style
 });
 
 cardElement.mount('#card-element');
@@ -37,7 +37,7 @@ cardElement.on('change', function (event) {
     } else {
         cardElementError.textContent = " ";
     }
-})
+});
 
 // Handle Form Submit
 var form = document.getElementById('payment-form');
@@ -48,11 +48,11 @@ form.addEventListener('submit', function (event) {
     // Disable card element and submit button to prevent multiple submissions
     cardElement.update({
         'disabled': true
-    })
+    });
     document.getElementById('submit-button').disabled = true;
 
     var saveInfo = Boolean($('#id-save-info').attr('checked'));
-    var csrfToken = $('input[name="csrfmiddlewaretoken"]').val()
+    var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
     var postData = {
         'csrfmiddlewaretoken': csrfToken,
         'client_secret': clientSecret,
@@ -100,7 +100,7 @@ form.addEventListener('submit', function (event) {
                 loading(false);
                 cardElement.update({
                     'disabled': false
-                })
+                });
                 document.getElementById('submit-button').disabled = false;
             } else {
                 if (result.paymentIntent.status === 'succeeded') {
@@ -110,8 +110,8 @@ form.addEventListener('submit', function (event) {
         });
     }).fail(function () {
         location.reload();
-    })
-})
+    });
+});
 
 // Show a spinner on payment submission
 // Code from Stripe Docs: https://stripe.com/docs/payments/integration-builder

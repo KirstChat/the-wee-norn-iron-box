@@ -220,7 +220,7 @@ a.nav-link.active {
 }
 
 .profile-card {
-    height: 80vh;
+    height: 40vh;
 }
 /* ---------- End Cards ---------- */
 
@@ -305,7 +305,7 @@ footer h5 {
 /* For devices with a screen size bigger than 375px */
 @media only screen 
     and (min-width: 375px)
-    and (max-device-width: 812px)
+    and (max-width: 812px)
     and (orientation: landscape) {
    /* Card Product Images */
     .card img {
@@ -325,8 +325,8 @@ footer h5 {
 
 /* For devices with a screen size bigger than 768px */
 @media only screen 
-    and (min-device-width: 768px)
-    and (max-device-width: 1024px)
+    and (min-width: 768px)
+    and (max-width: 1024px)
     and (orientation: portrait) {
     /* Card Product Images */
     .card img {

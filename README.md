@@ -86,11 +86,15 @@ Registered users will receive a box containing 6 of their chosen Northern Irish 
 - As a **Site Owner/Superuser**, I want to be able to add new products
 - As a **Site Owner/Superuser**, I want to be able to edit products
 - As a **Site Owner/Superuser**, I want to be able to remove products
+- As a **Site Owner/Superuser**, I want to be able to manage user reviews
+- As a **Site Owner/Superuser**, I want to be able to view and manage all blog posts
 - As a **Site Owner/Superuser**, I want to be able to access the admin panel to view registered users order details so I know what products to add to their box
 
 ### Design
 
 #### Colour Scheme
+
+The design of this project uses box shapes with sharp edges to hold most of the content as the project is a site that sells snack boxes.
 
 ![Colour palette generated using coolors.co](wireframes/images/twnib-colour-palette.png)
 _Colour palette generated using [coolors.co](https://coolors.co)_
@@ -98,9 +102,13 @@ _Colour palette generated using [coolors.co](https://coolors.co)_
 The colour palette for this project is based on the colours of the Harland and Wolff cranes in Belfast, Northern Ireland.
 
 - ![#161616](https://via.placeholder.com/15/161616/000000?text=+) `#161616`:
+  - Used as the background colour for the navbar and footer as well as the colour for text and buttons
 - ![#A30000](https://via.placeholder.com/15/a30000/000000?text=+) `#A30000`:
+  - Used as the hover colour for buttons
 - ![#FF9F1C](https://via.placeholder.com/15/ffb700/000000?text=+) `#FF9F1C`:
+  - Used as the main background colour across all pages
 - ![#FFFFFF](https://via.placeholder.com/15/ffffff/000000?text=+) `#FFFFFF`:
+  - Used as the background colour for page headings and cards
 
 #### Typography
 
@@ -119,6 +127,8 @@ I also used [Affinity Photo](https://affinity.serif.com/en-gb/photo/) to create 
 #### Wireframes (**UPLOAD THESE!!!**)
 
 The wireframes for my site were created using [Balsamiq](https://balsamiq.com/). I created wireframes for mobile, tablet and desktop devices.
+
+There isn't a wireframe for the blog app as this was a suggested feature to add later in the development process.
 
 ![Site Map](wireframes/images/site-map.png)
 
@@ -237,8 +247,9 @@ Comment Model
 - A products page with a search bar and category filters
 - Product descriptions that display when the user hovers over the product card
 - A box page to allow the user to see the contents of their box before they order
-- A profile page that displays previous orders and a saved delivery address for future orders
+- A profile page that displays previous orders and a saved delivery address for future orders as well as blog post drafts
 - A checkout page that allows the user to purchase their box using Stripe payments
+- A blog page that displays blog posts and allows users to create their own posts as well as comment on other posts
 - A footer located on every page with links to social media pages
 - Toasts to let the user know when they've successfully completed an action or to let them know if there was a error completing an action
 

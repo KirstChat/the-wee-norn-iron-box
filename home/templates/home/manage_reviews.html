@@ -16,7 +16,8 @@
                                 <p class="fw-bold mx-auto w-50">{{ review.review }}</p>
                                 <p class="fst-italic mt-3">Posted By: {{ review.posted_by }}</p>
                                 <a class="btn solid mx-auto" href="{% url 'delete_review' review.id %}">
-                                    <i class="fas fa-trash p-1"></i>
+                                    <i class="fas fa-trash pe-2"></i>
+                                    Delete
                                 </a>
                             </div>
                         {% endfor %}
