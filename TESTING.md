@@ -46,6 +46,10 @@ Found one undefined variable in stripe_elements.js:
 
 [PEP8 Online](http://pep8online.com/) was used to check that the Python code meets PEP8 requirements:
 
+As well as using linting in VS Code to check python code, I also ran all custom python files through PEP8 online which found no errors:
+
+![PEP8 Online Results](wireframes/images/pep8.png)
+
 [Contents](#contents)
 
 ---
@@ -104,11 +108,16 @@ Throughout the development process, different branches have been created to test
 
 Reviews Branch:
 
-- This branch was created to create the reviews app in the project and was used to test the views in the home app to ensure that the reviews displayed properly on the home page
+- This branch was created to create the reviews app in the project and was also used to test the views in the home app to ensure that the reviews displayed properly on the home page
 
 Stripe Branch:
 
+- This branch was originally created to test stripe subscriptions
+- After creating subscription models, views and adding stripe elements, I was unable to successfully setup stripe subscriptions so opted for a stripe one-time payment option instead
+
 View Box Branch:
+
+- This branch was created to test viewing the box items in the box app and also in the success toast when a user has successfully added an item to their box
 
 [Contents](#contents)
 
