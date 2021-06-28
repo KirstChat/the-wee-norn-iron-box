@@ -102,6 +102,14 @@ a.nav-link.active {
     color: var(--white);
 }
 
+.toast-header {
+    border-radius: 0;
+}
+
+.toast-body {
+    border: 2px solid var(--black);
+}
+
 .box-preview {
     height: 200px;
     overflow-x: hidden;
@@ -320,6 +328,11 @@ footer h5 {
     and (min-device-width: 768px)
     and (max-device-width: 1024px)
     and (orientation: portrait) {
+    /* Card Product Images */
+    .card img {
+        padding: 20px;
+    }
+
     /* Review Carousel */
     .carousel {
         height: 40vh;
@@ -343,6 +356,7 @@ footer h5 {
     /* Card Product Images */
     .card img {
         height: 25vh;
+        padding: 10px;
     }
 
     /* Buttons */

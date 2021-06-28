@@ -163,7 +163,7 @@
         </div>
         
         <!-- Add New Product Button -->
-        {% if user.is_superuser %}
+        {% if request.user.is_superuser %}
             <div class="position-relative">
                 <a href="{% url 'add_product' %}" class="btn solid position-fixed bottom-0 end-0 m-4 w-auto">
                     <i class="fas fa-plus"></i>
