@@ -81,7 +81,7 @@ Stripe Subscription:
 
 - The original idea for this project was to create a subscription service that would allow subscribers to receive their snack box each month
 - While trying to implement a stripe subscription plan, I was unable to generate any successful payments
-- Due to work commitments/project submission deadline impending, I opted for my back-up plan of a one time payment option, keeping the same price of £10 per box
+- Due to work commitments/project submission deadline impending, I opted for my back-up plan of a one time payment option, keeping the same price of £10 per box that contains 6 items chosen by the user
 
 [Contents](#contents)
 

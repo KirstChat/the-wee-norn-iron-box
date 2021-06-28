@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect, reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
@@ -43,3 +43,26 @@ def add_review(request):
         'review_form': review_form,
     }
     return render(request, template, context)
+
+
+@login_required
+def manage_reviews(request):
+    reviews = Review.objects.all()
+
+    context = {
+        'reviews': reviews,
+    }
+
+    return render(request, 'home/manage_reviews.html', context)
+
+
+@login_required
+def delete_review(request, review_id):
+    if not request.user.is_superuser:
+        messages.error(request, 'Only the admin can delete reviews.')
+        return redirect(reverse('home'))
+
+    review = get_object_or_404(Review, pk=review_id)
+    review.delete()
+    messages.success(request, 'Review deleted!')
+    return redirect(reverse('manage_reviews'))

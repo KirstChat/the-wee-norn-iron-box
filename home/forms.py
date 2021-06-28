@@ -52,3 +52,7 @@ class ReviewForm(forms.ModelForm):
                 InlineRadios('rating'),
             ),
         )
+
+        # Remove auto-generated labels
+        self.fields['review'].label = False
+        self.fields['rating'].label = False
