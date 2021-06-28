@@ -15,10 +15,10 @@
                 </p>
                 <p>{{ post.post }}</p>
                 {% if post.posted_by == request.user %}
-                <div class="text-center">
-                    <a href="{% url 'edit_post' post.id %}" class="btn solid m-2">Edit</a>
-                    <a href="{% url 'delete_post' post.id %}" class="btn m-2">Delete</a>
-                </div>
+                    <div class="text-center">
+                        <a href="{% url 'edit_post' post.id %}" class="btn solid m-2">Edit</a>
+                        <a href="{% url 'delete_post' post.id %}" class="btn m-2">Delete</a>
+                    </div>
                 {% endif %}
             </div>
         </div>
@@ -43,7 +43,6 @@
                         {{ form|crispy }}
                         <div class="text-center mt-2">
                             <button class="btn solid m-2" type="submit">Add Comment</button>
-                            <a href="{% url 'post_detail' post.id %}" class="btn m-2">Cancel</a>
                         </div>
                     </form>
                 </div>
