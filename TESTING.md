@@ -102,13 +102,26 @@ As a **Registered User**, I want to be able to leave a review on the site to let
 
 Throughout the development process, different branches have been created to test different features and layouts which have now been merged with the master branch.
 
+Reviews Branch:
+
+- This branch was created to create the reviews app in the project and was used to test the views in the home app to ensure that the reviews displayed properly on the home page
+
+Stripe Branch:
+
+View Box Branch:
+
 [Contents](#contents)
 
 ---
 
 ## Responsiveness
 
-[Responsively](https://responsively.app/)
+As well as running each page through a validator and testing user stories to see if they were met, I also tested the responsiveness of the site across a number of different devices and browsers:
+
+- Chrome DevTools was used during the development process to test the responsiveness of the site on different devices before pushing any changes to GitHub
+- After pushing changes to GitHub, the site was also tested in Firefox and Safari
+- The site was also tested across a number of personal devices including an iPad, iPhone 11 and MacBook Pro
+- A desktop app called [Responsively](https://responsively.app/) was also used to check the responsiveness of the site on some additional android devices that I didn't have access to on Chrome DevTools
 
 [Contents](#contents)
 
@@ -129,6 +142,10 @@ As well as testing the responsiveness of the site, I also tested the performance
 ---
 
 ## Known Bugs
+
+Reviews App:
+
+- Registered users are able to post more than one review
 
 [Contents](#contents)
 

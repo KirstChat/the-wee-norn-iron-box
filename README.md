@@ -150,6 +150,9 @@ Links to the wireframes can be found below. Each link contains the wireframes fo
 
 [SQLite3](https://www.sqlite.org/index.html) was used in development as part of the Django framework and [Heroku Postgres](https://www.heroku.com/postgres) was used for Production.
 
+![Model Diagram created using dbdiagram.io](wireframes/images/models.png)
+_DB Diagram created using [dbdiagram.io](https://dbdiagram.io/)_
+
 **Home App:**
 
 Review Model
@@ -169,7 +172,7 @@ Category Model
 | --- | --- | --- |
 | name | CharField | max_length=200 |
 
-Products Model
+Product Model
 
 | Field | Field Type | Field Options |
 | --- | --- | --- |
@@ -188,8 +191,7 @@ Order Model
 | --- | --- | ---|
 | order_number | CharField | max_length=32, null=False, editable=False |
 | user_profile | ForeignKey | UserProfile, on_delete=models.SET_NULL, null=True, blank=False, related_name='orders' |
-| first_name | CharField | max_length=25, null=False, blank=False |
-| last_name | CharField | max_length=25, null=False, blank=False |
+| full_name | CharField | max_length=80, null=False, blank=False |
 | email | EmailField | max_length=254, null=False, blank=False |
 | contact_number | CharField | max_length=20, null=True, blank=True |
 | address_line_1 | CharField | max_length=80, null=False, blank=False |
