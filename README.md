@@ -1,6 +1,6 @@
 # The Wee Norn Iron Box
 
-The Wee Norn Iron Box is a snack box service that will allow registered users to choose from a selecting of different Northern Irish treats to be posted to them each month in a 'wee' box.
+The Wee Norn Iron Box is a snack box service that will allow registered users to choose from a selection of different Northern Irish treats to be posted to them in a 'wee' box.
 
 ![Mockup Generator from Am I Responsive](wireframes/images/mockup.png)
 
@@ -63,6 +63,7 @@ Registered users will receive a box containing 6 of their chosen Northern Irish 
 - As a **First Time Visitor**, I want to be able to easily view/use the site on my smartphone
 - As a **First Time Visitor**, I want to be able to see what products are available to add to a snack box
 - As a **First Time Visitor**, I want to know the snack box price
+- As a **First Time Visitor**, I want to be able to read blog posts
 - As a **First Time Visitor**, I want to be able to easily register for an account
 - As a **First Time Visitor**, I want to be able to follow the company on social media platforms
 - As a **First Time Visitor**, I want to be able to contact the company with any queries I might have
@@ -70,8 +71,13 @@ Registered users will receive a box containing 6 of their chosen Northern Irish 
 #### Registered User
 
 - As a **Registered User**, I want to be able to easily login and logout of my account
-- As a **Registered User**, I want to be able to easily update my details in my profile
 - As a **Registered User**, I want to be able to easily add and remove items from my box
+- As a **Registered User**, I want to be able to easily purchase my box
+- As a **Registered User**, I want to receive an email confirming my purchase
+- As a **Registered User**, I want to be able to easily update my delivery details in my profile
+- As a **Registered User**, I want to be able to view my order history
+- As a **Registered User**, I want to be able to easily submit blog posts
+- As a **Registered User**, I want to be able to comment on other blog posts
 - As a **Registered User**, I want to be able to leave a review on the site to let others know about my experience
 
 #### Site Owner/Superuser

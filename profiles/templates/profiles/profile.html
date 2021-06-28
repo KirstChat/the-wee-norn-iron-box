@@ -61,7 +61,10 @@
                             </tbody>
                         </table>
                     {% empty %}
-                    <p>You haven't ordered anything</p>
+                        <div class="m-auto">
+                            <p class="fw-bold my-auto">You haven't ordered anything yet!</p>
+                            <a href="{% url 'products' %}" class="btn solid mt-4">View Products</a>
+                        </div>
                     {% endfor %}
                 </div>
             </div>
