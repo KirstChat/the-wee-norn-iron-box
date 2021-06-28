@@ -77,6 +77,7 @@ Registered users will receive a box containing 6 of their chosen Northern Irish 
 - As a **Registered User**, I want to be able to easily update my delivery details in my profile
 - As a **Registered User**, I want to be able to view my order history
 - As a **Registered User**, I want to be able to easily submit blog posts
+- As a **Registered User**, I want to be able to easily edit or delete any blog posts I've submitted
 - As a **Registered User**, I want to be able to comment on other blog posts
 - As a **Registered User**, I want to be able to leave a review on the site to let others know about my experience
 
@@ -98,7 +99,6 @@ The colour palette for this project is based on the colours of the Harland and W
 
 - ![#161616](https://via.placeholder.com/15/161616/000000?text=+) `#161616`:
 - ![#A30000](https://via.placeholder.com/15/a30000/000000?text=+) `#A30000`:
-- ![#E00000](https://via.placeholder.com/15/e00000/000000?text=+) `#E00000`:
 - ![#FF9F1C](https://via.placeholder.com/15/ffb700/000000?text=+) `#FF9F1C`:
 - ![#FFFFFF](https://via.placeholder.com/15/ffffff/000000?text=+) `#FFFFFF`:
 
@@ -195,7 +195,7 @@ Order Model
 Box Items Model
 
 | Field | Field Type | Field Options |
-| :---: | :---: | :---:|
+| --- | :--- | ---|
 | order | ForeignKey | Order, null=False, blank=False, on_delete=models.CASCADE, related_name="boxitems" |
 | product | ForeignKey | Product, null=False, blank=False, on_delete=models.CASCADE |
 
@@ -204,7 +204,7 @@ Box Items Model
 Post Model
 
 | Field | Field Type | Field Options |
-| :---: | :---: | :---: |
+| --- | --- | --- |
 | title | CharField | max_length=254, null=False, blank=False |
 | post | TextField | null=False, blank=False |
 | posted_by | ForeignKey | User, on_delete=models.CASCADE |
@@ -214,7 +214,7 @@ Post Model
 Comment Model
 
 | Field | Field Type | Field Options |
-| :---: | :---: | :---: |
+| --- | --- | --- |
 | comment | TextField | null=False, blank=False |
 | posted_by | ForeignKey | User, on_delete=models.CASCADE |
 | date_commented | DateTimeField | auto_now_add=True |
@@ -498,6 +498,9 @@ The following steps were used to store static files and media files in an Amazon
 
 - [Comments System with Django](https://djangocentral.com/creating-comments-system-with-django/)
   - This tutorial was used as a guide to add comments to blog posts.
+
+- [Media Queries](https://css-tricks.com/snippets/css/media-queries-for-standard-devices/)
+  - This code from css-tricks was used to add additional media queries for devices in landscape.
 
 ### Content
 
