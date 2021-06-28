@@ -7,11 +7,13 @@ from .forms import CommentForm, PostForm
 
 
 def blog_posts(request):
-    # A view to return all published blog posts
+    # A view to return all blog posts
     posts = Post.objects.filter(status=1).order_by('-date_posted')
+    drafts = Post.objects.filter(status=0).order_by('-date_posted')
 
     context = {
         'posts': posts,
+        'drafts': drafts,
     }
 
     return render(request, 'blog/blog.html', context)
@@ -24,6 +26,7 @@ def post_detail(request, post_id):
 
     new_comment = None
 
+    # Add a comment to a post
     if request.method == "POST":
         form = CommentForm(request.POST)
         if form.is_valid():

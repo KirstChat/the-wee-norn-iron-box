@@ -43,13 +43,6 @@
                         <a class="btn solid mb-2" href="{% url 'view_box' %}">View My Box</a>
                     </div>
                 </div>
-            {% else %}
-                <!-- Dont't display box preview on box page when products are removed -->
-                <div class="row">
-                    <div class="col">
-                        <a class="btn solid mb-2" href="{% url 'products' %}">Add Products</a>
-                    </div>
-                </div>
             {% endif %}
         {% endif %}
     </div>

@@ -9,8 +9,10 @@
                 <!-- Products Button -->
                 <div class="col-sm-12 col-md-5 col-lg-5 order-md-1 order-lg-1 order-2 text-center align-self-center">
                     <h1 class="mt-2 mb-4">The Taste of Home in a Wee Box for £10</h1>
-                    {% if request.user.is_authenticated %}
+                    {% if request.user.is_superuser %}
                         <a class="btn solid mb-4" href="{% url 'products' %}">Manage Products</a>
+                    {% elif request.user.is_authenticated %}
+                        <a class="btn solid mb-4" href="{% url 'products' %}">View Products</a>
                     {% else %}
                         <a class="btn solid mb-4" href="{% url 'account_signup' %}">Get Started</a>
                     {% endif %}
