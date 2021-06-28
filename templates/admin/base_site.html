@@ -1,0 +1,11 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title %}The Wee Norn Iron Box | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block extrahead %}
+    <link rel="icon" href={% static "images/twnib-favicon.png"%} sizes="48x48" />
+{% endblock %}
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">The Wee Norn Iron Box | {{ site_header|default:_('Django administration') }}</a></h1>
+{% endblock %}

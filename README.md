@@ -246,13 +246,17 @@ Comment Model
 
 In future releases of this project and as I continue to progress as a developer, I would like to add some additional features to improve the users overall experience:
 
-- Subscription Payments:
+- Subscription Payment Option:
   - I initially wanted to make this project a subscription box service but due to work commitments and time restraints, I opted for a single payment service to meet the project requirements
   - In future, I would like to try adding the stripe subscription payments again as this feature would allow users to have the option to receive a box every month rather than having to log on each time they wish to purchase one
   - Along with this, I would also like to give users the option to pause or stop their subscription at any time
 
 - Multiple Payment Options:
   - This feature would give users various options to pay for their box or subscription using Apple Pay or Google Pay
+
+- Additional Account Options:
+  - I would like to give the user the option to create an account by logging in with one of their social accounts including Facebook and Google
+  - I would also like to give the user the option to delete their account if they no longer wish to use the service
 
 [Contents](#contents)
 
@@ -412,7 +416,7 @@ DATABASES = {
 - You can create fixtures by using the following command:
 
 ```bash
-python3 manage.py dumpdata --<app_name>.<model_name> --indent 2 > <fixtures_name>.json
+python3 manage.py dumpdata --app_name.model_name --indent 2 > fixtures_name.json
 ```
 
 - Create a superuser for the Postgres database to access the admin panel using ```python3 manage.py createsuperuser```
@@ -501,6 +505,9 @@ The following steps were used to store static files and media files in an Amazon
 
 - [Media Queries](https://css-tricks.com/snippets/css/media-queries-for-standard-devices/)
   - This code from css-tricks was used to add additional media queries for devices in landscape.
+
+- [Django Site Admin Favicon](https://stackoverflow.com/questions/34959897/set-favicon-in-django-admin)
+  - This code from stack overflow was used to add a custom favicon to django administration site.
 
 ### Content
 
