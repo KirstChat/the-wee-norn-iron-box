@@ -136,23 +136,83 @@ As a **Registered User**, I want to be able to easily login and logout of my acc
 
 - I've included a link to the login page in the navigation bar and a link for logged in users to logout of their account
 
+_Login Page_
+![Login Page Screenshot](docs/images/login.png)
+
 As a **Registered User**, I want to be able to easily add and remove items from my box:
+
+- On the products page, I've add a button to each product to allow the user to easily add that product to their box
+- On the view box page, I've add a remove button to each product to allow the user to easily remove a product from their box
+
+_Add Product_
+![Add Product Screenshot](docs/images/add-product.png)
+
+_Remove Product_
+![Remove Product Screenshot](docs/images/remove-product.png)
 
 As a **Registered User**, I want to be able to easily purchase my box:
 
+- I've added an order my box button which displays in the view box page when the user has added 6 items to their box
+- The user will be directed to a checkout page where they can enter their delivery and payment information
+
+_Order Button_
+![Order Button Screenshot](docs/images/order-button.png)
+_Checkout Page_
+![Checkout Page Screenshot](docs/images/checkout.png)
+
 As a **Registered User**, I want to receive an email confirming my purchase:
+
+- When a user has successfully ordered their box, they will receive an email to confirm their order
+- I've also set up a checkout success page that the user will see when their order is successful which will display all their order details
+
+_Email Confirmation_
+![Email Confirmation Screenshot](docs/images/confirmation-email.png)
+_Checkout Success Page_
+![Checkout Success Screenshot](docs/images/checkout-success.png)
 
 As a **Registered User**, I want to be able to easily update my delivery details in my profile:
 
+- On the checkout page, I've provided the user with the option to save their delivery address for quicker checkout in the future
+- If the user chooses this option, their delivery address will be saved to their profile and they can update these details at anytime
+
+_Delivery Address Update_
+![Delivery Address Screenshot](docs/images/delivery-address.png)
+
 As a **Registered User**, I want to be able to view my order history:
+
+- I've added an order history section to the user's profile which displays all of the users previous orders
+- The user is able to click on the order number to view their full order details which will display a page similar to the checkout success page
+
+_Order History_
+![Order History Screenshot](docs/images/order-history.png)
 
 As a **Registered User**, I want to be able to easily submit blog posts:
 
+- I've created a blog page that allows registered users to add their own posts
+
+_Add Blog Post_
+![Add Blog Post Screenshot](docs/images/add-post.png)
+
 As a **Registered User**, I want to be able to easily edit or delete any blog posts I've submitted:
+
+- I've added edit and delete buttons to allow registered users to edit or delete any of their own posts
+
+_Edit or Delete Post Buttons_
+![Edit or Delete Buttons Screenshot](docs/images/edit-delete-post.png)
 
 As a **Registered User**, I want to be able to comment on other blog posts:
 
+- I've provided a comment section on each post to allow registered users to comment on posts
+
+_Blog Post Comments_
+![Blog Post Comments](docs/images/add-comments.png)
+
 As a **Registered User**, I want to be able to leave a review on the site to let others know about my experience:
+
+- I've added a button to the reviews section on the home page to allow registered users to leave a review
+
+_Add Review Form_
+![Add Review Screenshot](docs/images/add-review.png)
 
 [Contents](#contents)
 
@@ -164,7 +224,7 @@ Throughout the development process, different branches have been created to test
 
 Reviews Branch:
 
-- This branch was created to create the reviews app in the project and was also used to test the views in the home app to ensure that the reviews displayed properly on the home page
+- This branch was used to create the reviews app in the project and was also used to test the views in the home app to ensure that the reviews displayed properly on the home page
 
 Stripe Branch:
 
@@ -173,7 +233,7 @@ Stripe Branch:
 
 View Box Branch:
 
-- This branch was created to test viewing the box items in the box app and also in the success toast when a user has successfully added an item to their box
+- This branch was used to test viewing the box items in the box app and also in the success toast when a user has successfully added an item to their box
 
 [Contents](#contents)
 
