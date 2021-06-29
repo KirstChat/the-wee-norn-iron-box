@@ -85,8 +85,7 @@ Registered users will receive a box containing 6 of their chosen Northern Irish 
 #### Site Owner/Superuser
 
 - As a **Site Owner/Superuser**, I want to be able to add new products
-- As a **Site Owner/Superuser**, I want to be able to edit products
-- As a **Site Owner/Superuser**, I want to be able to remove products
+- As a **Site Owner/Superuser**, I want to be able to edit and delete products
 - As a **Site Owner/Superuser**, I want to be able to manage user reviews
 - As a **Site Owner/Superuser**, I want to be able to view and manage all blog posts
 - As a **Site Owner/Superuser**, I want to be able to access the admin panel to view registered users order details so I know what products to add to their box
@@ -140,6 +139,7 @@ Links to the wireframes can be found below. Each link contains the wireframes fo
 - Checkout
 - User Profile
 - Add Review
+- Login/Sign Up
 
 There aren't any wireframes for the blog app as this was a suggested feature to add later in the development process. There also aren't any wireframes for the error pages as I decided to add these later in the development process.
 
@@ -152,7 +152,7 @@ There aren't any wireframes for the blog app as this was a suggested feature to 
 [SQLite3](https://www.sqlite.org/index.html) was used in development as part of the Django framework and [Heroku Postgres](https://www.heroku.com/postgres) was used for Production. The models used in the project can be found below:
 
 ![Model Diagram created using dbdiagram.io](docs/images/models.png)
-_DB Diagram created using [dbdiagram.io](https://dbdiagram.io/) to show the relationships between each of the models in the project_
+_DB Diagram created using [dbdiagram.io](https://dbdiagram.io/) to show the relationships between models_
 
 **Home App:**
 

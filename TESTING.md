@@ -157,6 +157,7 @@ As a **Registered User**, I want to be able to easily purchase my box:
 
 _Order Button_
 ![Order Button Screenshot](docs/images/order-button.png)
+
 _Checkout Page_
 ![Checkout Page Screenshot](docs/images/checkout.png)
 
@@ -167,6 +168,7 @@ As a **Registered User**, I want to receive an email confirming my purchase:
 
 _Email Confirmation_
 ![Email Confirmation Screenshot](docs/images/confirmation-email.png)
+
 _Checkout Success Page_
 ![Checkout Success Screenshot](docs/images/checkout-success.png)
 
@@ -214,6 +216,43 @@ As a **Registered User**, I want to be able to leave a review on the site to let
 _Add Review Form_
 ![Add Review Screenshot](docs/images/add-review.png)
 
+### Site Owner/Superuser User
+
+As a **Site Owner/Superuser**, I want to be able to add new products:
+
+- I've add an 'Add New Product' button on the products page that is only available to the superuser
+
+_Add New Product Button_
+![Add New Product Button Screenshot](docs/images/add-new-product.png)
+
+As a **Site Owner/Superuser**, I want to be able to edit and delete products
+
+- I've added an edit button and a delete button to each of the products that is only available to the superuser
+
+_Edit/Delete Product Button_
+![Edit/Delete Button Screenshot](docs/images/edit-delete-product.png)
+
+As a **Site Owner/Superuser**, I want to be able to manage user reviews:
+
+- I've add a manage reviews page that allows the superuser to view all reviews and remove any that may be inappropriate
+
+_Manage Reviews Page_
+![Manage Reviews Screenshot](docs/images/manage-reviews.png)
+
+As a **Site Owner/Superuser**, I want to be able to view and manage all blog posts:
+
+- I've added permissions for the superuser to be able to edit and delete any of the blog posts on the site
+
+_Edit/Delete Blog Post_
+![Add New Product Button Screenshot](docs/images/blog-edit-delete.png)
+
+As a **Site Owner/Superuser**, I want to be able to access the admin panel to view registered users order details so I know what products to add to their box:
+
+- I've included a link in the navigation bar to the django admin panel
+
+_Admin Navigation Bar_
+![Admin Navigation Bar Screenshot](docs/images/admin-nav.png)
+
 [Contents](#contents)
 
 ---
@@ -229,7 +268,7 @@ Reviews Branch:
 Stripe Branch:
 
 - This branch was originally created to test stripe subscriptions
-- After creating subscription models, views and adding stripe elements, I was unable to successfully setup stripe subscriptions so opted for a stripe one-time payment option instead
+- After creating subscription models, views and adding stripe elements, I was unable to successfully setup stripe subscriptions so opted for a stripe one-time payment option instead to meet the project requirements
 
 View Box Branch:
 
@@ -254,7 +293,13 @@ As well as running each page through a validator and testing user stories to see
 
 ## Performance
 
-As well as testing the responsiveness of the site, I also tested the performance of each page using [Lighthouse](https://developers.google.com/web/tools/lighthouse) in Chrome DevTools.
+As well as testing the responsiveness of the site, I also tested the performance of each page using [Lighthouse](https://developers.google.com/web/tools/lighthouse) in Chrome DevTools. After generating reports for both desktop and mobile, the site performed better on desktop than on mobile, with mobile performances scores ranging between 60 - 90 depending on the page. The CDN links used in the site appeared to have brought down the overall performance score but these links are required for Google Fonts, Font Awesome and Bootstrap. The accessibility, best practices and SEO scores on both mobile and desktop ranged between 87 - 95.
+
+Desktop Performance:
+![Lighthouse Desktop Screenshot](docs/images/lighthouse-desktop.png)
+
+Mobile Performance:
+![Lighthouse Mobile Screenshot](docs/images/lighthouse-mobile.png)
 
 [Contents](#contents)
 
@@ -287,6 +332,29 @@ Each page has been tested individually to check that:
   - manage reviews page to manage reviews posted by users
   - products page to add, edit and delete products
   - blog page to edit and delete blog posts by all users
+- Toasts display when:
+  - a user signs up, signs in or signs out of their account
+  - a user adds a product to their box
+  - a user has reached the item count limit in their box
+  - a user successfully orders their box
+  - a user adds a review, blog post or comment
+  - a user edits or deletes a blog post
+  - a user tries to access or use an admin only page or function
+  - admin adds, edits or deletes a product
+  - admin adds or edits a blog post
+  - admin deletes a blog post or a review
+
+Stripe payments were also tested by sending test webhooks from the Stripe dashboard:
+
+_Stripe Test Webhook_
+![Stripe Test Webhook Screenshot](docs/images/stripe-webhook.png)
+
+Emails were tested by creating an account using a temporary email address on [Temp Mail](https://temp-mail.org/en). Emails were successfully sent when:
+
+- Verifying the email address for a new account that was created
+![Verify Email](docs/images/verify-email-2.png)
+- Completing an order
+![Order Confirmation](docs/images/confirmation-email.png)
 
 [Contents](#contents)
 
@@ -294,9 +362,11 @@ Each page has been tested individually to check that:
 
 ## Known Bugs
 
+There are some minor bugs currently present that could be fixed in future release and with more experience using Python and Django.
+
 Reviews App:
 
-- Currently, registered users are able to post more than one review
+- Registered users are able to post more than one review but should only be able to post one review
 
 [Contents](#contents)
 
