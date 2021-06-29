@@ -132,6 +132,8 @@ The wireframes for my site were created using [Balsamiq](https://balsamiq.com/).
 
 Links to the wireframes can be found below. Each link contains the wireframes for mobile, tablet and desktop devices:
 
+The final design of the site loosely follows the design of the wireframes. Rather than displaying the product descriptions with the product image in the same card, I decided to display the description when the user hovers over the product image. I also added a blog app as a suggested feature by my mentor later in the development process.
+
 - [Home Page](https://github.com/KirstChat/the-wee-norn-iron-box/blob/master/docs/wireframes/home.pdf)
 - [Products Page](https://github.com/KirstChat/the-wee-norn-iron-box/blob/master/docs/wireframes/products.pdf)
 - [Add/Edit/Delete Products](https://github.com/KirstChat/the-wee-norn-iron-box/blob/master/docs/wireframes/add-edit-delete-products.pdf) _(Superuser Only)_
@@ -139,8 +141,6 @@ Links to the wireframes can be found below. Each link contains the wireframes fo
 - [User Profile](https://github.com/KirstChat/the-wee-norn-iron-box/blob/master/docs/wireframes/profile.pdf)
 - [Add Review](https://github.com/KirstChat/the-wee-norn-iron-box/blob/master/docs/wireframes/add-review.pdf)
 - [Login/Sign Up](https://github.com/KirstChat/the-wee-norn-iron-box/blob/master/docs/wireframes/login-logout-signup.pdf)
-
-There aren't any wireframes for the blog app as this was a suggested feature to add later in the development process. There also aren't any wireframes for the error pages as I decided to add these later in the development process.
 
 [Contents](#contents)
 
