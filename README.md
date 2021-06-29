@@ -2,7 +2,7 @@
 
 The Wee Norn Iron Box is a snack box service that will allow registered users to choose from a selection of different Northern Irish treats to be posted to them in a 'wee' box.
 
-![Mockup Generator from Am I Responsive](wireframes/images/mockup.png)
+![Mockup Generator from Am I Responsive](docs/images/mockup.png)
 
 The image above is a screenshot of the site displayed on different devices using [Am I Responsive](http://ami.responsivedesign.is/).
 
@@ -94,9 +94,9 @@ Registered users will receive a box containing 6 of their chosen Northern Irish 
 
 #### Colour Scheme
 
-The design of this project uses box shapes with sharp edges to hold most of the content as the project is a site that sells snack boxes.
+The overall design of this project is simple and easy to follow, using block shapes with sharp edges and defined borders to display most of the content, mimicking that of a box.
 
-![Colour palette generated using coolors.co](wireframes/images/twnib-colour-palette.png)
+![Colour palette generated using coolors.co](docs/images/twnib-colour-palette.png)
 _Colour palette generated using [coolors.co](https://coolors.co)_
 
 The colour palette for this project is based on the colours of the Harland and Wolff cranes in Belfast, Northern Ireland.
@@ -128,9 +128,7 @@ I also used [Affinity Photo](https://affinity.serif.com/en-gb/photo/) to create 
 
 The wireframes for my site were created using [Balsamiq](https://balsamiq.com/). I created wireframes for mobile, tablet and desktop devices.
 
-There isn't a wireframe for the blog app as this was a suggested feature to add later in the development process.
-
-![Site Map](wireframes/images/site-map.png)
+![Site Map](docs/images/site-map.png)
 
 Links to the wireframes can be found below. Each link contains the wireframes for mobile, tablet and desktop devices:
 
@@ -142,16 +140,18 @@ Links to the wireframes can be found below. Each link contains the wireframes fo
 - User Profile
 - Add Review
 
+There aren't any wireframes for the blog app as this was a suggested feature to add later in the development process. There also aren't any wireframes for the error pages as I decided to add these later in the development process.
+
 [Contents](#contents)
 
 ---
 
 ## Database Models
 
-[SQLite3](https://www.sqlite.org/index.html) was used in development as part of the Django framework and [Heroku Postgres](https://www.heroku.com/postgres) was used for Production.
+[SQLite3](https://www.sqlite.org/index.html) was used in development as part of the Django framework and [Heroku Postgres](https://www.heroku.com/postgres) was used for Production. The models used in the project can be found below:
 
-![Model Diagram created using dbdiagram.io](wireframes/images/models.png)
-_DB Diagram created using [dbdiagram.io](https://dbdiagram.io/)_
+![Model Diagram created using dbdiagram.io](docs/images/models.png)
+_DB Diagram created using [dbdiagram.io](https://dbdiagram.io/) to show the relationships between each of the models in the project_
 
 **Home App:**
 
@@ -268,7 +268,7 @@ In future releases of this project and as I continue to progress as a developer,
   - This feature would give users various options to pay for their box or subscription using Apple Pay or Google Pay
 
 - Additional Account Options:
-  - I would like to give the user the option to create an account by logging in with one of their social accounts including Facebook and Google
+  - I would like to give the user the option to create an account by logging in with one of their social accounts such as Facebook or Google
   - I would also like to give the user the option to delete their account if they no longer wish to use the service
 
 [Contents](#contents)
@@ -490,7 +490,7 @@ The following steps were used to store static files and media files in an Amazon
   - CSS linear-gradient was used to add a gradient background to the card overlay for the cards used in the products app.
 
 - [Django Documentation](https://docs.djangoproject.com/en/3.2/)
-  - The Django Documentation was used to create form choices, return a full URL path with a string query and to check the length of a dictionary in the template.
+  - The Django Documentation was used to create form choices, return a full URL path with a string query and to check the length of a dictionary in the template as well as how to use various other filters in the templates.
 
 - [Initialise Bootstrap 5 Toasts](https://stackoverflow.com/questions/63515279/how-to-initialize-toasts-with-javascript-in-bootstrap-5)
   - This piece of code from Stack Overflow was used to initialise toasts within Bootstrap 5 using vanilla JavaScript instead of jQuery as Bootstrap 5 no longer relies on jQuery.
@@ -508,7 +508,7 @@ The following steps were used to store static files and media files in an Amazon
   - This command was used to indent the products and categories datadump to make it easier for users to read.
 
 - [Bootstrap Carousel in for loop](https://stackoverflow.com/questions/30483186/bootstrap-carousel-and-django)
-  - This code from stack overflow was used to add a Bootstrap Carousel with a for loop to display reviews on the home page.
+  - This code from Stack Overflow was used to add a Bootstrap Carousel with a for loop to display reviews on the home page.
 
 - [Blog Application with Django](https://djangocentral.com/building-a-blog-application-with-django/)
   - This tutorial was used as a guide to add a blog application to the project to allow users and superusers to create blog posts.
