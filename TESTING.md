@@ -17,7 +17,7 @@
 
 The [W3C Markup Validator](https://validator.w3.org/) and the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) were used to validate the HTML and CSS files in the project and check there were no syntax errors. The following shows the results for each page:
 
-[W3C Markup Validator](https://validator.w3.org/)
+[W3C Markup Validator](https://validator.w3.org/):
 
 Products page displayed a bad value error for spaces in the subject line of mailto
 
@@ -27,7 +27,7 @@ After fixing the error on the products page, I ran all the pages through the val
 
 ![Markup Validator Results](wireframes/images/html-validator.png)
 
-[W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/):
 
 There were no errors displayed after running all css files through the validator but there were warnings for the use of colour variables which can be ignored:
 
@@ -46,8 +46,6 @@ Found one undefined variable in stripe_elements.js:
 
 [PEP8 Online](http://pep8online.com/) was used to check that the Python code meets PEP8 requirements:
 
-As well as using linting in VS Code to check python code, I also ran all custom python files through PEP8 online which found no errors:
-
 ![PEP8 Online Results](wireframes/images/pep8.png)
 
 [Contents](#contents)
@@ -60,21 +58,43 @@ As well as using linting in VS Code to check python code, I also ran all custom 
 
 As a **First Time Visitor**, I want to understand the main purpose of the site on my first visit:
 
+- I've included a short description in the heading section below the navigation bar of the site as well as a section to explain how the site works
+
 As a **First Time Visitor**, I want to be able to easily navigate the site:
+
+- I've included a navigation bar at the top of all pages to provide links to other pages in the site
+- I've also included various buttons throughout the site that also link to other pages
+- I've added external links to social media pages in the footer that will open in a new tab/window
 
 As a **First Time Visitor**, I want to be able to easily view/use the site on my smartphone:
 
+- I've used [Bootstrap 5](https://getbootstrap.com/) to make the site responsive across multiple devices including mobile and tablets
+
 As a **First Time Visitor**, I want to be able to see what products are available to add to a snack box:
+
+- I've included a link to the products page in the navigation bar that allows first time visitors see what products are available to add to a box before they register for an account to make a purchase
 
 As a **First Time Visitor**, I want to know the snack box price:
 
+- I've included the price of the box on the home page in the heading section as well as in the section that explains how the site works
+
 As a **First Time Visitor**, I want to be able to read blog posts:
+
+- I've included a link to the blog page in the navigation bar that allows first time visitors to read posts
 
 As a **First Time Visitor**, I want to be able to easily register for an account:
 
+- I've included a link to the sign up page in the navigation bar that allows first time visitors to create an account
+- After signing up for an account, the user will receive a verification email which will allow them finish signing up for their account
+
 As a **First Time Visitor**, I want to be able to follow the company on social media platforms:
 
+- I've included links to social media platforms in the footer of the site
+- These links will open in a new tab/window when opened
+
 As a **First Time Visitor**, I want to be able to contact the company with any queries I might have:
+
+- I've included an email link in the products page to allow users to contact the site owner to request any products they'd like to see available in the future
 
 ### Registered User
 
