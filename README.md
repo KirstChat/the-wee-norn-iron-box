@@ -132,10 +132,10 @@ The wireframes for my site were created using [Balsamiq](https://balsamiq.com/).
 
 Links to the wireframes can be found below. Each link contains the wireframes for mobile, tablet and desktop devices:
 
-- [Home Page](https://github.com/KirstChat/the-wee-norn-iron-box/blob/master/wireframes/home.pdf)
-- [Products Page](https://github.com/KirstChat/the-wee-norn-iron-box/blob/master/wireframes/products.pdf)
-- [Add/Edit/Delete Products](https://github.com/KirstChat/the-wee-norn-iron-box/blob/master/wireframes/add-edit-delete-products.pdf) _(Superuser Only)_
-- Box Contents
+- [Home Page](https://github.com/KirstChat/the-wee-norn-iron-box/blob/master/docs/wireframes/home.pdf)
+- [Products Page](https://github.com/KirstChat/the-wee-norn-iron-box/blob/master/docs/wireframes/products.pdf)
+- [Add/Edit/Delete Products](https://github.com/KirstChat/the-wee-norn-iron-box/blob/master/docs/wireframes/add-edit-delete-products.pdf) _(Superuser Only)_
+- [Box Contents](https://github.com/KirstChat/the-wee-norn-iron-box/blob/master/docs/wireframes/box.pdf)
 - Checkout
 - User Profile
 - Add Review
@@ -585,6 +585,10 @@ Other Images
 - Ulster Fry used on Products Page [The Culture Trip](https://theculturetrip.com/europe/united-kingdom/northern-ireland/articles/a-brief-history-of-the-ulster-fry/)
 
 ### Acknowledgements
+
+- A huge thank you to my mentor Spencer Barriball for all his advice and feedback throughout this project - you've been incredible as always!
+
+- Thanks to the Slack community for being the most supportive and fantastic group of people.
 
 [Contents](#contents)
 
