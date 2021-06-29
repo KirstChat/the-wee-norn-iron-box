@@ -5,8 +5,6 @@ from django.contrib import messages
 from .forms import ReviewForm
 from .models import Review
 
-# Create your views here.
-
 
 def reviews(request):
     # A view to return reviews on the index page

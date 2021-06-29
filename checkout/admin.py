@@ -1,8 +1,6 @@
 from django.contrib import admin
 from .models import Order, BoxItems
 
-# Register your models here.
-
 
 class BoxItemsAdminInline(admin.TabularInline):
     model = BoxItems
