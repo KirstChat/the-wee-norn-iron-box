@@ -139,7 +139,7 @@ Links to the wireframes can be found below. Each link contains the wireframes fo
 - Checkout
 - User Profile
 - Add Review
-- Login/Sign Up
+- [Login/Sign Up](https://github.com/KirstChat/the-wee-norn-iron-box/blob/master/docs/wireframes/login-logout-signup.pdf)
 
 There aren't any wireframes for the blog app as this was a suggested feature to add later in the development process. There also aren't any wireframes for the error pages as I decided to add these later in the development process.
 
