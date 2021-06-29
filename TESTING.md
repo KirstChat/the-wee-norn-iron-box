@@ -25,28 +25,28 @@ Products page displayed a bad value error for spaces in the subject line of mail
 
 After fixing the error on the products page, I ran all the pages through the validator again to check there were no other errors or warnings to show:
 
-![Markup Validator Results](wireframes/images/html-validator.png)
+![Markup Validator Results](docs/images/html-validator.png)
 
 [W3C CSS Validator](https://jigsaw.w3.org/css-validator/):
 
 There were no errors displayed after running all css files through the validator but there were warnings for the use of colour variables which can be ignored:
 
-![CSS Validator Results](wireframes/images/css-validator.png)
+![CSS Validator Results](docs/images/css-validator.png)
 
 [JS Hint](https://jshint.com/) was used to check that the JavaScript code in the project complies with coding rules and to check for any syntax errors:
 
 Found one undefined variable in initialise_toasts.js:
-![JS Hint Results](wireframes/images/toasts-js.png)
+![JS Hint Results](docs/images/toasts-js.png)
 
 Found no errors in star_ratings.js:
-![JS Hint Results](wireframes/images/stars-js.png)
+![JS Hint Results](docs/images/stars-js.png)
 
 Found one undefined variable in stripe_elements.js:
-![JS Hint Results](wireframes/images/stripe-js.png)
+![JS Hint Results](docs/images/stripe-js.png)
 
 [PEP8 Online](http://pep8online.com/) was used to check that the Python code meets PEP8 requirements:
 
-![PEP8 Online Results](wireframes/images/pep8.png)
+![PEP8 Online Results](docs/images/pep8.png)
 
 [Contents](#contents)
 
@@ -60,19 +60,29 @@ As a **First Time Visitor**, I want to understand the main purpose of the site o
 
 - I've included a short description in the heading section below the navigation bar of the site as well as a section to explain how the site works
 
+_Descriptions on Home Page_
+![Site Description Screenshot](docs/images/home-page-description.png)
+
 As a **First Time Visitor**, I want to be able to easily navigate the site:
 
 - I've included a navigation bar at the top of all pages to provide links to other pages in the site
 - I've also included various buttons throughout the site that also link to other pages
 - I've added external links to social media pages in the footer that will open in a new tab/window
 
+_Navigation Bar_
+![Navigation Bar Screenshot](docs/images/navigation-bar.png)
+
 As a **First Time Visitor**, I want to be able to easily view/use the site on my smartphone:
 
 - I've used [Bootstrap 5](https://getbootstrap.com/) to make the site responsive across multiple devices including mobile and tablets
+- The site has been tested across multiple devices to ensure it is [responsive](#responsiveness)
 
 As a **First Time Visitor**, I want to be able to see what products are available to add to a snack box:
 
 - I've included a link to the products page in the navigation bar that allows first time visitors see what products are available to add to a box before they register for an account to make a purchase
+
+_Products Page_
+![Products Screenshot](docs/images/products-page.png)
 
 As a **First Time Visitor**, I want to know the snack box price:
 
@@ -81,24 +91,50 @@ As a **First Time Visitor**, I want to know the snack box price:
 As a **First Time Visitor**, I want to be able to read blog posts:
 
 - I've included a link to the blog page in the navigation bar that allows first time visitors to read posts
+- Without an account, they won't have permission to add any posts or comment on any posts
+
+_Blog Post_
+![Blog Page Screenshot](docs/images/blog-post.png)
+_Comments Section_
+![Blog Page Screenshot](docs/images/blog-comments.png)
 
 As a **First Time Visitor**, I want to be able to easily register for an account:
 
 - I've included a link to the sign up page in the navigation bar that allows first time visitors to create an account
-- After signing up for an account, the user will receive a verification email which will allow them finish signing up for their account
+- After signing up for an account, the user will receive a verification email which will allow them finish signing up for their account when they follow the link in the email
+
+_Sign Up Form_
+![Sign Up Form Screenshot](docs/images/signup.png)
+_Verify Email_
+![Verify Email Screenshot](docs/images/verify-email.png)
+
+As a **First Time Visitor**, I want to read reviews from other users:
+
+- I've included a reviews section on the home page so they can read about other peoples experience using the service
+
+_Reviews_
+![Reviews Screenshot](docs/images/reviews.png)
 
 As a **First Time Visitor**, I want to be able to follow the company on social media platforms:
 
 - I've included links to social media platforms in the footer of the site
 - These links will open in a new tab/window when opened
 
+_Footer_
+![Footer Screenshot](docs/images/footer.png)
+
 As a **First Time Visitor**, I want to be able to contact the company with any queries I might have:
 
 - I've included an email link in the products page to allow users to contact the site owner to request any products they'd like to see available in the future
 
+_Email Link_
+![Email Link Screenshot](docs/images/email-link.png)
+
 ### Registered User
 
 As a **Registered User**, I want to be able to easily login and logout of my account:
+
+- I've included a link to the login page in the navigation bar and a link for logged in users to logout of their account
 
 As a **Registered User**, I want to be able to easily add and remove items from my box:
 
@@ -166,6 +202,32 @@ As well as testing the responsiveness of the site, I also tested the performance
 
 ## Manual Testing
 
+Each page has been tested individually to check that:
+
+- Images load properly
+- Navigation buttons link to the correct pages in the site
+- External links located in the footer open in a new tab/window and link to the correct site
+- First time visitors only have access to the:
+  - home page where they can only read reviews
+  - sign up page
+  - login page
+  - blog page but are unable to add any posts or comments
+  - products page but are unable to purchase/add products to a box
+- Registered users have access to the:
+  - home page where they can add a review
+  - login page to login to their account
+  - profile page to view their order history, blog drafts and to update their default delivery address
+  - products page to add products to their box
+  - box page to view products they have added to their box
+  - checkout page to purchase their box followed by the checkout success page when they've completed a purchase
+  - blog page to read, add and comment on posts as well as edit or delete any posts they've published
+  - logout page to logout of their account
+- The Site Owner/Superuser has access to the:
+  - django admin panel
+  - manage reviews page to manage reviews posted by users
+  - products page to add, edit and delete products
+  - blog page to edit and delete blog posts by all users
+
 [Contents](#contents)
 
 ---
@@ -174,7 +236,7 @@ As well as testing the responsiveness of the site, I also tested the performance
 
 Reviews App:
 
-- Registered users are able to post more than one review
+- Currently, registered users are able to post more than one review
 
 [Contents](#contents)
 

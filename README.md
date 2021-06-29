@@ -65,6 +65,7 @@ Registered users will receive a box containing 6 of their chosen Northern Irish 
 - As a **First Time Visitor**, I want to know the snack box price
 - As a **First Time Visitor**, I want to be able to read blog posts
 - As a **First Time Visitor**, I want to be able to easily register for an account
+- As a **First Time Visitor**, I want to read reviews from other users
 - As a **First Time Visitor**, I want to be able to follow the company on social media platforms
 - As a **First Time Visitor**, I want to be able to contact the company with any queries I might have
 
