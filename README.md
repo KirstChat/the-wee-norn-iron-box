@@ -136,9 +136,8 @@ Links to the wireframes can be found below. Each link contains the wireframes fo
 - [Products Page](https://github.com/KirstChat/the-wee-norn-iron-box/blob/master/docs/wireframes/products.pdf)
 - [Add/Edit/Delete Products](https://github.com/KirstChat/the-wee-norn-iron-box/blob/master/docs/wireframes/add-edit-delete-products.pdf) _(Superuser Only)_
 - [Box Contents](https://github.com/KirstChat/the-wee-norn-iron-box/blob/master/docs/wireframes/box.pdf)
-- Checkout
-- User Profile
-- Add Review
+- [User Profile](https://github.com/KirstChat/the-wee-norn-iron-box/blob/master/docs/wireframes/profile.pdf)
+- [Add Review](https://github.com/KirstChat/the-wee-norn-iron-box/blob/master/docs/wireframes/add-review.pdf)
 - [Login/Sign Up](https://github.com/KirstChat/the-wee-norn-iron-box/blob/master/docs/wireframes/login-logout-signup.pdf)
 
 There aren't any wireframes for the blog app as this was a suggested feature to add later in the development process. There also aren't any wireframes for the error pages as I decided to add these later in the development process.
